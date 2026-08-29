@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -361,7 +361,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gd4lib\gd4lib.csproj">
-      <Project>{a51bc027-d30a-4925-9066-ef22a1d09e25}</Project>
+      <Project>{a51bc027-d30a-4925-9066-ef22a1d09e25}  <ItemGroup>
+    <Content Include="BDSender_assets.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
       <Name>gd4lib</Name>
     </ProjectReference>
   </ItemGroup>
@@ -457,6 +462,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDSender_assets.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
 
 

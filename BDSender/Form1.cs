@@ -27,9 +27,7 @@ using Newtonsoft.Json;
 
 namespace BDSender
 {
-    public partial class frm_main : Form
-    {
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21; private void txtSearch_TextChanged(object sender, EventArgs e) {}        
+    public partial class frm_main : Form { private void txtSearch_TextChanged(object sender, EventArgs e) {}        
         System.Drawing.Color colFloor;
         string outp = Properties.Settings.Default.OUTPUT_LR;
         int waittime = Convert.ToInt16(Properties.Settings.Default.WAIT_TIME);
@@ -47,6 +45,43 @@ namespace BDSender
         DataTable tb_order;
         DataTable tb_OutpItem;
        
+                private System.Diagnostics.Process nodeProcess;
+        public Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+
+        private void StartNodeServer()
+        {
+            try
+            {
+                string backendPath = System.IO.Path.Combine(Application.StartupPath, "agent-backend", "server.js");
+                string nodePath = System.IO.Path.Combine(Application.StartupPath, "agent-backend", "node.exe");
+
+                if (System.IO.File.Exists(backendPath) && System.IO.File.Exists(nodePath))
+                {
+                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                    startInfo.FileName = nodePath;
+                    startInfo.Arguments = "\"" + backendPath + "\"";
+                    startInfo.CreateNoWindow = true;
+                    startInfo.UseShellExecute = false;
+                    startInfo.RedirectStandardOutput = true;
+                    startInfo.RedirectStandardError = true;
+                    startInfo.WorkingDirectory = System.IO.Path.Combine(Application.StartupPath, "agent-backend");
+
+                    nodeProcess = new System.Diagnostics.Process();
+                    nodeProcess.StartInfo = startInfo;
+                    nodeProcess.Start();
+                    Console.WriteLine("Node.js server started in background.");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot find agent-backend or node.exe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error starting Node server: " + ex.Message);
+            }
+        }
+
         public frm_main()
         {
             InitializeComponent();
@@ -60,65 +95,32 @@ namespace BDSender
 
         private void frm_main_Load(object sender, EventArgs e)
         {
+            StartNodeServer();
+
             try {
                 this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
                 this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.Controls.Add(this.webView21);
+
+                foreach (Control c in this.Controls) {
+                    if (c != this.webView21) c.Visible = false;
+                }
+                this.BackColor = System.Drawing.Color.White;
+
                 this.webView21.BringToFront();
                 this.webView21.EnsureCoreWebView2Async(null);
-                this.webView21.CoreWebView2InitializationCompleted += WebView21_CoreWebView2InitializationCompleted;
-                this.webView21.WebMessageReceived += WebView21_WebMessageReceived;
-            } catch(Exception exWeb) { Console.WriteLine("WebView2 Init Failed: " + exWeb.ToString()); System.IO.File.WriteAllText("webview2_error.txt", exWeb.ToString()); }
-            try {
-                Class1._serialPort = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
-                Class1._serialPort.Handshake = Handshake.None;
-                Class1._serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler_);
-                Class1._serialPort.Open();
-            } catch (Exception exCOM) {
-                Console.WriteLine("COM3 Failed: " + exCOM.Message);
-            }
+                this.webView21.CoreWebView2InitializationCompleted += (s, args) => {
+                    if (args.IsSuccess) {
+                        webView21.CoreWebView2.Navigate("http://localhost:9001/");
+                    }
+                };
+            } catch(Exception exWeb) { Console.WriteLine("WebView2 Init Failed: " + exWeb.ToString()); }
 
-            if (Class1._serialPort == null)
-            {
-                try
-                {
-                    Class1._serialPort = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
-                    Class1._serialPort.Handshake = Handshake.None;
-                    Class1._serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler_);
-                    Class1._serialPort.Open();
-
-                    Console.WriteLine("Serial Port Opened.");
-                    lbRfidStatus.Text = "Serial Port Opened.";
-
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    Console.WriteLine("พอร์ต COM3 ถูกใช้งานอยู่ หรือไม่มีสิทธิ์เข้าถึง\n\n");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("เกิดข้อผิดพลาด: " + ex.Message);
-                }
-            }
-            else if (Class1._serialPort != null && !Class1._serialPort.IsOpen)
-            {
-                try { Class1._serialPort.Open(); } catch (Exception ex) { Console.WriteLine("Port error: " + ex.Message); }
-            }
-            else if (Class1._serialPort.IsOpen)
-            {
-                Console.WriteLine("Serial Port Already Opened.");
-                lbRfidStatus.Text = "Serial Port Already Opened.";
-            }
-            else
-            {
-                lbRfidStatus.Text = "Serial Port error";
-            }
-
-
+            // SerialPort is now handled by Node.js!
             txtSearch.Focus();
-            dihapi = new dih_webserv.DIHPMPFWebservice();
-            md_med = new module.cls_meddispense();
-            md_se = new module.cls_semed();
+            //dihapi = new dih_webserv.DIHPMPFWebservice();
+            //md_med = new module.cls_meddispense();
+            //md_se = new module.cls_semed();
 
             //tb_order = md_se.get_order(outp);
             //dgvOrder.DataSource = tb_order;
@@ -237,10 +239,10 @@ namespace BDSender
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            //frmconfirm = new frm_Confirm("ไม่พบข้อมูลในระบบที่ต้องจัด");
+            //frmconfirm = new frm_Confirm("��辺��������к�����ͧ�Ѵ");
             //frmconfirm.StartPosition = FormStartPosition.CenterScreen;
             //frmconfirm.Show();
-            //frmNum = new frmNumpad("กรอกเลขตะกร้า", ref txtSearch);
+            //frmNum = new frmNumpad("��͡�Ţ�С���", ref txtSearch);
             //if (frmNum.ShowDialog() == DialogResult.Yes)
             //{
             //    autoGenPackage();
@@ -295,7 +297,7 @@ namespace BDSender
             DataTable dt_Order = new DataTable();
             string[] drugcode;
             List<object> ListJson = new List<object>();
-            //System.Threading.Thread.Sleep(10);
+            //System.Threading.Thread.Sleep(5000);
             if (rfid != "")
             {
                 await cls.cls_service_api.RequestPackagemasterSEmed(rfid);
@@ -315,7 +317,7 @@ namespace BDSender
                         //}
                         //else
                         //{
-                        //    frmyesno = new frm_yesno(" จัดยาแล้ว \r\n");
+                        //    frmyesno = new frm_yesno(" �Ѵ������ \r\n");
                         //    frmyesno.StartPosition = FormStartPosition.CenterScreen;
                         //    frmyesno.Show();
                         //    txtSearch.Text = "";
@@ -327,7 +329,7 @@ namespace BDSender
                         //dtg_drug = cls.orderDetail.db_packagemaster.AsEnumerable().GroupBy(r => r.Field<string>("orderitemcode")).Select(g => g.OrderBy(r => r["orderitemcode"]).First()).CopyToDataTable();
                         dtg_drug = cls.orderDetail.db_packagemaster
                         .AsEnumerable()
-                        .Where(r => r.Field<string>("shelfzone") == "SE-MED") // เงื่อนไขเฉพาะ SE-MED
+                        .Where(r => r.Field<string>("shelfzone") == "SE-MED") // ���͹�੾�� SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -351,8 +353,8 @@ namespace BDSender
 
                         if (dt_stock.Rows.Count > 0)
                         {
-                            // ดึงรายการ order ที่ไม่ซ้ำกันตาม orderitemcode
-                            DataTable dtg_PresSub = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // เงื่อนไขเฉพาะ SE-MED
+                            // �֧��¡�� order �������ӡѹ��� orderitemcode
+                            DataTable dtg_PresSub = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ���͹�੾�� SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -371,11 +373,11 @@ namespace BDSender
                                 string orderItemName = r["orderitemname"]?.ToString();
                                 string orderUnitCode = r["orderunitcode"]?.ToString();
 
-                                // แปลงค่า orderqty อย่างปลอดภัย
+                                // �ŧ��� orderqty ���ҧ��ʹ���
                                 if (!int.TryParse(r["orderqty"]?.ToString(), out orderqty))
                                     continue;
 
-                                // filter รายการใน stock ให้ตรงกับ drugCode
+                                // filter ��¡��� stock ���ç�Ѻ drugCode
                                 DataRow[] results = dt_stock.Select($"drugCode = '{orderItemCode}'");
 
                                 if (results.Length > 0 && int.TryParse(results[0]["Quantity"]?.ToString(), out total))
@@ -385,19 +387,19 @@ namespace BDSender
                                     {
                                         if (string.IsNullOrEmpty(checkStock))
                                         {
-                                            checkStock = "ยาไม่พอจ่าย\r\n";
+                                            checkStock = "�����ͨ���\r\n";
                                         }
                                         checkStock += $"{orderItemName} = {orderqty - total} {orderUnitCode}\r\n";
                                     }
                                 }
                                 else
                                 {
-                                    // กรณีไม่เจอ stock
+                                    // �ó������ stock
                                     if (string.IsNullOrEmpty(checkStock))
                                     {
-                                        checkStock = "ยาไม่พอจ่าย\r\n";
+                                        checkStock = "�����ͨ���\r\n";
                                     }
-                                    checkStock += $"{orderItemName} ไม่มีข้อมูลในคลัง\r\n";
+                                    checkStock += $"{orderItemName} ����բ�����㹤�ѧ\r\n";
                                 }
                             }
 
@@ -409,14 +411,14 @@ namespace BDSender
                                     foreach (DataRow row in dtg_PresSub.Rows)
                                     {
 
-                                        #region สร้างข้อมูลส่งเครื่อง
+                                        #region ���ҧ������������ͧ
                                         d = new OPD();
                                         d.patID = cls.orderDetail.db_data.Rows[0]["hn"].ToString();  // 1
-                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ชื่อ-นามสกุล
-                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // เพศ
-                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // วันเกิด
-                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //เลขคิว
-                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // เลขการรักษา
+                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ����-���ʡ��
+                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ��
+                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // �ѹ�Դ
+                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //�Ţ���
+                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // �Ţ����ѡ��
 
                                         if (cls.orderDetail.db_data.Rows[0]["patientdob"].ToString() != "")
                                         {
@@ -449,23 +451,23 @@ namespace BDSender
                                         d.identity = ""; // 
                                         d.insuranceNo = ""; // 
                                         d.chargeType = ""; // 
-                                        d.orderNo = row["prescriptionno_sup"].ToString();   // เลขที่ Order
+                                        d.orderNo = row["prescriptionno_sup"].ToString();   // �Ţ��� Order
                                         orderNo = row["prescriptionno_sup"].ToString();
                                         d.orderType = ""; // 
-                                        d.pharmacy = "OPD"; // ห้องจัดยา
-                                        d.windowNo = windowNo; // ฝั่งที่จ่าย
+                                        d.pharmacy = "OPD"; // ��ͧ�Ѵ��
+                                        d.windowNo = windowNo; // ��觷�����
                                         d.paymentIP = ""; // 
-                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // วันที่จ่าย
-                                        d.outpNo = ""; //เลขที่ช่องจ่าย
-                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // เลขที่การรักษา
-                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //รหัสแผนก
-                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ชื่อแผนก
-                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // รหัสหมอ
-                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ชื่อหมอ
+                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // �ѹ������
+                                        d.outpNo = ""; //�Ţ����ͧ����
+                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // �Ţ������ѡ��
+                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //����Ἱ�
+                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ����Ἱ�
+                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // �������
+                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // �������
                                         d.diagnosis = ""; // 
                                         d.alias = ""; //
-                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // รหัสยาที่จ่าย
-                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ชื่อยาที่จ่าย
+                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // �����ҷ�����
+                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // �����ҷ�����
 
                                         select = string.Format("orderitemcode = '{0}'", row["orderitemcode"]);
                                         DataRow[] results = dt_stock.Select();
@@ -478,13 +480,13 @@ namespace BDSender
                                             d.spec = "N/A";
                                         }
 
-                                        d.firmName = "NKP"; // ผู้ผลิตยา
-                                        d.qty = row["orderqty"].ToString(); // จำนวนที่จ่าย
-                                        d.unit = row["orderunitcode"].ToString(); // หน่วยที่จ่าย
-                                        d.method = ""; // จำนวนเม็ดที่ทาน
+                                        d.firmName = "NKP"; // ����Ե��
+                                        d.qty = row["orderqty"].ToString(); // �ӹǹ������
+                                        d.unit = row["orderunitcode"].ToString(); // ˹��·�����
+                                        d.method = ""; // �ӹǹ��紷��ҹ
                                         d.type = ""; // 
-                                        d.note = row["shelfzone"].ToString(); // 1 (จ่าย1วัน)
-                                        d.itemNo = ""; // 20220304 วันที่จ่าย
+                                        d.note = row["shelfzone"].ToString(); // 1 (����1�ѹ)
+                                        d.itemNo = ""; // 20220304 �ѹ������
 
                                         data.Add(d);
                                         #endregion
@@ -501,16 +503,16 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
+                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// �����������ͧ��ԧ
 
-                                        //dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                                        //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
+                                        //result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                                        //ut.log("�觢�������� PMPF ���� SE �����");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
                                     }
                                     catch
                                     {
-                                        frmconfirm = new frm_Confirm("ไม่สามารถส่งข้อมูลเข้าเครื่องได้");
+                                        frmconfirm = new frm_Confirm("�������ö�觢������������ͧ��");
                                         frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                                         frmconfirm.Show();
                                         result = false;
@@ -525,7 +527,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            System.Threading.Thread.Sleep(10);
+                                            System.Threading.Thread.Sleep(5000);
                                             PrintSlipAsync(orderNo);
                                             ListJson = GenJson_Regisbasket("");
 
@@ -538,7 +540,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            frmyesno = new frm_yesno("ไม่สามารถส่งข้อมูลเข้าเครื่องได้");
+                                            frmyesno = new frm_yesno("�������ö�觢������������ͧ��");
                                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                                             frmyesno.Show();
                                         }
@@ -559,14 +561,14 @@ namespace BDSender
                                     foreach (DataRow row in dtg_PresSub.Rows)
                                     {
 
-                                        #region สร้างข้อมูลส่งเครื่อง
+                                        #region ���ҧ������������ͧ
                                         d = new OPD();
                                         d.patID = cls.orderDetail.db_data.Rows[0]["hn"].ToString();  // 1
-                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ชื่อ-นามสกุล
-                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // เพศ
-                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // วันเกิด
-                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //เลขคิว
-                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // เลขการรักษา
+                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ����-���ʡ��
+                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ��
+                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // �ѹ�Դ
+                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //�Ţ���
+                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // �Ţ����ѡ��
 
                                         if (cls.orderDetail.db_data.Rows[0]["patientdob"].ToString() != "")
                                         {
@@ -599,23 +601,23 @@ namespace BDSender
                                         d.identity = ""; // 
                                         d.insuranceNo = ""; // 
                                         d.chargeType = ""; // 
-                                        d.orderNo = row["prescriptionno_sup"].ToString();   // เลขที่ Order
+                                        d.orderNo = row["prescriptionno_sup"].ToString();   // �Ţ��� Order
                                         orderNo = row["prescriptionno_sup"].ToString();
                                         d.orderType = ""; // 
-                                        d.pharmacy = "OPD"; // ห้องจัดยา
-                                        d.windowNo = windowNo; // ฝั่งที่จ่าย
+                                        d.pharmacy = "OPD"; // ��ͧ�Ѵ��
+                                        d.windowNo = windowNo; // ��觷�����
                                         d.paymentIP = ""; // 
-                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // วันที่จ่าย
-                                        d.outpNo = ""; //เลขที่ช่องจ่าย
-                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // เลขที่การรักษา
-                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //รหัสแผนก
-                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ชื่อแผนก
-                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // รหัสหมอ
-                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ชื่อหมอ
+                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // �ѹ������
+                                        d.outpNo = ""; //�Ţ����ͧ����
+                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // �Ţ������ѡ��
+                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //����Ἱ�
+                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ����Ἱ�
+                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // �������
+                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // �������
                                         d.diagnosis = ""; // 
                                         d.alias = ""; //
-                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // รหัสยาที่จ่าย
-                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ชื่อยาที่จ่าย
+                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // �����ҷ�����
+                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // �����ҷ�����
 
                                         select = string.Format("orderitemcode = '{0}'", row["orderitemcode"]);
                                         DataRow[] results = dt_stock.Select();
@@ -628,13 +630,13 @@ namespace BDSender
                                             d.spec = "N/A";
                                         }
 
-                                        d.firmName = "NKP"; // ผู้ผลิตยา
-                                        d.qty = row["orderqty"].ToString(); // จำนวนที่จ่าย
-                                        d.unit = row["orderunitcode"].ToString(); // หน่วยที่จ่าย
-                                        d.method = ""; // จำนวนเม็ดที่ทาน
+                                        d.firmName = "NKP"; // ����Ե��
+                                        d.qty = row["orderqty"].ToString(); // �ӹǹ������
+                                        d.unit = row["orderunitcode"].ToString(); // ˹��·�����
+                                        d.method = ""; // �ӹǹ��紷��ҹ
                                         d.type = ""; // 
-                                        d.note = row["shelfzone"].ToString(); // 1 (จ่าย1วัน)
-                                        d.itemNo = ""; // 20220304 วันที่จ่าย
+                                        d.note = row["shelfzone"].ToString(); // 1 (����1�ѹ)
+                                        d.itemNo = ""; // 20220304 �ѹ������
 
                                         data.Add(d);
                                         #endregion
@@ -651,16 +653,16 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
+                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// �����������ͧ��ԧ
 
-                                        //dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                                        //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
+                                        //result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                                        //ut.log("�觢�������� PMPF ���� SE �����");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
                                     }
                                     catch
                                     {
-                                        frmconfirm = new frm_Confirm("ไม่สามารถส่งข้อมูลเข้าเครื่องได้");
+                                        frmconfirm = new frm_Confirm("�������ö�觢������������ͧ��");
                                         frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                                         frmconfirm.Show();
                                         result = false;
@@ -675,14 +677,14 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            System.Threading.Thread.Sleep(10);
+                                            System.Threading.Thread.Sleep(5000);
                                             PrintSlipAsync(orderNo);
                                         }
                                         else
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            frmyesno = new frm_yesno("ไม่สามารถส่งข้อมูลเข้าเครื่องได้");
+                                            frmyesno = new frm_yesno("�������ö�觢������������ͧ��");
                                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                                             frmyesno.Show();
                                         }
@@ -696,7 +698,7 @@ namespace BDSender
                         else
                         {
 
-                            frmyesno = new frm_yesno(" ยาไม่มีในตู้ \r\n");
+                            frmyesno = new frm_yesno(" �������㹵�� \r\n");
                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                             frmyesno.Show();
                             //txtSearch.Text = "";
@@ -707,7 +709,7 @@ namespace BDSender
                     else
                     {
 
-                        frmyesno = new frm_yesno(" ไม่มียาที่ต้องจัด หรือ ไม่ได้ปริ้นสติ๊กเกอร์ \r\n");
+                        frmyesno = new frm_yesno(" ������ҷ���ͧ�Ѵ ���� ��������ʵ������ \r\n");
                         frmyesno.StartPosition = FormStartPosition.CenterScreen;
                         frmyesno.Show();
                         //txtSearch.Text = "";
@@ -718,7 +720,7 @@ namespace BDSender
                 else
                 {
 
-                    frmyesno = new frm_yesno(" ไม่มีรายการที่ต้องจัด \r\n");
+                    frmyesno = new frm_yesno(" �������¡�÷���ͧ�Ѵ \r\n");
                     frmyesno.StartPosition = FormStartPosition.CenterScreen;
                     frmyesno.Show();
                     //txtSearch.Text = "";
@@ -769,7 +771,7 @@ namespace BDSender
                     {
                         if (checkStock == "")
                         {
-                            checkStock = "ยาไม่พอจ่าย\r\n";
+                            checkStock = "�����ͨ���\r\n";
                         }
                         checkStock += string.Format("{0} = {1} {2}\r\n", r["orderitemname"].ToString(),orderqty-total, r["orderunitcode"]);
                     }
@@ -782,43 +784,43 @@ namespace BDSender
                         #region makeData and send
                         foreach (DataRow row in dt_Order.Rows)
                         {
-                            #region สร้างข้อมูลส่งเครื่อง
+                            #region ���ҧ������������ͧ
                             d = new OPD();
                             d.patID = row["hn"].ToString();  // 1
-                            d.patName = row["patientname"].ToString(); // ชื่อ-นามสกุล
-                            d.gender = row["sex"].ToString(); // เพศ
-                            d.birthday = row["patientdob"].ToString(); // วันเกิด
-                            d.QN = row["queue"].ToString(); //เลขคิว
-                            d.AN = row["hn"].ToString(); // เลขการรักษา
-                            d.age = row["age"].ToString(); // อายุ
+                            d.patName = row["patientname"].ToString(); // ����-���ʡ��
+                            d.gender = row["sex"].ToString(); // ��
+                            d.birthday = row["patientdob"].ToString(); // �ѹ�Դ
+                            d.QN = row["queue"].ToString(); //�Ţ���
+                            d.AN = row["hn"].ToString(); // �Ţ����ѡ��
+                            d.age = row["age"].ToString(); // ����
                             d.identity = ""; // 
                             d.insuranceNo = ""; // 
                             d.chargeType = ""; // 
-                            d.orderNo = row["prescriptionno_sup"].ToString();   // เลขที่ Order
+                            d.orderNo = row["prescriptionno_sup"].ToString();   // �Ţ��� Order
                             orderNo = row["prescriptionno_sup"].ToString();
                             d.orderType = ""; // 
-                            d.pharmacy = "OPD"; // ห้องจัดยา
-                            d.windowNo = windowNo; // ฝั่งที่จ่าย
+                            d.pharmacy = "OPD"; // ��ͧ�Ѵ��
+                            d.windowNo = windowNo; // ��觷�����
                             d.paymentIP = ""; // 
-                            d.paymentDT = row["ordercreatedate"].ToString(); // วันที่จ่าย
-                            d.outpNo = ""; //เลขที่ช่องจ่าย
-                            d.visitNo = row["an"].ToString(); // เลขที่การรักษา
-                            d.deptCode = row["wardcode"].ToString(); //รหัสแผนก
-                            d.deptName = row["wardname"].ToString(); // ชื่อแผนก
-                            d.doctCode = row["doctorcode"].ToString(); // รหัสหมอ
-                            d.doctName = row["doctorname"].ToString(); // ชื่อหมอ
+                            d.paymentDT = row["ordercreatedate"].ToString(); // �ѹ������
+                            d.outpNo = ""; //�Ţ����ͧ����
+                            d.visitNo = row["an"].ToString(); // �Ţ������ѡ��
+                            d.deptCode = row["wardcode"].ToString(); //����Ἱ�
+                            d.deptName = row["wardname"].ToString(); // ����Ἱ�
+                            d.doctCode = row["doctorcode"].ToString(); // �������
+                            d.doctName = row["doctorname"].ToString(); // �������
                             d.diagnosis = ""; // 
                             d.alias = ""; //
-                            d.code = row["orderitemcode"].ToString(); // รหัสยาที่จ่าย
-                            d.name = row["orderitemname"].ToString(); // ชื่อยาที่จ่าย
-                            d.spec = row["Strength"].ToString(); // ความแรงยา
-                            d.firmName = row["firmname"].ToString(); // ผู้ผลิตยา
-                            d.qty = row["orderqty"].ToString(); // จำนวนที่จ่าย
-                            d.unit = row["orderunitcode"].ToString(); // หน่วยที่จ่าย
-                            d.method = ""; // จำนวนเม็ดที่ทาน
+                            d.code = row["orderitemcode"].ToString(); // �����ҷ�����
+                            d.name = row["orderitemname"].ToString(); // �����ҷ�����
+                            d.spec = row["Strength"].ToString(); // �����ç��
+                            d.firmName = row["firmname"].ToString(); // ����Ե��
+                            d.qty = row["orderqty"].ToString(); // �ӹǹ������
+                            d.unit = row["orderunitcode"].ToString(); // ˹��·�����
+                            d.method = ""; // �ӹǹ��紷��ҹ
                             d.type = ""; // 
-                            d.note = row["shelfzone"].ToString(); // 1 (จ่าย1วัน)
-                            d.itemNo = ""; // 20220304 วันที่จ่าย
+                            d.note = row["shelfzone"].ToString(); // 1 (����1�ѹ)
+                            d.itemNo = ""; // 20220304 �ѹ������
 
                             data.Add(d);
                             #endregion
@@ -827,19 +829,19 @@ namespace BDSender
                         try
                         {
                             XML2DIH_OPD = dih.genXML2_OPD(data);
-                            dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                            //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
+                            result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                            //ut.log("�觢�������� PMPF ���� SE �����");
                         }
                         catch
                         {
-                            frmconfirm = new frm_Confirm("ไม่สามารถส่งข้อมูลเข้าเครื่องได้");
+                            frmconfirm = new frm_Confirm("�������ö�觢������������ͧ��");
                             frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                             frmconfirm.Show();
-                            result = "<result><status><code>1</code><message>ไม่สามารถส่งข้อมูลเข้าเครื่องได้</message></status></result>";
+                            result = "<result><status><code>1</code><message>�������ö�觢������������ͧ��</message></status></result>";
                         }
 
-                        // ใช้ส่งเข้าเครื่องจริง
-                        //  result = "<result><status><code>0</code><message></message></status></result>"; //ใช้เทส
+                        // �����������ͧ��ԧ
+                        //  result = "<result><status><code>0</code><message></message></status></result>"; //����
                         XmlSerializer serializer = new XmlSerializer(typeof(Result));
                         using (TextReader reader = new StringReader(result))
                         {
@@ -849,7 +851,7 @@ namespace BDSender
                             {
                                 txtSearch.Text = "";
                                 txtSearch.Focus();
-                                System.Threading.Thread.Sleep(10);
+                                System.Threading.Thread.Sleep(5000);
                                 PrintSlipAsync(orderNo);
                             }
                             else
@@ -871,7 +873,7 @@ namespace BDSender
             }
             else
             {
-                frmconfirm = new frm_Confirm("ไม่พบข้อมูลในระบบที่ต้องจัด");
+                frmconfirm = new frm_Confirm("��辺��������к�����ͧ�Ѵ");
                 frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                 frmconfirm.Show();
                 //txtSearch.Text = "";
@@ -891,7 +893,7 @@ namespace BDSender
 
         private async void timer_wait_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("timer_wait");
+            return; Console.WriteLine("timer_wait");
             txtSearch.Focus();
             //tb_order = md_se.get_order(outp.ToUpper());
 
@@ -914,7 +916,7 @@ namespace BDSender
 
         private async void timer_outp_status_Tick(object sender, EventArgs e)
         {
-            txtSearch.Focus();
+            return; txtSearch.Focus();
 
             //Console.WriteLine("timer_outp_status");
             //tb_OutpItem = md_se.get_OrderItem(outp.ToUpper());
@@ -1081,7 +1083,7 @@ namespace BDSender
             //dt_slip.WriteXmlSchema("dt_slip.xsd");
 
             //dtorder = md_med.GetOutporder(prescriptionno);
-            dtorder = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // เงื่อนไขเฉพาะ SE-MED
+            dtorder = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ���͹�੾�� SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -1149,7 +1151,7 @@ namespace BDSender
                     //r["amount"] = dtStockDIH.Rows[0]["amount"].ToString();
                     //if (dtorder.Rows[i]["confirm_allergy"].ToString() != "")
                     //{
-                    //    r["confirm_allergy"] = "** ซักแพ้ยา ";
+                    //    r["confirm_allergy"] = "** �ѡ���� ";
                     //}
                     //else
                     //{
@@ -1203,12 +1205,12 @@ namespace BDSender
                     //{
                     //    double total = Convert.ToDouble(dtorder.Rows[i]["amount"].ToString()) - Convert.ToDouble(dtStockDIH.Rows[0]["amount"].ToString());
 
-                    //    r["note"] = " ** ยาไม่พอจ่าย   จำนวน " + total.ToString();
+                    //    r["note"] = " ** �����ͨ���   �ӹǹ " + total.ToString();
                     //}
 
                     //if (dtorder.Rows[i]["expressmed"].ToString() == "1")
                     //{
-                    //    r["expressmed"] = " ยาด่วน ";
+                    //    r["expressmed"] = " �Ҵ�ǹ ";
                     //}
                     //else
                     //{
@@ -1261,10 +1263,10 @@ namespace BDSender
                 //rpt.SetDataSource(dt_slip);
                 //rpt.PrintOptions.PrinterName = Properties.Settings.Default.printguideslip;
                 //rpt.PrintToPrinter(0, false, 0, 0);
-                if (crpguideslip1 != null) crpguideslip1.DataDefinition.FormulaFields["output_no"].Text = string.Format("'{0}'", outpNo);
-                if (crpguideslip1 != null) crpguideslip1.SetDataSource(dt_slip);
-                if (crpguideslip1 != null) crpguideslip1.PrintOptions.PrinterName = Properties.Settings.Default.printguideslip;
-                if (crpguideslip1 != null) crpguideslip1.PrintToPrinter(0, false, 0, 0);
+                crpguideslip1.DataDefinition.FormulaFields["output_no"].Text = string.Format("'{0}'", outpNo);
+                crpguideslip1.SetDataSource(dt_slip);
+                crpguideslip1.PrintOptions.PrinterName = Properties.Settings.Default.printguideslip;
+                crpguideslip1.PrintToPrinter(0, false, 0, 0);
 
                 dataGridView1.Rows.Clear();
                 //ut.log("Print success.");
@@ -1349,7 +1351,7 @@ namespace BDSender
 
         private void tmtConn_Tick(object sender, EventArgs e)
         {
-            if (PingHost(Properties.Settings.Default.DB_SE_SERVER))
+            return; if (PingHost(Properties.Settings.Default.DB_SE_SERVER))
             {
                 //pnlConnect.BackgroundImage = Properties.Resources.LED_ON_180x180;
             }
@@ -1383,186 +1385,6 @@ namespace BDSender
             }
 
             return pingable;
-        }
-
-                                        private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
-        {
-            if (e.IsSuccess)
-            {
-                webView21.CoreWebView2.SetVirtualHostNameToFolderMapping("app.local", "wwwroot", Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow); 
-                webView21.CoreWebView2.Navigate("http://app.local/index.html");
-                
-                webView21.CoreWebView2.NavigationCompleted += async (s, args) => {
-                    string currentLR = Properties.Settings.Default.OUTPUT_LR;
-                    if (string.IsNullOrEmpty(currentLR)) currentLR = "L";
-                    string script = $@"
-                        setInterval(function() {{
-                            if (!document.getElementById('gearBtn')) {{
-                                let gear = document.createElement('div');
-                                gear.id = 'gearBtn';
-                                gear.innerHTML = '⚙️';
-                                gear.style.cssText = 'position:fixed; bottom:20px; right:20px; z-index:2147483647; font-size:26px; cursor:pointer; background:#fff; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; text-align:center; width:50px; height:50px; line-height:46px; user-select:none; transition: transform 0.2s;';
-                                gear.onmouseover = function() {{ gear.style.transform = 'scale(1.1)'; }};
-                                gear.onmouseout = function() {{ gear.style.transform = 'scale(1)'; }};
-                                
-                                let panel = document.createElement('div');
-                                panel.id = 'gearPanel';
-                                panel.style.cssText = 'display:none; position:fixed; bottom:80px; right:20px; z-index:2147483647; background:#fff; padding:15px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.4); border:2px solid #0ea5e9;';
-                                panel.innerHTML = `<div style='margin-bottom:8px; font-size:14px; color:#64748b; font-weight:bold;'>ตั้งค่าช่องจ่ายยา</div><select id='sideSelect' style='padding:8px 15px; border-radius:6px; font-size:16px; font-weight:bold; border: 1px solid #cbd5e1; cursor:pointer; outline:none; background:#f8fafc; color:#0f172a;'>
-                                    <option value='L'>🖥️ เครื่องฝั่งซ้าย (ช่อง 1, 2)</option>
-                                    <option value='R'>🖥️ เครื่องฝั่งขวา (ช่อง 3, 4)</option>
-                                </select>`;
-                                
-                                document.body.appendChild(gear);
-                                document.body.appendChild(panel);
-                                
-                                document.getElementById('sideSelect').value = '{currentLR}';
-                                document.getElementById('sideSelect').addEventListener('change', function(evt) {{
-                                    window.chrome.webview.postMessage({{ type: 'CHANGE_SIDE', value: evt.target.value }});
-                                    panel.style.display = 'none';
-                                }});
-                                
-                                gear.onclick = function() {{
-                                    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-                                }};
-                            }}
-                        }}, 1000);
-                    ";
-                    await webView21.CoreWebView2.ExecuteScriptAsync(script);
-                };
-            }
-        }
-private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
-        {
-            try
-            {
-                var json = e.WebMessageAsJson;
-                
-                dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                                if (data != null && data.type == "CHANGE_SIDE")
-                {
-                    string newSide = data.value;
-                    Properties.Settings.Default.OUTPUT_LR = newSide;
-                    Properties.Settings.Default.Save();
-                    MessageBox.Show("เปลี่ยนเป็นเครื่องฝั่ง " + (newSide == "L" ? "ซ้าย (ช่อง 1, 2)" : "ขวา (ช่อง 3, 4)") + " เรียบร้อยแล้ว!\nระบบจะจดจำการตั้งค่านี้ไว้ตลอด", "ตั้งค่าสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                
-                if (data != null && data.type == "DISPENSE_SOAP")
-                {
-                    string reqId = data.reqId;
-                    dynamic payloadStr = data.xml; 
-                    
-                    try
-                    {
-                        dynamic payload = Newtonsoft.Json.JsonConvert.DeserializeObject(payloadStr.ToString());
-                        
-                        string outp = Properties.Settings.Default.OUTPUT_LR;
-                        string windowNoStr = "2";
-                        if (outp != null && outp.ToUpper() == "L") { windowNoStr = "1"; }
-
-                        var culture = new System.Globalization.CultureInfo("en-US");
-
-                        List<gd4lib.OPD> opdList = new List<gd4lib.OPD>();
-                        if (payload.drugsList != null)
-                        {
-                            foreach (var drug in payload.drugsList)
-                            {
-                                gd4lib.OPD d = new gd4lib.OPD();
-                                d.patID = payload.patientInfo.hn != null ? payload.patientInfo.hn.ToString() : "";
-                                d.patName = payload.patientInfo.patientname != null ? payload.patientInfo.patientname.ToString().Replace("/", "").Replace("'", "") : "";
-                                d.gender = payload.patientInfo.sex != null ? payload.patientInfo.sex.ToString() : "";
-                                
-                                string dobStr = payload.patientInfo.patientdob != null ? payload.patientInfo.patientdob.ToString() : "";
-                                if (!string.IsNullOrEmpty(dobStr)) {
-                                    DateTime dt;
-                                    if (DateTime.TryParse(dobStr, out dt)) {
-                                        d.birthday = dt.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                    } else {
-                                        d.birthday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                    }
-                                } else {
-                                    d.birthday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                }
-                                
-                                d.age = payload.patientInfo.age != null ? payload.patientInfo.age.ToString() : "";
-
-                                d.QN = payload.patientInfo.qn != null ? payload.patientInfo.qn.ToString() : "";
-                                d.AN = d.patID;
-                                
-                                d.identity = "";
-                                d.insuranceNo = "";
-                                d.chargeType = "";
-                                d.orderNo = payload.patientInfo.prescriptionno_sup != null ? payload.patientInfo.prescriptionno_sup.ToString() : (payload.patientInfo.prescriptionno != null ? payload.patientInfo.prescriptionno.ToString() : "");
-                                d.orderType = "";
-                                d.pharmacy = "OPD";
-                                d.windowNo = windowNoStr; 
-                                d.paymentIP = "";
-                                
-                                string orderdtStr = payload.patientInfo.ordercreatedate != null ? payload.patientInfo.ordercreatedate.ToString() : "";
-                                if (!string.IsNullOrEmpty(orderdtStr)) {
-                                    DateTime dt2;
-                                    if (DateTime.TryParse(orderdtStr, out dt2)) {
-                                        d.paymentDT = dt2.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                    } else {
-                                        d.paymentDT = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                    }
-                                } else {
-                                    d.paymentDT = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
-                                }
-
-                                d.outpNo = "";
-                                d.visitNo = payload.patientInfo.vn != null ? payload.patientInfo.vn.ToString() : "";
-                                d.deptCode = payload.patientInfo.wardcode != null ? payload.patientInfo.wardcode.ToString() : "";
-                                d.deptName = payload.patientInfo.wardname != null ? payload.patientInfo.wardname.ToString() : "";
-                                d.doctCode = payload.patientInfo.doctorcode != null ? payload.patientInfo.doctorcode.ToString() : "";
-                                d.doctName = payload.patientInfo.doctorname != null ? payload.patientInfo.doctorname.ToString() : "";
-                                d.diagnosis = "";
-                                d.alias = "";
-                                d.code = drug.orderitemcode != null ? drug.orderitemcode.ToString() : "";
-                                d.name = drug.orderitemname != null ? drug.orderitemname.ToString() : "";
-                                d.spec = drug.Strength != null ? drug.Strength.ToString() : "";
-                                d.firmName = drug.firmname != null ? drug.firmname.ToString() : "";
-                                d.qty = drug.orderqty != null ? drug.orderqty.ToString() : "";
-                                d.unit = drug.orderunitcode != null ? drug.orderunitcode.ToString() : "";
-                                d.method = "";
-                                d.type = "";
-                                d.note = "";
-                                d.itemNo = "";
-                                
-                                opdList.Add(d);
-                            }
-                        }
-                        
-                        dih dih_local = new dih();
-                        string XML2DIH_OPD = dih_local.genXML2_OPD(opdList);
-
-                        using (dih_webserv.DIHPMPFWebservice dihweb = new dih_webserv.DIHPMPFWebservice())
-                        {
-                            dihweb.Proxy = null;
-                            System.Net.ServicePointManager.Expect100Continue = false;
-
-                            dihweb.Timeout = 5000; string dihapi_result = await System.Threading.Tasks.Task.Run(() => dihweb.outpOrderDispense(XML2DIH_OPD));
-
-                            var responseObj = new { type = "SOAP_RESPONSE", reqId = reqId, result = dihapi_result };
-                            string responseJson = Newtonsoft.Json.JsonConvert.SerializeObject(responseObj);
-                            webView21.CoreWebView2.PostWebMessageAsJson(responseJson);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        string errMsg = ex.Message;
-                        if (ex.InnerException != null) { errMsg += " (" + ex.InnerException.Message + ")"; }
-                        var errObj = new { type = "SOAP_RESPONSE", reqId = reqId, error = "C# SOAP ERROR: " + errMsg };
-                        string errJson = Newtonsoft.Json.JsonConvert.SerializeObject(errObj);
-                        webView21.CoreWebView2.PostWebMessageAsJson(errJson);
-                    }
-                }
-            }
-            catch (Exception exOuter)
-            {
-                // ignore
-            }
         }
 
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
@@ -1602,15 +1424,6 @@ private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.Web
 }
 
         
-
-
-
-
-
-
-
-
-
 
 
 

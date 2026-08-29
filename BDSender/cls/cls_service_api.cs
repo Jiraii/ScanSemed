@@ -17,7 +17,7 @@ namespace BDSender.cls
         orderDetail cls_orderDetail = new orderDetail();
         public static async Task RequestPackagemasterSEmed(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -289,7 +289,7 @@ namespace BDSender.cls
         }
         public static async Task<bool> update_resultSemed(string Json)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -342,7 +342,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_Getsemedstock(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -433,7 +433,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_GetOutporder(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -526,7 +526,7 @@ namespace BDSender.cls
 
         public static async Task<DataTable> Request_Getorderitem(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -620,7 +620,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_Getorderdetails(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -714,7 +714,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_Getorder(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -808,7 +808,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_getoutput(string keyword)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -902,7 +902,7 @@ namespace BDSender.cls
         }
         public static async Task<DataTable> Request_Getdrug()
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -996,7 +996,7 @@ namespace BDSender.cls
 
         public static async Task<DataTable> RequestUserID(string userid)
         {           
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
@@ -1077,7 +1077,7 @@ namespace BDSender.cls
 
         public static async Task<bool> update_regisbasket(List<object> ListJson)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient(new HttpClientHandler() { UseProxy = false }))
             {
                 try
                 {
