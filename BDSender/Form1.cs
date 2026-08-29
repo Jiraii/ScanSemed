@@ -501,9 +501,9 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
+                                        //dihapi_dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
 
-                                        //result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                                        //dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
                                         //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
@@ -651,9 +651,9 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
+                                        //dihapi_dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);// ใช้ส่งเข้าเครื่องจริง
 
-                                        //result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                                        //dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
                                         //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
@@ -827,7 +827,7 @@ namespace BDSender
                         try
                         {
                             XML2DIH_OPD = dih.genXML2_OPD(data);
-                            result = dihapi.outpOrderDispense(XML2DIH_OPD);
+                            dihapi.Timeout = 5000; result = dihapi.outpOrderDispense(XML2DIH_OPD);
                             //ut.log("ส่งข้อมูลเข้า PMPF จ่าย SE สำเร็จ");
                         }
                         catch
@@ -1542,7 +1542,7 @@ private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.Web
                             dihweb.Proxy = null;
                             System.Net.ServicePointManager.Expect100Continue = false;
 
-                            string dihapi_result = dihweb.outpOrderDispense(XML2DIH_OPD);
+                            dihweb.Timeout = 5000; string dihapi_result = await System.Threading.Tasks.Task.Run(() => dihweb.outpOrderDispense(XML2DIH_OPD));
 
                             var responseObj = new { type = "SOAP_RESPONSE", reqId = reqId, result = dihapi_result };
                             string responseJson = Newtonsoft.Json.JsonConvert.SerializeObject(responseObj);
