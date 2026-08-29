@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://webservice.pmpf.dih.com" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://webservice.pmpf.dih.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>DIHPMPFWebservice</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.pmpf.dih.com">
+      <xs:element name="pharmacyDict">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pharmacyDictResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="staffDict">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="staffDictResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="drugDict">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="drugDictResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="wardDict">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="wardDictResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deptDict">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deptDictResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="outpOrderCompletionNotify">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="outpOrderCompletionNotifyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="inpOrderDispense">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="inpOrderDispenseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="inpOrderCompletionNotify">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="inpOrderCompletionNotifyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="outpOrderDispense">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="outpOrderDispenseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="wardDictRequest">
+    <wsdl:part name="parameters" element="ns:wardDict" />
+  </wsdl:message>
+  <wsdl:message name="wardDictResponse">
+    <wsdl:part name="parameters" element="ns:wardDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="pharmacyDictRequest">
+    <wsdl:part name="parameters" element="ns:pharmacyDict" />
+  </wsdl:message>
+  <wsdl:message name="pharmacyDictResponse">
+    <wsdl:part name="parameters" element="ns:pharmacyDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="inpOrderCompletionNotifyRequest">
+    <wsdl:part name="parameters" element="ns:inpOrderCompletionNotify" />
+  </wsdl:message>
+  <wsdl:message name="inpOrderCompletionNotifyResponse">
+    <wsdl:part name="parameters" element="ns:inpOrderCompletionNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="staffDictRequest">
+    <wsdl:part name="parameters" element="ns:staffDict" />
+  </wsdl:message>
+  <wsdl:message name="staffDictResponse">
+    <wsdl:part name="parameters" element="ns:staffDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="outpOrderCompletionNotifyRequest">
+    <wsdl:part name="parameters" element="ns:outpOrderCompletionNotify" />
+  </wsdl:message>
+  <wsdl:message name="outpOrderCompletionNotifyResponse">
+    <wsdl:part name="parameters" element="ns:outpOrderCompletionNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="deptDictRequest">
+    <wsdl:part name="parameters" element="ns:deptDict" />
+  </wsdl:message>
+  <wsdl:message name="deptDictResponse">
+    <wsdl:part name="parameters" element="ns:deptDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="outpOrderDispenseRequest">
+    <wsdl:part name="parameters" element="ns:outpOrderDispense" />
+  </wsdl:message>
+  <wsdl:message name="outpOrderDispenseResponse">
+    <wsdl:part name="parameters" element="ns:outpOrderDispenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="inpOrderDispenseRequest">
+    <wsdl:part name="parameters" element="ns:inpOrderDispense" />
+  </wsdl:message>
+  <wsdl:message name="inpOrderDispenseResponse">
+    <wsdl:part name="parameters" element="ns:inpOrderDispenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="drugDictRequest">
+    <wsdl:part name="parameters" element="ns:drugDict" />
+  </wsdl:message>
+  <wsdl:message name="drugDictResponse">
+    <wsdl:part name="parameters" element="ns:drugDictResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DIHPMPFWebservicePortType">
+    <wsdl:operation name="wardDict">
+      <wsdl:input wsaw:Action="urn:wardDict" message="ns:wardDictRequest" />
+      <wsdl:output wsaw:Action="urn:wardDictResponse" message="ns:wardDictResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pharmacyDict">
+      <wsdl:input wsaw:Action="urn:pharmacyDict" message="ns:pharmacyDictRequest" />
+      <wsdl:output wsaw:Action="urn:pharmacyDictResponse" message="ns:pharmacyDictResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderCompletionNotify">
+      <wsdl:input wsaw:Action="urn:inpOrderCompletionNotify" message="ns:inpOrderCompletionNotifyRequest" />
+      <wsdl:output wsaw:Action="urn:inpOrderCompletionNotifyResponse" message="ns:inpOrderCompletionNotifyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="staffDict">
+      <wsdl:input wsaw:Action="urn:staffDict" message="ns:staffDictRequest" />
+      <wsdl:output wsaw:Action="urn:staffDictResponse" message="ns:staffDictResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderCompletionNotify">
+      <wsdl:input wsaw:Action="urn:outpOrderCompletionNotify" message="ns:outpOrderCompletionNotifyRequest" />
+      <wsdl:output wsaw:Action="urn:outpOrderCompletionNotifyResponse" message="ns:outpOrderCompletionNotifyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deptDict">
+      <wsdl:input wsaw:Action="urn:deptDict" message="ns:deptDictRequest" />
+      <wsdl:output wsaw:Action="urn:deptDictResponse" message="ns:deptDictResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderDispense">
+      <wsdl:input wsaw:Action="urn:outpOrderDispense" message="ns:outpOrderDispenseRequest" />
+      <wsdl:output wsaw:Action="urn:outpOrderDispenseResponse" message="ns:outpOrderDispenseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderDispense">
+      <wsdl:input wsaw:Action="urn:inpOrderDispense" message="ns:inpOrderDispenseRequest" />
+      <wsdl:output wsaw:Action="urn:inpOrderDispenseResponse" message="ns:inpOrderDispenseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="drugDict">
+      <wsdl:input wsaw:Action="urn:drugDict" message="ns:drugDictRequest" />
+      <wsdl:output wsaw:Action="urn:drugDictResponse" message="ns:drugDictResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DIHPMPFWebserviceSoap11Binding" type="ns:DIHPMPFWebservicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wardDict">
+      <soap:operation soapAction="urn:wardDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pharmacyDict">
+      <soap:operation soapAction="urn:pharmacyDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderCompletionNotify">
+      <soap:operation soapAction="urn:inpOrderCompletionNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="staffDict">
+      <soap:operation soapAction="urn:staffDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderCompletionNotify">
+      <soap:operation soapAction="urn:outpOrderCompletionNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deptDict">
+      <soap:operation soapAction="urn:deptDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderDispense">
+      <soap:operation soapAction="urn:inpOrderDispense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderDispense">
+      <soap:operation soapAction="urn:outpOrderDispense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drugDict">
+      <soap:operation soapAction="urn:drugDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DIHPMPFWebserviceSoap12Binding" type="ns:DIHPMPFWebservicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wardDict">
+      <soap12:operation soapAction="urn:wardDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pharmacyDict">
+      <soap12:operation soapAction="urn:pharmacyDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderCompletionNotify">
+      <soap12:operation soapAction="urn:inpOrderCompletionNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="staffDict">
+      <soap12:operation soapAction="urn:staffDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderCompletionNotify">
+      <soap12:operation soapAction="urn:outpOrderCompletionNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deptDict">
+      <soap12:operation soapAction="urn:deptDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderDispense">
+      <soap12:operation soapAction="urn:inpOrderDispense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderDispense">
+      <soap12:operation soapAction="urn:outpOrderDispense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drugDict">
+      <soap12:operation soapAction="urn:drugDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DIHPMPFWebserviceHttpBinding" type="ns:DIHPMPFWebservicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="wardDict">
+      <http:operation location="wardDict" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pharmacyDict">
+      <http:operation location="pharmacyDict" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderCompletionNotify">
+      <http:operation location="inpOrderCompletionNotify" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="staffDict">
+      <http:operation location="staffDict" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderCompletionNotify">
+      <http:operation location="outpOrderCompletionNotify" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deptDict">
+      <http:operation location="deptDict" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inpOrderDispense">
+      <http:operation location="inpOrderDispense" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="outpOrderDispense">
+      <http:operation location="outpOrderDispense" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drugDict">
+      <http:operation location="drugDict" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DIHPMPFWebservice">
+    <wsdl:port name="DIHPMPFWebserviceHttpSoap11Endpoint" binding="ns:DIHPMPFWebserviceSoap11Binding">
+      <soap:address location="http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="DIHPMPFWebserviceHttpSoap12Endpoint" binding="ns:DIHPMPFWebserviceSoap12Binding">
+      <soap12:address location="http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="DIHPMPFWebserviceHttpEndpoint" binding="ns:DIHPMPFWebserviceHttpBinding">
+      <http:address location="http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

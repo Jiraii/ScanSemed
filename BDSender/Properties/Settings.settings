@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BDSender.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DB_SE_USER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="DB_SE_PASS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin@gd4</Value>
+    </Setting>
+    <Setting Name="DB_SE_PORT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1433</Value>
+    </Setting>
+    <Setting Name="DB_MED_USER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="DB_MED_PASS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin@gd4</Value>
+    </Setting>
+    <Setting Name="DB_MED_PORT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="BDSender_dih_webserv_DIHPMPFWebservice" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="WAIT_TIME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="OUTPUT_LR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L</Value>
+    </Setting>
+    <Setting Name="DB_MED_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">meddispense</Value>
+    </Setting>
+    <Setting Name="printguideslip" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="apiUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.34.246//apiopd</Value>
+    </Setting>
+    <Setting Name="Setting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XP-80C</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0.6</Value>
+    </Setting>
+    <Setting Name="DB_SE_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SEMed1650</Value>
+    </Setting>
+    <Setting Name="DB_SE_SERVER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.35.222.66</Value>
+    </Setting>
+    <Setting Name="DB_MED_SERVER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.35.222.66</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

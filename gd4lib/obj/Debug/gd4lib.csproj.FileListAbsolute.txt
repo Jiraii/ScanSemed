@@ -1,0 +1,11 @@
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\MySql.Data.dll
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\gd4lib.dll
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\gd4lib.pdb
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\Newtonsoft.Json.dll
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\QRCoder.dll
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\bin\Debug\Newtonsoft.Json.xml
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\obj\Debug\gd4lib.csproj.AssemblyReference.cache
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\obj\Debug\gd4lib.csproj.CoreCompileInputs.cache
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\obj\Debug\gd4lib.csproj.Up2Date
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\obj\Debug\gd4lib.dll
+D:\BDSender_Nakornping\BDSender_Nakornping-main\gd4lib\obj\Debug\gd4lib.pdb
