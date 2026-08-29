@@ -1385,7 +1385,7 @@ namespace BDSender
             return pingable;
         }
 
-                                private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
+                                        private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
             if (e.IsSuccess)
             {
@@ -1397,17 +1397,34 @@ namespace BDSender
                     if (string.IsNullOrEmpty(currentLR)) currentLR = "L";
                     string script = $@"
                         setInterval(function() {{
-                            if (!document.getElementById('sideSelect')) {{
-                                let div = document.createElement('div');
-                                div.innerHTML = `<select id='sideSelect' style='position:fixed; bottom:20px; right:20px; z-index:2147483647; padding:10px 20px; border-radius:8px; font-size:18px; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; cursor:pointer; background-color: #f8fafc; color: #0f172a; outline:none;'>
-                                    <option value='L'>⚙️ ตั้งค่า: เครื่องฝั่งซ้าย (ช่อง 1, 2)</option>
-                                    <option value='R'>⚙️ ตั้งค่า: เครื่องฝั่งขวา (ช่อง 3, 4)</option>
+                            if (!document.getElementById('gearBtn')) {{
+                                let gear = document.createElement('div');
+                                gear.id = 'gearBtn';
+                                gear.innerHTML = '⚙️';
+                                gear.style.cssText = 'position:fixed; bottom:20px; right:20px; z-index:2147483647; font-size:26px; cursor:pointer; background:#fff; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; text-align:center; width:50px; height:50px; line-height:46px; user-select:none; transition: transform 0.2s;';
+                                gear.onmouseover = function() {{ gear.style.transform = 'scale(1.1)'; }};
+                                gear.onmouseout = function() {{ gear.style.transform = 'scale(1)'; }};
+                                
+                                let panel = document.createElement('div');
+                                panel.id = 'gearPanel';
+                                panel.style.cssText = 'display:none; position:fixed; bottom:80px; right:20px; z-index:2147483647; background:#fff; padding:15px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.4); border:2px solid #0ea5e9;';
+                                panel.innerHTML = `<div style='margin-bottom:8px; font-size:14px; color:#64748b; font-weight:bold;'>ตั้งค่าช่องจ่ายยา</div><select id='sideSelect' style='padding:8px 15px; border-radius:6px; font-size:16px; font-weight:bold; border: 1px solid #cbd5e1; cursor:pointer; outline:none; background:#f8fafc; color:#0f172a;'>
+                                    <option value='L'>🖥️ เครื่องฝั่งซ้าย (ช่อง 1, 2)</option>
+                                    <option value='R'>🖥️ เครื่องฝั่งขวา (ช่อง 3, 4)</option>
                                 </select>`;
-                                document.body.appendChild(div);
+                                
+                                document.body.appendChild(gear);
+                                document.body.appendChild(panel);
+                                
                                 document.getElementById('sideSelect').value = '{currentLR}';
                                 document.getElementById('sideSelect').addEventListener('change', function(evt) {{
                                     window.chrome.webview.postMessage({{ type: 'CHANGE_SIDE', value: evt.target.value }});
+                                    panel.style.display = 'none';
                                 }});
+                                
+                                gear.onclick = function() {{
+                                    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+                                }};
                             }}
                         }}, 1000);
                     ";
