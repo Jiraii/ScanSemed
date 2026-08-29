@@ -295,7 +295,7 @@ namespace BDSender
             DataTable dt_Order = new DataTable();
             string[] drugcode;
             List<object> ListJson = new List<object>();
-            //System.Threading.Thread.Sleep(5000);
+            //System.Threading.Thread.Sleep(10);
             if (rfid != "")
             {
                 await cls.cls_service_api.RequestPackagemasterSEmed(rfid);
@@ -525,7 +525,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            System.Threading.Thread.Sleep(5000);
+                                            System.Threading.Thread.Sleep(10);
                                             PrintSlipAsync(orderNo);
                                             ListJson = GenJson_Regisbasket("");
 
@@ -675,7 +675,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            System.Threading.Thread.Sleep(5000);
+                                            System.Threading.Thread.Sleep(10);
                                             PrintSlipAsync(orderNo);
                                         }
                                         else
@@ -849,7 +849,7 @@ namespace BDSender
                             {
                                 txtSearch.Text = "";
                                 txtSearch.Focus();
-                                System.Threading.Thread.Sleep(5000);
+                                System.Threading.Thread.Sleep(10);
                                 PrintSlipAsync(orderNo);
                             }
                             else
