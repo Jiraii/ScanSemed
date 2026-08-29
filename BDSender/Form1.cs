@@ -1399,7 +1399,7 @@ namespace BDSender
                         setInterval(function() {{
                             if (!document.getElementById('sideSelect')) {{
                                 let div = document.createElement('div');
-                                div.innerHTML = `<select id='sideSelect' style='position:fixed; top:20px; right:20px; z-index:2147483647; padding:10px 20px; border-radius:8px; font-size:18px; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; cursor:pointer; background-color: #f8fafc; color: #0f172a; outline:none;'>
+                                div.innerHTML = `<select id='sideSelect' style='position:fixed; bottom:20px; right:20px; z-index:2147483647; padding:10px 20px; border-radius:8px; font-size:18px; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; cursor:pointer; background-color: #f8fafc; color: #0f172a; outline:none;'>
                                     <option value='L'>⚙️ ตั้งค่า: เครื่องฝั่งซ้าย (ช่อง 1, 2)</option>
                                     <option value='R'>⚙️ ตั้งค่า: เครื่องฝั่งขวา (ช่อง 3, 4)</option>
                                 </select>`;
