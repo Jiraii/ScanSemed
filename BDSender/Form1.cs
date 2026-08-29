@@ -1,4 +1,4 @@
-using BDSender.forms;
+Ôªøusing BDSender.forms;
 using CrystalDecisions.CrystalReports.Engine;
 using gd4lib;
 using System;
@@ -93,11 +93,11 @@ namespace BDSender
                 }
                 catch (UnauthorizedAccessException ex)
                 {
-                    Console.WriteLine("æÕ√Ïµ COM3 ∂Ÿ°„™Èß“πÕ¬ŸË À√◊Õ‰¡Ë¡’ ‘∑∏‘Ï‡¢È“∂÷ß\n\n");
+                    Console.WriteLine("‡∏û‡∏≠‡∏£‡πå‡∏ï COM3 ‡∏ñ‡∏π‡∏Å‡πÉ‡∏ä‡πâ‡∏á‡∏≤‡∏ô‡∏≠‡∏¢‡∏π‡πà ‡∏´‡∏£‡∏∑‡∏≠‡πÑ‡∏°‡πà‡∏°‡∏µ‡∏™‡∏¥‡∏ó‡∏ò‡∏¥‡πå‡πÄ‡∏Ç‡πâ‡∏≤‡∏ñ‡∏∂‡∏á\n\n");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("‡°‘¥¢ÈÕº‘¥æ≈“¥: " + ex.Message);
+                    Console.WriteLine("‡πÄ‡∏Å‡∏¥‡∏î‡∏Ç‡πâ‡∏≠‡∏ú‡∏¥‡∏î‡∏û‡∏•‡∏≤‡∏î: " + ex.Message);
                 }
             }
             else if (Class1._serialPort != null && !Class1._serialPort.IsOpen)
@@ -237,10 +237,10 @@ namespace BDSender
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            //frmconfirm = new frm_Confirm("‰¡Ëæ∫¢ÈÕ¡Ÿ≈„π√–∫∫∑’ËµÈÕß®—¥");
+            //frmconfirm = new frm_Confirm("‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÉ‡∏ô‡∏£‡∏∞‡∏ö‡∏ö‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î");
             //frmconfirm.StartPosition = FormStartPosition.CenterScreen;
             //frmconfirm.Show();
-            //frmNum = new frmNumpad("°√Õ°‡≈¢µ–°√È“", ref txtSearch);
+            //frmNum = new frmNumpad("‡∏Å‡∏£‡∏≠‡∏Å‡πÄ‡∏•‡∏Ç‡∏ï‡∏∞‡∏Å‡∏£‡πâ‡∏≤", ref txtSearch);
             //if (frmNum.ShowDialog() == DialogResult.Yes)
             //{
             //    autoGenPackage();
@@ -315,7 +315,7 @@ namespace BDSender
                         //}
                         //else
                         //{
-                        //    frmyesno = new frm_yesno(" ®—¥¬“·≈È« \r\n");
+                        //    frmyesno = new frm_yesno(" ‡∏à‡∏±‡∏î‡∏¢‡∏≤‡πÅ‡∏•‡πâ‡∏ß \r\n");
                         //    frmyesno.StartPosition = FormStartPosition.CenterScreen;
                         //    frmyesno.Show();
                         //    txtSearch.Text = "";
@@ -327,7 +327,7 @@ namespace BDSender
                         //dtg_drug = cls.orderDetail.db_packagemaster.AsEnumerable().GroupBy(r => r.Field<string>("orderitemcode")).Select(g => g.OrderBy(r => r["orderitemcode"]).First()).CopyToDataTable();
                         dtg_drug = cls.orderDetail.db_packagemaster
                         .AsEnumerable()
-                        .Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡ß◊ËÕπ‰¢‡©æ“– SE-MED
+                        .Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡πÄ‡∏á‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏Ç‡πÄ‡∏â‡∏û‡∏≤‡∏∞ SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -351,8 +351,8 @@ namespace BDSender
 
                         if (dt_stock.Rows.Count > 0)
                         {
-                            // ¥÷ß√“¬°“√ order ∑’Ë‰¡Ë´È”°—πµ“¡ orderitemcode
-                            DataTable dtg_PresSub = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡ß◊ËÕπ‰¢‡©æ“– SE-MED
+                            // ‡∏î‡∏∂‡∏á‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£ order ‡∏ó‡∏µ‡πà‡πÑ‡∏°‡πà‡∏ã‡πâ‡∏≥‡∏Å‡∏±‡∏ô‡∏ï‡∏≤‡∏° orderitemcode
+                            DataTable dtg_PresSub = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡πÄ‡∏á‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏Ç‡πÄ‡∏â‡∏û‡∏≤‡∏∞ SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -371,11 +371,11 @@ namespace BDSender
                                 string orderItemName = r["orderitemname"]?.ToString();
                                 string orderUnitCode = r["orderunitcode"]?.ToString();
 
-                                // ·ª≈ß§Ë“ orderqty Õ¬Ë“ßª≈Õ¥¿—¬
+                                // ‡πÅ‡∏õ‡∏•‡∏á‡∏Ñ‡πà‡∏≤ orderqty ‡∏≠‡∏¢‡πà‡∏≤‡∏á‡∏õ‡∏•‡∏≠‡∏î‡∏†‡∏±‡∏¢
                                 if (!int.TryParse(r["orderqty"]?.ToString(), out orderqty))
                                     continue;
 
-                                // filter √“¬°“√„π stock „ÀÈµ√ß°—∫ drugCode
+                                // filter ‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£‡πÉ‡∏ô stock ‡πÉ‡∏´‡πâ‡∏ï‡∏£‡∏á‡∏Å‡∏±‡∏ö drugCode
                                 DataRow[] results = dt_stock.Select($"drugCode = '{orderItemCode}'");
 
                                 if (results.Length > 0 && int.TryParse(results[0]["Quantity"]?.ToString(), out total))
@@ -385,19 +385,19 @@ namespace BDSender
                                     {
                                         if (string.IsNullOrEmpty(checkStock))
                                         {
-                                            checkStock = "¬“‰¡ËæÕ®Ë“¬\r\n";
+                                            checkStock = "‡∏¢‡∏≤‡πÑ‡∏°‡πà‡∏û‡∏≠‡∏à‡πà‡∏≤‡∏¢\r\n";
                                         }
                                         checkStock += $"{orderItemName} = {orderqty - total} {orderUnitCode}\r\n";
                                     }
                                 }
                                 else
                                 {
-                                    // °√≥’‰¡Ë‡®Õ stock
+                                    // ‡∏Å‡∏£‡∏ì‡∏µ‡πÑ‡∏°‡πà‡πÄ‡∏à‡∏≠ stock
                                     if (string.IsNullOrEmpty(checkStock))
                                     {
-                                        checkStock = "¬“‰¡ËæÕ®Ë“¬\r\n";
+                                        checkStock = "‡∏¢‡∏≤‡πÑ‡∏°‡πà‡∏û‡∏≠‡∏à‡πà‡∏≤‡∏¢\r\n";
                                     }
-                                    checkStock += $"{orderItemName} ‰¡Ë¡’¢ÈÕ¡Ÿ≈„π§≈—ß\r\n";
+                                    checkStock += $"{orderItemName} ‡πÑ‡∏°‡πà‡∏°‡∏µ‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÉ‡∏ô‡∏Ñ‡∏•‡∏±‡∏á\r\n";
                                 }
                             }
 
@@ -409,14 +409,14 @@ namespace BDSender
                                     foreach (DataRow row in dtg_PresSub.Rows)
                                     {
 
-                                        #region  √È“ß¢ÈÕ¡Ÿ≈ Ëß‡§√◊ËÕß
+                                        #region ‡∏™‡∏£‡πâ‡∏≤‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏™‡πà‡∏á‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á
                                         d = new OPD();
                                         d.patID = cls.orderDetail.db_data.Rows[0]["hn"].ToString();  // 1
-                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ™◊ËÕ-π“¡ °ÿ≈
-                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ‡æ»
-                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // «—π‡°‘¥
-                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //‡≈¢§‘«
-                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡≈¢°“√√—°…“
+                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ‡∏ä‡∏∑‡πà‡∏≠-‡∏ô‡∏≤‡∏°‡∏™‡∏Å‡∏∏‡∏•
+                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ‡πÄ‡∏û‡∏®
+                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // ‡∏ß‡∏±‡∏ô‡πÄ‡∏Å‡∏¥‡∏î
+                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //‡πÄ‡∏•‡∏Ç‡∏Ñ‡∏¥‡∏ß
+                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
 
                                         if (cls.orderDetail.db_data.Rows[0]["patientdob"].ToString() != "")
                                         {
@@ -449,23 +449,23 @@ namespace BDSender
                                         d.identity = ""; // 
                                         d.insuranceNo = ""; // 
                                         d.chargeType = ""; // 
-                                        d.orderNo = row["prescriptionno_sup"].ToString();   // ‡≈¢∑’Ë Order
+                                        d.orderNo = row["prescriptionno_sup"].ToString();   // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà Order
                                         orderNo = row["prescriptionno_sup"].ToString();
                                         d.orderType = ""; // 
-                                        d.pharmacy = "OPD"; // ÀÈÕß®—¥¬“
-                                        d.windowNo = windowNo; // Ω—Ëß∑’Ë®Ë“¬
+                                        d.pharmacy = "OPD"; // ‡∏´‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î‡∏¢‡∏≤
+                                        d.windowNo = windowNo; // ‡∏ù‡∏±‡πà‡∏á‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
                                         d.paymentIP = ""; // 
-                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // «—π∑’Ë®Ë“¬
-                                        d.outpNo = ""; //‡≈¢∑’Ë™ËÕß®Ë“¬
-                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡≈¢∑’Ë°“√√—°…“
-                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //√À— ·ºπ°
-                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ™◊ËÕ·ºπ°
-                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // √À— À¡Õ
-                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ™◊ËÕÀ¡Õ
+                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.outpNo = ""; //‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏ä‡πà‡∏≠‡∏á‡∏à‡πà‡∏≤‡∏¢
+                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
+                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //‡∏£‡∏´‡∏±‡∏™‡πÅ‡∏ú‡∏ô‡∏Å
+                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ‡∏ä‡∏∑‡πà‡∏≠‡πÅ‡∏ú‡∏ô‡∏Å
+                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // ‡∏£‡∏´‡∏±‡∏™‡∏´‡∏°‡∏≠
+                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠‡∏´‡∏°‡∏≠
                                         d.diagnosis = ""; // 
                                         d.alias = ""; //
-                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // √À— ¬“∑’Ë®Ë“¬
-                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ™◊ËÕ¬“∑’Ë®Ë“¬
+                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // ‡∏£‡∏´‡∏±‡∏™‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ‡∏ä‡∏∑‡πà‡∏≠‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
 
                                         select = string.Format("orderitemcode = '{0}'", row["orderitemcode"]);
                                         DataRow[] results = dt_stock.Select();
@@ -478,13 +478,13 @@ namespace BDSender
                                             d.spec = "N/A";
                                         }
 
-                                        d.firmName = "NKP"; // ºŸÈº≈‘µ¬“
-                                        d.qty = row["orderqty"].ToString(); // ®”π«π∑’Ë®Ë“¬
-                                        d.unit = row["orderunitcode"].ToString(); // ÀπË«¬∑’Ë®Ë“¬
-                                        d.method = ""; // ®”π«π‡¡Á¥∑’Ë∑“π
+                                        d.firmName = "NKP"; // ‡∏ú‡∏π‡πâ‡∏ú‡∏•‡∏¥‡∏ï‡∏¢‡∏≤
+                                        d.qty = row["orderqty"].ToString(); // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.unit = row["orderunitcode"].ToString(); // ‡∏´‡∏ô‡πà‡∏ß‡∏¢‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.method = ""; // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡πÄ‡∏°‡πá‡∏î‡∏ó‡∏µ‡πà‡∏ó‡∏≤‡∏ô
                                         d.type = ""; // 
-                                        d.note = row["shelfzone"].ToString(); // 1 (®Ë“¬1«—π)
-                                        d.itemNo = ""; // 20220304 «—π∑’Ë®Ë“¬
+                                        d.note = row["shelfzone"].ToString(); // 1 (‡∏à‡πà‡∏≤‡∏¢1‡∏ß‡∏±‡∏ô)
+                                        d.itemNo = ""; // 20220304 ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
 
                                         data.Add(d);
                                         #endregion
@@ -501,16 +501,16 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// „™È Ëß‡¢È“‡§√◊ËÕß®√‘ß
+                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// ‡πÉ‡∏ä‡πâ‡∏™‡πà‡∏á‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡∏à‡∏£‡∏¥‡∏á
 
                                         //result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                                        //ut.log(" Ëß¢ÈÕ¡Ÿ≈‡¢È“ PMPF ®Ë“¬ SE  ”‡√Á®");
+                                        //ut.log("‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤ PMPF ‡∏à‡πà‡∏≤‡∏¢ SE ‡∏™‡∏≥‡πÄ‡∏£‡πá‡∏à");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
                                     }
                                     catch
                                     {
-                                        frmconfirm = new frm_Confirm("‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È");
+                                        frmconfirm = new frm_Confirm("‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ");
                                         frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                                         frmconfirm.Show();
                                         result = false;
@@ -538,7 +538,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            frmyesno = new frm_yesno("‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È");
+                                            frmyesno = new frm_yesno("‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ");
                                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                                             frmyesno.Show();
                                         }
@@ -559,14 +559,14 @@ namespace BDSender
                                     foreach (DataRow row in dtg_PresSub.Rows)
                                     {
 
-                                        #region  √È“ß¢ÈÕ¡Ÿ≈ Ëß‡§√◊ËÕß
+                                        #region ‡∏™‡∏£‡πâ‡∏≤‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏™‡πà‡∏á‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á
                                         d = new OPD();
                                         d.patID = cls.orderDetail.db_data.Rows[0]["hn"].ToString();  // 1
-                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ™◊ËÕ-π“¡ °ÿ≈
-                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ‡æ»
-                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // «—π‡°‘¥
-                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //‡≈¢§‘«
-                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡≈¢°“√√—°…“
+                                        d.patName = cls.orderDetail.db_data.Rows[0]["patientname"].ToString().Replace("/", "").Replace("'", "");  // ‡∏ä‡∏∑‡πà‡∏≠-‡∏ô‡∏≤‡∏°‡∏™‡∏Å‡∏∏‡∏•
+                                        d.gender = cls.orderDetail.db_data.Rows[0]["sex"].ToString(); // ‡πÄ‡∏û‡∏®
+                                        d.birthday = clsconvertdate.convert_en(cls.orderDetail.db_data.Rows[0]["patientdob"].ToString()); // ‡∏ß‡∏±‡∏ô‡πÄ‡∏Å‡∏¥‡∏î
+                                        d.QN = cls.orderDetail.db_data.Rows[0]["qn"].ToString(); //‡πÄ‡∏•‡∏Ç‡∏Ñ‡∏¥‡∏ß
+                                        d.AN = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
 
                                         if (cls.orderDetail.db_data.Rows[0]["patientdob"].ToString() != "")
                                         {
@@ -599,23 +599,23 @@ namespace BDSender
                                         d.identity = ""; // 
                                         d.insuranceNo = ""; // 
                                         d.chargeType = ""; // 
-                                        d.orderNo = row["prescriptionno_sup"].ToString();   // ‡≈¢∑’Ë Order
+                                        d.orderNo = row["prescriptionno_sup"].ToString();   // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà Order
                                         orderNo = row["prescriptionno_sup"].ToString();
                                         d.orderType = ""; // 
-                                        d.pharmacy = "OPD"; // ÀÈÕß®—¥¬“
-                                        d.windowNo = windowNo; // Ω—Ëß∑’Ë®Ë“¬
+                                        d.pharmacy = "OPD"; // ‡∏´‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î‡∏¢‡∏≤
+                                        d.windowNo = windowNo; // ‡∏ù‡∏±‡πà‡∏á‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
                                         d.paymentIP = ""; // 
-                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // «—π∑’Ë®Ë“¬
-                                        d.outpNo = ""; //‡≈¢∑’Ë™ËÕß®Ë“¬
-                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡≈¢∑’Ë°“√√—°…“
-                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //√À— ·ºπ°
-                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ™◊ËÕ·ºπ°
-                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // √À— À¡Õ
-                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ™◊ËÕÀ¡Õ
+                                        d.paymentDT = clsconvertdate.convert_en_time(cls.orderDetail.db_data.Rows[0]["ordercreatedate"].ToString()); // ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.outpNo = ""; //‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏ä‡πà‡∏≠‡∏á‡∏à‡πà‡∏≤‡∏¢
+                                        d.visitNo = cls.orderDetail.db_data.Rows[0]["hn"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
+                                        d.deptCode = cls.orderDetail.db_data.Rows[0]["wardcode"].ToString(); //‡∏£‡∏´‡∏±‡∏™‡πÅ‡∏ú‡∏ô‡∏Å
+                                        d.deptName = "";/*cls.orderDetail.db_data.Rows[0]["wardname"].ToString();*/ // ‡∏ä‡∏∑‡πà‡∏≠‡πÅ‡∏ú‡∏ô‡∏Å
+                                        d.doctCode = cls.orderDetail.db_data.Rows[0]["doctorcode"].ToString(); // ‡∏£‡∏´‡∏±‡∏™‡∏´‡∏°‡∏≠
+                                        d.doctName = cls.orderDetail.db_data.Rows[0]["doctorname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠‡∏´‡∏°‡∏≠
                                         d.diagnosis = ""; // 
                                         d.alias = ""; //
-                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // √À— ¬“∑’Ë®Ë“¬
-                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ™◊ËÕ¬“∑’Ë®Ë“¬
+                                        d.code = row["orderitemcode"].ToString().Replace("/", "").Replace("'", "");  // ‡∏£‡∏´‡∏±‡∏™‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.name = row["orderitemname"].ToString().Replace("/", "").Replace("'", "");  // ‡∏ä‡∏∑‡πà‡∏≠‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
 
                                         select = string.Format("orderitemcode = '{0}'", row["orderitemcode"]);
                                         DataRow[] results = dt_stock.Select();
@@ -628,13 +628,13 @@ namespace BDSender
                                             d.spec = "N/A";
                                         }
 
-                                        d.firmName = "NKP"; // ºŸÈº≈‘µ¬“
-                                        d.qty = row["orderqty"].ToString(); // ®”π«π∑’Ë®Ë“¬
-                                        d.unit = row["orderunitcode"].ToString(); // ÀπË«¬∑’Ë®Ë“¬
-                                        d.method = ""; // ®”π«π‡¡Á¥∑’Ë∑“π
+                                        d.firmName = "NKP"; // ‡∏ú‡∏π‡πâ‡∏ú‡∏•‡∏¥‡∏ï‡∏¢‡∏≤
+                                        d.qty = row["orderqty"].ToString(); // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.unit = row["orderunitcode"].ToString(); // ‡∏´‡∏ô‡πà‡∏ß‡∏¢‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                                        d.method = ""; // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡πÄ‡∏°‡πá‡∏î‡∏ó‡∏µ‡πà‡∏ó‡∏≤‡∏ô
                                         d.type = ""; // 
-                                        d.note = row["shelfzone"].ToString(); // 1 (®Ë“¬1«—π)
-                                        d.itemNo = ""; // 20220304 «—π∑’Ë®Ë“¬
+                                        d.note = row["shelfzone"].ToString(); // 1 (‡∏à‡πà‡∏≤‡∏¢1‡∏ß‡∏±‡∏ô)
+                                        d.itemNo = ""; // 20220304 ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
 
                                         data.Add(d);
                                         #endregion
@@ -651,16 +651,16 @@ namespace BDSender
 
                                         await cls.cls_service_api.update_resultSemed(json);
 
-                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// „™È Ëß‡¢È“‡§√◊ËÕß®√‘ß
+                                        //dihapi_result = dihapi.outpOrderDispense(XML2DIH_OPD);// ‡πÉ‡∏ä‡πâ‡∏™‡πà‡∏á‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡∏à‡∏£‡∏¥‡∏á
 
                                         //result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                                        //ut.log(" Ëß¢ÈÕ¡Ÿ≈‡¢È“ PMPF ®Ë“¬ SE  ”‡√Á®");
+                                        //ut.log("‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤ PMPF ‡∏à‡πà‡∏≤‡∏¢ SE ‡∏™‡∏≥‡πÄ‡∏£‡πá‡∏à");
 
                                         dihapi_result = "<result><status><code>0</code><message></message></status></result>";
                                     }
                                     catch
                                     {
-                                        frmconfirm = new frm_Confirm("‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È");
+                                        frmconfirm = new frm_Confirm("‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ");
                                         frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                                         frmconfirm.Show();
                                         result = false;
@@ -682,7 +682,7 @@ namespace BDSender
                                         {
                                             txtSearch.Text = "";
                                             txtSearch.Focus();
-                                            frmyesno = new frm_yesno("‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È");
+                                            frmyesno = new frm_yesno("‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ");
                                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                                             frmyesno.Show();
                                         }
@@ -696,7 +696,7 @@ namespace BDSender
                         else
                         {
 
-                            frmyesno = new frm_yesno(" ¬“‰¡Ë¡’„πµŸÈ \r\n");
+                            frmyesno = new frm_yesno(" ‡∏¢‡∏≤‡πÑ‡∏°‡πà‡∏°‡∏µ‡πÉ‡∏ô‡∏ï‡∏π‡πâ \r\n");
                             frmyesno.StartPosition = FormStartPosition.CenterScreen;
                             frmyesno.Show();
                             //txtSearch.Text = "";
@@ -707,7 +707,7 @@ namespace BDSender
                     else
                     {
 
-                        frmyesno = new frm_yesno(" ‰¡Ë¡’¬“∑’ËµÈÕß®—¥ À√◊Õ ‰¡Ë‰¥Èª√‘Èπ µ‘Í°‡°Õ√Ï \r\n");
+                        frmyesno = new frm_yesno(" ‡πÑ‡∏°‡πà‡∏°‡∏µ‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î ‡∏´‡∏£‡∏∑‡∏≠ ‡πÑ‡∏°‡πà‡πÑ‡∏î‡πâ‡∏õ‡∏£‡∏¥‡πâ‡∏ô‡∏™‡∏ï‡∏¥‡πä‡∏Å‡πÄ‡∏Å‡∏≠‡∏£‡πå \r\n");
                         frmyesno.StartPosition = FormStartPosition.CenterScreen;
                         frmyesno.Show();
                         //txtSearch.Text = "";
@@ -718,7 +718,7 @@ namespace BDSender
                 else
                 {
 
-                    frmyesno = new frm_yesno(" ‰¡Ë¡’√“¬°“√∑’ËµÈÕß®—¥ \r\n");
+                    frmyesno = new frm_yesno(" ‡πÑ‡∏°‡πà‡∏°‡∏µ‡∏£‡∏≤‡∏¢‡∏Å‡∏≤‡∏£‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î \r\n");
                     frmyesno.StartPosition = FormStartPosition.CenterScreen;
                     frmyesno.Show();
                     //txtSearch.Text = "";
@@ -769,7 +769,7 @@ namespace BDSender
                     {
                         if (checkStock == "")
                         {
-                            checkStock = "¬“‰¡ËæÕ®Ë“¬\r\n";
+                            checkStock = "‡∏¢‡∏≤‡πÑ‡∏°‡πà‡∏û‡∏≠‡∏à‡πà‡∏≤‡∏¢\r\n";
                         }
                         checkStock += string.Format("{0} = {1} {2}\r\n", r["orderitemname"].ToString(),orderqty-total, r["orderunitcode"]);
                     }
@@ -782,43 +782,43 @@ namespace BDSender
                         #region makeData and send
                         foreach (DataRow row in dt_Order.Rows)
                         {
-                            #region  √È“ß¢ÈÕ¡Ÿ≈ Ëß‡§√◊ËÕß
+                            #region ‡∏™‡∏£‡πâ‡∏≤‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡∏™‡πà‡∏á‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á
                             d = new OPD();
                             d.patID = row["hn"].ToString();  // 1
-                            d.patName = row["patientname"].ToString(); // ™◊ËÕ-π“¡ °ÿ≈
-                            d.gender = row["sex"].ToString(); // ‡æ»
-                            d.birthday = row["patientdob"].ToString(); // «—π‡°‘¥
-                            d.QN = row["queue"].ToString(); //‡≈¢§‘«
-                            d.AN = row["hn"].ToString(); // ‡≈¢°“√√—°…“
-                            d.age = row["age"].ToString(); // Õ“¬ÿ
+                            d.patName = row["patientname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠-‡∏ô‡∏≤‡∏°‡∏™‡∏Å‡∏∏‡∏•
+                            d.gender = row["sex"].ToString(); // ‡πÄ‡∏û‡∏®
+                            d.birthday = row["patientdob"].ToString(); // ‡∏ß‡∏±‡∏ô‡πÄ‡∏Å‡∏¥‡∏î
+                            d.QN = row["queue"].ToString(); //‡πÄ‡∏•‡∏Ç‡∏Ñ‡∏¥‡∏ß
+                            d.AN = row["hn"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
+                            d.age = row["age"].ToString(); // ‡∏≠‡∏≤‡∏¢‡∏∏
                             d.identity = ""; // 
                             d.insuranceNo = ""; // 
                             d.chargeType = ""; // 
-                            d.orderNo = row["prescriptionno_sup"].ToString();   // ‡≈¢∑’Ë Order
+                            d.orderNo = row["prescriptionno_sup"].ToString();   // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà Order
                             orderNo = row["prescriptionno_sup"].ToString();
                             d.orderType = ""; // 
-                            d.pharmacy = "OPD"; // ÀÈÕß®—¥¬“
-                            d.windowNo = windowNo; // Ω—Ëß∑’Ë®Ë“¬
+                            d.pharmacy = "OPD"; // ‡∏´‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î‡∏¢‡∏≤
+                            d.windowNo = windowNo; // ‡∏ù‡∏±‡πà‡∏á‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
                             d.paymentIP = ""; // 
-                            d.paymentDT = row["ordercreatedate"].ToString(); // «—π∑’Ë®Ë“¬
-                            d.outpNo = ""; //‡≈¢∑’Ë™ËÕß®Ë“¬
-                            d.visitNo = row["an"].ToString(); // ‡≈¢∑’Ë°“√√—°…“
-                            d.deptCode = row["wardcode"].ToString(); //√À— ·ºπ°
-                            d.deptName = row["wardname"].ToString(); // ™◊ËÕ·ºπ°
-                            d.doctCode = row["doctorcode"].ToString(); // √À— À¡Õ
-                            d.doctName = row["doctorname"].ToString(); // ™◊ËÕÀ¡Õ
+                            d.paymentDT = row["ordercreatedate"].ToString(); // ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                            d.outpNo = ""; //‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏ä‡πà‡∏≠‡∏á‡∏à‡πà‡∏≤‡∏¢
+                            d.visitNo = row["an"].ToString(); // ‡πÄ‡∏•‡∏Ç‡∏ó‡∏µ‡πà‡∏Å‡∏≤‡∏£‡∏£‡∏±‡∏Å‡∏©‡∏≤
+                            d.deptCode = row["wardcode"].ToString(); //‡∏£‡∏´‡∏±‡∏™‡πÅ‡∏ú‡∏ô‡∏Å
+                            d.deptName = row["wardname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠‡πÅ‡∏ú‡∏ô‡∏Å
+                            d.doctCode = row["doctorcode"].ToString(); // ‡∏£‡∏´‡∏±‡∏™‡∏´‡∏°‡∏≠
+                            d.doctName = row["doctorname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠‡∏´‡∏°‡∏≠
                             d.diagnosis = ""; // 
                             d.alias = ""; //
-                            d.code = row["orderitemcode"].ToString(); // √À— ¬“∑’Ë®Ë“¬
-                            d.name = row["orderitemname"].ToString(); // ™◊ËÕ¬“∑’Ë®Ë“¬
-                            d.spec = row["Strength"].ToString(); // §«“¡·√ß¬“
-                            d.firmName = row["firmname"].ToString(); // ºŸÈº≈‘µ¬“
-                            d.qty = row["orderqty"].ToString(); // ®”π«π∑’Ë®Ë“¬
-                            d.unit = row["orderunitcode"].ToString(); // ÀπË«¬∑’Ë®Ë“¬
-                            d.method = ""; // ®”π«π‡¡Á¥∑’Ë∑“π
+                            d.code = row["orderitemcode"].ToString(); // ‡∏£‡∏´‡∏±‡∏™‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                            d.name = row["orderitemname"].ToString(); // ‡∏ä‡∏∑‡πà‡∏≠‡∏¢‡∏≤‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                            d.spec = row["Strength"].ToString(); // ‡∏Ñ‡∏ß‡∏≤‡∏°‡πÅ‡∏£‡∏á‡∏¢‡∏≤
+                            d.firmName = row["firmname"].ToString(); // ‡∏ú‡∏π‡πâ‡∏ú‡∏•‡∏¥‡∏ï‡∏¢‡∏≤
+                            d.qty = row["orderqty"].ToString(); // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                            d.unit = row["orderunitcode"].ToString(); // ‡∏´‡∏ô‡πà‡∏ß‡∏¢‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
+                            d.method = ""; // ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô‡πÄ‡∏°‡πá‡∏î‡∏ó‡∏µ‡πà‡∏ó‡∏≤‡∏ô
                             d.type = ""; // 
-                            d.note = row["shelfzone"].ToString(); // 1 (®Ë“¬1«—π)
-                            d.itemNo = ""; // 20220304 «—π∑’Ë®Ë“¬
+                            d.note = row["shelfzone"].ToString(); // 1 (‡∏à‡πà‡∏≤‡∏¢1‡∏ß‡∏±‡∏ô)
+                            d.itemNo = ""; // 20220304 ‡∏ß‡∏±‡∏ô‡∏ó‡∏µ‡πà‡∏à‡πà‡∏≤‡∏¢
 
                             data.Add(d);
                             #endregion
@@ -828,18 +828,18 @@ namespace BDSender
                         {
                             XML2DIH_OPD = dih.genXML2_OPD(data);
                             result = dihapi.outpOrderDispense(XML2DIH_OPD);
-                            //ut.log(" Ëß¢ÈÕ¡Ÿ≈‡¢È“ PMPF ®Ë“¬ SE  ”‡√Á®");
+                            //ut.log("‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤ PMPF ‡∏à‡πà‡∏≤‡∏¢ SE ‡∏™‡∏≥‡πÄ‡∏£‡πá‡∏à");
                         }
                         catch
                         {
-                            frmconfirm = new frm_Confirm("‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È");
+                            frmconfirm = new frm_Confirm("‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ");
                             frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                             frmconfirm.Show();
-                            result = "<result><status><code>1</code><message>‰¡Ë “¡“√∂ Ëß¢ÈÕ¡Ÿ≈‡¢È“‡§√◊ËÕß‰¥È</message></status></result>";
+                            result = "<result><status><code>1</code><message>‡πÑ‡∏°‡πà‡∏™‡∏≤‡∏°‡∏≤‡∏£‡∏ñ‡∏™‡πà‡∏á‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡πÑ‡∏î‡πâ</message></status></result>";
                         }
 
-                        // „™È Ëß‡¢È“‡§√◊ËÕß®√‘ß
-                        //  result = "<result><status><code>0</code><message></message></status></result>"; //„™È‡∑ 
+                        // ‡πÉ‡∏ä‡πâ‡∏™‡πà‡∏á‡πÄ‡∏Ç‡πâ‡∏≤‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡∏à‡∏£‡∏¥‡∏á
+                        //  result = "<result><status><code>0</code><message></message></status></result>"; //‡πÉ‡∏ä‡πâ‡πÄ‡∏ó‡∏™
                         XmlSerializer serializer = new XmlSerializer(typeof(Result));
                         using (TextReader reader = new StringReader(result))
                         {
@@ -871,7 +871,7 @@ namespace BDSender
             }
             else
             {
-                frmconfirm = new frm_Confirm("‰¡Ëæ∫¢ÈÕ¡Ÿ≈„π√–∫∫∑’ËµÈÕß®—¥");
+                frmconfirm = new frm_Confirm("‡πÑ‡∏°‡πà‡∏û‡∏ö‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•‡πÉ‡∏ô‡∏£‡∏∞‡∏ö‡∏ö‡∏ó‡∏µ‡πà‡∏ï‡πâ‡∏≠‡∏á‡∏à‡∏±‡∏î");
                 frmconfirm.StartPosition = FormStartPosition.CenterScreen;
                 frmconfirm.Show();
                 //txtSearch.Text = "";
@@ -1081,7 +1081,7 @@ namespace BDSender
             //dt_slip.WriteXmlSchema("dt_slip.xsd");
 
             //dtorder = md_med.GetOutporder(prescriptionno);
-            dtorder = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡ß◊ËÕπ‰¢‡©æ“– SE-MED
+            dtorder = cls.orderDetail.db_packagemaster.AsEnumerable().Where(r => r.Field<string>("shelfzone") == "SE-MED") // ‡πÄ‡∏á‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏Ç‡πÄ‡∏â‡∏û‡∏≤‡∏∞ SE-MED
                         .GroupBy(r => new
                         {
                             ShelfZone = r.Field<string>("shelfzone"),
@@ -1149,7 +1149,7 @@ namespace BDSender
                     //r["amount"] = dtStockDIH.Rows[0]["amount"].ToString();
                     //if (dtorder.Rows[i]["confirm_allergy"].ToString() != "")
                     //{
-                    //    r["confirm_allergy"] = "** ´—°·æÈ¬“ ";
+                    //    r["confirm_allergy"] = "** ‡∏ã‡∏±‡∏Å‡πÅ‡∏û‡πâ‡∏¢‡∏≤ ";
                     //}
                     //else
                     //{
@@ -1203,12 +1203,12 @@ namespace BDSender
                     //{
                     //    double total = Convert.ToDouble(dtorder.Rows[i]["amount"].ToString()) - Convert.ToDouble(dtStockDIH.Rows[0]["amount"].ToString());
 
-                    //    r["note"] = " ** ¬“‰¡ËæÕ®Ë“¬   ®”π«π " + total.ToString();
+                    //    r["note"] = " ** ‡∏¢‡∏≤‡πÑ‡∏°‡πà‡∏û‡∏≠‡∏à‡πà‡∏≤‡∏¢   ‡∏à‡∏≥‡∏ô‡∏ß‡∏ô " + total.ToString();
                     //}
 
                     //if (dtorder.Rows[i]["expressmed"].ToString() == "1")
                     //{
-                    //    r["expressmed"] = " ¬“¥Ë«π ";
+                    //    r["expressmed"] = " ‡∏¢‡∏≤‡∏î‡πà‡∏ß‡∏ô ";
                     //}
                     //else
                     //{
@@ -1400,6 +1400,15 @@ namespace BDSender
                 var json = e.WebMessageAsJson;
                 
                 dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+                                if (data != null && data.type == "CHANGE_SIDE")
+                {
+                    string newSide = data.value;
+                    Properties.Settings.Default.OUTPUT_LR = newSide;
+                    Properties.Settings.Default.Save();
+                    MessageBox.Show("‡πÄ‡∏õ‡∏•‡∏µ‡πà‡∏¢‡∏ô‡πÄ‡∏õ‡πá‡∏ô‡πÄ‡∏Ñ‡∏£‡∏∑‡πà‡∏≠‡∏á‡∏ù‡∏±‡πà‡∏á " + (newSide == "L" ? "‡∏ã‡πâ‡∏≤‡∏¢ (‡∏ä‡πà‡∏≠‡∏á 1, 2)" : "‡∏Ç‡∏ß‡∏≤ (‡∏ä‡πà‡∏≠‡∏á 3, 4)") + " ‡πÄ‡∏£‡∏µ‡∏¢‡∏ö‡∏£‡πâ‡∏≠‡∏¢‡πÅ‡∏•‡πâ‡∏ß!\n‡∏£‡∏∞‡∏ö‡∏ö‡∏à‡∏∞‡∏à‡∏î‡∏à‡∏≥‡∏Å‡∏≤‡∏£‡∏ï‡∏±‡πâ‡∏á‡∏Ñ‡πà‡∏≤‡∏ô‡∏µ‡πâ‡πÑ‡∏ß‡πâ‡∏ï‡∏•‡∏≠‡∏î", "‡∏ï‡∏±‡πâ‡∏á‡∏Ñ‡πà‡∏≤‡∏™‡∏≥‡πÄ‡∏£‡πá‡∏à", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                
                 if (data != null && data.type == "DISPENSE_SOAP")
                 {
                     string reqId = data.reqId;
