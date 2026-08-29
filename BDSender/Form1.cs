@@ -1385,15 +1385,37 @@ namespace BDSender
             return pingable;
         }
 
-                private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
+                                private void WebView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
             if (e.IsSuccess)
             {
-                webView21.CoreWebView2.SetVirtualHostNameToFolderMapping("app.local", "wwwroot", Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow); webView21.CoreWebView2.Navigate("http://app.local/index.html");
+                webView21.CoreWebView2.SetVirtualHostNameToFolderMapping("app.local", "wwwroot", Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow); 
+                webView21.CoreWebView2.Navigate("http://app.local/index.html");
+                
+                webView21.CoreWebView2.NavigationCompleted += async (s, args) => {
+                    string currentLR = Properties.Settings.Default.OUTPUT_LR;
+                    if (string.IsNullOrEmpty(currentLR)) currentLR = "L";
+                    string script = $@"
+                        setInterval(function() {{
+                            if (!document.getElementById('sideSelect')) {{
+                                let div = document.createElement('div');
+                                div.innerHTML = `<select id='sideSelect' style='position:fixed; top:20px; right:20px; z-index:2147483647; padding:10px 20px; border-radius:8px; font-size:18px; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid #0ea5e9; cursor:pointer; background-color: #f8fafc; color: #0f172a; outline:none;'>
+                                    <option value='L'>⚙️ ตั้งค่า: เครื่องฝั่งซ้าย (ช่อง 1, 2)</option>
+                                    <option value='R'>⚙️ ตั้งค่า: เครื่องฝั่งขวา (ช่อง 3, 4)</option>
+                                </select>`;
+                                document.body.appendChild(div);
+                                document.getElementById('sideSelect').value = '{currentLR}';
+                                document.getElementById('sideSelect').addEventListener('change', function(evt) {{
+                                    window.chrome.webview.postMessage({{ type: 'CHANGE_SIDE', value: evt.target.value }});
+                                }});
+                            }}
+                        }}, 1000);
+                    ";
+                    await webView21.CoreWebView2.ExecuteScriptAsync(script);
+                };
             }
         }
-
-        private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+private async void WebView21_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
         {
             try
             {
