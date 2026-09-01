@@ -97,17 +97,17 @@ namespace BDSender
         {
             StartNodeServer();
 
-            try {
+                        try
+            {
+                this.Controls.Clear(); // Completely remove all C# UI
+                
                 this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
                 this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
                 this.Controls.Add(this.webView21);
 
-                foreach (Control c in this.Controls) {
-                    if (c != this.webView21) c.Visible = false;
-                }
                 this.BackColor = System.Drawing.Color.White;
-
                 this.webView21.BringToFront();
+                
                 this.webView21.EnsureCoreWebView2Async(null);
                 this.webView21.CoreWebView2InitializationCompleted += (s, args) => {
                     if (args.IsSuccess) {
