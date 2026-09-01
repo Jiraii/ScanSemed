@@ -215,24 +215,24 @@ export class AppComponent implements OnInit {
              const rawQty = parseFloat(d.qty);
              d.boxQty = Math.ceil(rawQty / packageRatio);
              
-             const requiredBoxes = d.boxQty;
+             const requiredPills = rawQty;
              const minimum = stockItem ? stockItem.Minimum : 0;
              
-             if (available < requiredBoxes) {
+             if (available < requiredPills) {
                this.missingDrugs.push({
                  code: d.code,
                  name: d.name,
-                 required: requiredBoxes,
-                 available: available,
-                 missing: requiredBoxes - available,
-                 unit: d.unit
+                 required: Math.ceil(requiredPills / packageRatio),
+                 available: Math.floor(available / packageRatio),
+                 missing: Math.ceil((requiredPills - available) / packageRatio),
+                 unit: 'กล่อง'
                });
              } else if (available <= minimum) {
                this.lowStockDrugs.push({
                  code: d.code,
                  name: d.name,
-                 available: available,
-                 unit: d.unit
+                 available: Math.floor(available / packageRatio),
+                 unit: 'กล่อง'
                });
              }
            });

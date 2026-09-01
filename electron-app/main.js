@@ -15,10 +15,11 @@ const BAUD_RATE = 115200;
 
 // Configuration fallback
 let HOSPITAL_API_BASE_URL = 'http://192.168.34.246/apiopd';
-let SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+let SEMED_SOAP_URL = 'http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
 let OUTPUT_LR = 'L';
 
 const configPath = path.join(app.getPath('userData'), 'config.json');
+
 function loadConfig() {
     try {
         if (fs.existsSync(configPath)) {
@@ -28,8 +29,8 @@ function loadConfig() {
             OUTPUT_LR = configData.OUTPUT_LR || OUTPUT_LR;
             
             // Auto-fix the wrong IP that was previously cached
-            if (SEMED_SOAP_URL.includes('10.35.222.66')) {
-                SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+            if (SEMED_SOAP_URL.includes('172.16.11.4')) {
+                SEMED_SOAP_URL = 'http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
                 configData.SEMED_SOAP_URL = SEMED_SOAP_URL;
                 fs.writeFileSync(configPath, JSON.stringify(configData, null, 2));
             }
@@ -143,7 +144,7 @@ function generateSemedXml(payload, windowNoStr) {
         <Name>${drug.name || ''}</Name>
         <Spec>N/A</Spec>
         <FirmName>NKP</FirmName>
-        <Qty>${drug.boxQty !== undefined ? drug.boxQty : (drug.qty || '')}</Qty>
+        <Qty>${drug.qty || ''}</Qty>
         <Unit>${drug.unit || ''}</Unit>
         <Method></Method>
         <Type></Type>
@@ -206,7 +207,7 @@ server.post('/api/proxy/dispense', async (req, res) => {
             name: (row.name || "").toString().replace("/", "").replace("'", ""),
             spec: "N/A", // C# checks stock for spec, defaulting to N/A
             firmName: "NKP",
-            qty: (row.boxQty !== undefined ? row.boxQty : (row.qty || "")).toString(),
+            qty: (row.qty || "").toString(),
             unit: (row.unit || "").toString(),
             method: "",
             type: "",
