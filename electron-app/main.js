@@ -307,7 +307,7 @@ async function scanAndConnectSerialPorts() {
         ports.forEach(portInfo => {
             const portPath = portInfo.path;
             try {
-                const port = new SerialPort({ path: portPath, baudRate: BAUD_RATE });
+                const port = new SerialPort({ path: portPath, baudRate: 115200 });
                 const parser = port.pipe(new ReadlineParser({ delimiter: '$' }));
                 parser.on('data', (data) => {
                     let rawData = data.toString().trim();
