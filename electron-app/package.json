@@ -28,7 +28,7 @@
                 "nsis",
                 "portable"
             ],
-            "icon": "icon.ico"
+            "icon": "icon.png"
         }
     },
     "main": "main.js",
