@@ -139,12 +139,12 @@ function generateSemedXml(payload, windowNoStr) {
         drugsXml += `
     <Drug>
         <Alias></Alias>
-        <Code>${drug.orderitemcode || ''}</Code>
-        <Name>${drug.orderitemname || ''}</Name>
+        <Code>${drug.code || ''}</Code>
+        <Name>${drug.name || ''}</Name>
         <Spec>N/A</Spec>
         <FirmName>NKP</FirmName>
-        <Qty>${drug.orderqty || ''}</Qty>
-        <Unit>${drug.orderunitcode || ''}</Unit>
+        <Qty>${drug.boxQty !== undefined ? drug.boxQty : (drug.qty || '')}</Qty>
+        <Unit>${drug.unit || ''}</Unit>
         <Method></Method>
         <Type></Type>
         <note>${drug.shelfzone || ''}</note>
@@ -202,12 +202,12 @@ server.post('/api/proxy/dispense', async (req, res) => {
         // Map the payload.drugsList to the format expected by update_resultSemed in C#
         const sendoredrdishPayload = payload.drugsList.map(row => ({
             alias: "",
-            code: (row.orderitemcode || "").toString().replace("/", "").replace("'", ""),
-            name: (row.orderitemname || "").toString().replace("/", "").replace("'", ""),
+            code: (row.code || "").toString().replace("/", "").replace("'", ""),
+            name: (row.name || "").toString().replace("/", "").replace("'", ""),
             spec: "N/A", // C# checks stock for spec, defaulting to N/A
             firmName: "NKP",
-            qty: (row.orderqty || "").toString(),
-            unit: (row.orderunitcode || "").toString(),
+            qty: (row.boxQty !== undefined ? row.boxQty : (row.qty || "")).toString(),
+            unit: (row.unit || "").toString(),
             method: "",
             type: "",
             note: (row.shelfzone || "").toString(),
@@ -296,7 +296,7 @@ async function scanAndConnectSerialPorts() {
                     let rawData = data.toString().trim();
                     if (rawData.startsWith('#')) {
                         const parts = rawData.substring(1).split('|');
-                        if (parts.length >= 3) {
+                        if (parts.length >= 3 && parts[2] !== '0') {
                             broadcastToUI({ type: 'SCAN', payload: parts[2] });
                         }
                     }
