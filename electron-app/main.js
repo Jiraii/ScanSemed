@@ -279,6 +279,8 @@ function broadcastToUI(data) {
 // ---------------------------------------------------------
 // Serial Port Scanner
 // ---------------------------------------------------------
+const appStartTime = Date.now();
+
 async function scanAndConnectSerialPorts() {
     try {
         const ports = await SerialPort.list();
@@ -288,6 +290,9 @@ async function scanAndConnectSerialPorts() {
                 const port = new SerialPort({ path: portPath, baudRate: 115200 });
                 const parser = port.pipe(new ReadlineParser({ delimiter: '$' }));
                 parser.on('data', (data) => {
+                    // Ignore data received within the first 3 seconds (flush old buffer)
+                    if (Date.now() - appStartTime < 3000) return;
+                    
                     let rawData = data.toString().trim();
                     if (rawData.startsWith('#')) {
                         const parts = rawData.substring(1).split('|');
