@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
                 uniqueDrugs.set(d.orderitemcode, {
                   code: d.orderitemcode,
                   name: d.orderitemname,
-                  qty: d.orderqty || d.qty, // ALWAYS use packagemaster qty (it's already in boxes!)
+                  qty: d.orderqty || d.qty,
                   unit: drugDetails ? drugDetails.orderunitcode : d.orderunitcode
                 });
               }
@@ -162,25 +162,27 @@ export class AppComponent implements OnInit {
             if (this.drugs.length === 0) {
                 this.showNoSemedDrugWarning = true;
                 this.dispenseStatus = 'idle';
+                this.isProcessing = false;
             } else {
-                // Call API to check real stock (comparing boxes with boxes)
                 this.checkStock(this.drugs);
             }
           } else {
             this.patientName = 'ไม่พบข้อมูลตะกร้า';
             this.dispenseStatus = 'idle';
             this.showInvalidMapWarning = true;
+            this.isProcessing = false;
           }
         } else {
             this.patientName = 'ไม่พบข้อมูลตะกร้า';
             this.dispenseStatus = 'idle';
             this.showInvalidMapWarning = true;
+            this.isProcessing = false;
         }
       },
       error: (e) => {
-        this.patientName = 'ดึงข้อมูลล้มเหลว';
-        this.dispenseStatus = 'error';
         console.error(e);
+        this.dispenseStatus = 'idle';
+        this.isProcessing = false;
       }
     });
   }
@@ -199,16 +201,21 @@ export class AppComponent implements OnInit {
            drugs.forEach(d => {
              const stockItem = stockData.find((s:any) => s.drugCode === d.code || s.Code === d.code);
              const available = stockItem ? stockItem.Quantity : 0;
-             const required = parseFloat(d.qty); // This is now in BOXES because of our fix
+             const packageRatio = stockItem ? parseFloat(stockItem.packageRatio || '1') : 1;
+             
+             const rawQty = parseFloat(d.qty);
+             d.boxQty = Math.ceil(rawQty / packageRatio);
+             
+             const requiredBoxes = d.boxQty;
              const minimum = stockItem ? stockItem.Minimum : 0;
              
-             if (available < required) {
+             if (available < requiredBoxes) {
                this.missingDrugs.push({
                  code: d.code,
                  name: d.name,
-                 required: required,
+                 required: requiredBoxes,
                  available: available,
-                 missing: required - available,
+                 missing: requiredBoxes - available,
                  unit: d.unit
                });
              } else if (available <= minimum) {
@@ -230,7 +237,6 @@ export class AppComponent implements OnInit {
         } else if (this.lowStockDrugs.length > 0) {
             this.showLowStockWarning = true;
         } else {
-            // No warning needed, auto dispense!
             setTimeout(() => {
                 this.onDispense();
             }, 500);
@@ -244,7 +250,7 @@ export class AppComponent implements OnInit {
         this.checkStockTime = new Date();
         this.dispenseStatus = 'ready';
         this.cdr.detectChanges();
-        // Fallback: Proceed even if stock check fails
+        drugs.forEach(d => { d.boxQty = d.qty; });
         setTimeout(() => {
             this.onDispense();
         }, 500);
@@ -255,10 +261,10 @@ export class AppComponent implements OnInit {
   onDispense() {
     if (!this.patientInfo || this.drugs.length === 0) {
         alert("ไม่มีข้อมูลยาสำหรับส่งจ่ายตู้ SEMED");
+        this.isProcessing = false;
         return;
     }
     
-    // Close modal if open
     this.showStockWarning = false;
     this.showLowStockWarning = false;
 
@@ -276,30 +282,16 @@ export class AppComponent implements OnInit {
           this.dispenseStatus = 'success';
           this.sendSemedTime = new Date();
           
-          // Add to history
-          this.dispensedHistory.push({
-            basketNo: this.basketNo,
+          this.dispensedHistory.unshift({
+            id: this.basketNo,
             patientName: this.patientName,
-            timestamp: new Date()
+            time: new Date()
           });
+          this.dispensedHistory = this.dispensedHistory.slice(0, 10);
+          this.isProcessing = false;
+          this.cdr.detectChanges();
           
-          // Clear state after success
           setTimeout(() => {
-              // If it reaches 5, clear it
-              if (this.dispensedHistory.length >= 5) {
-                this.dispensedHistory = [];
-              }
-
-              this.patientName = '-';
-              this.vn = '-';
-              this.hn = '-';
-              this.basketNo = '-';
-              this.rfidCode = '-';
-              this.drugs = [];
-              this.patientInfo = null;
-              this.loadPatientTime = null;
-              this.checkStockTime = null;
-              this.sendSemedTime = null;
 
               if (this.queue.length > 0) {
                 // มีคิวรออยู่ เอาคิวแรกมาทำต่อ
