@@ -71,8 +71,16 @@ export class AppComponent implements OnInit {
     }
 
     // 2. ถ้าตะกร้านี้ไปอยู่ในคิวรอแล้ว ให้ข้ามไป
-    if (this.queue.some(q => q.basketNo === cleanId || q.rfidCode === cleanId)) {
+    if (this.queue.includes(cleanId)) {
       console.log('Basket is already in queue, ignoring scan:', cleanId);
+      return;
+    }
+
+    // 3. ถ้าระบบไม่ว่าง ให้โยนตะกร้านี้เข้าคิว
+    if (this.dispenseStatus !== 'idle') {
+      console.log('System is busy, adding to queue:', cleanId);
+      this.queue.push(cleanId);
+      this.cdr.detectChanges();
       return;
     }
 
@@ -258,7 +266,7 @@ export class AppComponent implements OnInit {
           this.dispensedHistory.push({
             basketNo: this.basketNo,
             patientName: this.patientName,
-            time: new Date()
+            timestamp: new Date()
           });
           
           // Clear state after success
@@ -275,11 +283,21 @@ export class AppComponent implements OnInit {
               this.rfidCode = '-';
               this.drugs = [];
               this.patientInfo = null;
-              this.dispenseStatus = 'idle';
               this.loadPatientTime = null;
               this.checkStockTime = null;
               this.sendSemedTime = null;
-              this.cdr.detectChanges();
+
+              if (this.queue.length > 0) {
+                // มีคิวรออยู่ เอาคิวแรกมาทำต่อ
+                const nextBasket = this.queue.shift();
+                this.dispenseStatus = 'idle';
+                this.cdr.detectChanges();
+                this.handleScan(nextBasket);
+              } else {
+                // ไม่มีคิวรอ กลับหน้าว่าง
+                this.dispenseStatus = 'idle';
+                this.cdr.detectChanges();
+              }
           }, 3000);
         } else {
           this.dispenseStatus = 'error';
