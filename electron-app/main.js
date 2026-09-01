@@ -273,7 +273,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
-        title: "BDSender SEMED Dashboard",
+        title: "Scan",
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true

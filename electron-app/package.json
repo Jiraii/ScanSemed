@@ -1,18 +1,18 @@
 {
     "version": "1.0.0",
-    "name": "electron-app",
+    "name": "scan",
     "description": "",
     "scripts": {
+        "build:angular": "powershell -Command \"cd ../web-frontend-source; npm run build; if ($LASTEXITCODE -eq 0) { Copy-Item -Path './dist/web-frontend-source/browser/*' -Destination '../electron-app/dist/web-frontend/browser' -Recurse -Force }\"",
         "pack": "electron-builder --dir",
-        "dist": "electron-builder",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "dist": "npm run build:angular && electron-builder",
         "start": "electron ."
     },
     "build": {
-        "appId": "com.bdsender.semed",
-        "productName": "BDSender SEMED",
+        "appId": "com.hospital.scan",
+        "productName": "Scan",
         "directories": {
-            "output": "release"
+            "output": "D:/Scan"
         },
         "extraFiles": [
             {
@@ -27,7 +27,8 @@
             "target": [
                 "nsis",
                 "portable"
-            ]
+            ],
+            "icon": "icon.ico"
         }
     },
     "main": "main.js",
@@ -41,5 +42,8 @@
         "mysql2": "^3.24.2",
         "serialport": "^13.0.0",
         "ws": "^8.21.3"
+    },
+    "devDependencies": {
+        "electron-builder": "^26.15.3"
     }
 }
