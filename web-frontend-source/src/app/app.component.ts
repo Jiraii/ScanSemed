@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   basketNo: string = '-';
   rfidCode: string = '-';
   patientInfo: any = null;
+  isProcessing: boolean = false;
   
   drugs: any[] = [];
   queue: any[] = [];
@@ -115,6 +116,14 @@ export class AppComponent implements OnInit {
   }
 
   fetchPatientData(basketId: string) {
+    if (this.isProcessing) return;
+    
+    // Check history (max 10 recent scans)
+    if (this.dispensedHistory.some(h => h.id === basketId)) {
+        return;
+    }
+    
+    this.isProcessing = true;
     this.basketNo = basketId;
     this.rfidCode = basketId;
     this.patientName = 'กำลังดึงข้อมูล...';
