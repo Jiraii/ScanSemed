@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
                 uniqueDrugs.set(d.orderitemcode, {
                   code: d.orderitemcode,
                   name: d.orderitemname,
-                  qty: drugDetails ? (drugDetails.orderqty || drugDetails.qty) : (d.qty || d.orderqty),
+                  qty: d.orderqty || d.qty, // ALWAYS use packagemaster qty (it's already in boxes!)
                   unit: drugDetails ? drugDetails.orderunitcode : d.orderunitcode
                 });
               }
@@ -163,14 +163,8 @@ export class AppComponent implements OnInit {
                 this.showNoSemedDrugWarning = true;
                 this.dispenseStatus = 'idle';
             } else {
-                // No frontend stock check required, immediately dispense!
-                this.missingDrugs = [];
-                this.checkStockTime = new Date();
-                this.dispenseStatus = 'ready';
-                this.cdr.detectChanges();
-                setTimeout(() => {
-                    this.onDispense();
-                }, 500);
+                // Call API to check real stock (comparing boxes with boxes)
+                this.checkStock(this.drugs);
             }
           } else {
             this.patientName = 'ไม่พบข้อมูลตะกร้า';
@@ -187,6 +181,73 @@ export class AppComponent implements OnInit {
         this.patientName = 'ดึงข้อมูลล้มเหลว';
         this.dispenseStatus = 'error';
         console.error(e);
+      }
+    });
+  }
+
+  checkStock(drugs: any[]) {
+    const drugCodes = drugs.map(d => d.code);
+    this.http.post<any>('/api/proxy/semedstock', { drugcode: drugCodes }).subscribe({
+      next: (res) => {
+        this.missingDrugs = [];
+        this.lowStockDrugs = [];
+        this.showStockWarning = false;
+        this.showLowStockWarning = false;
+        
+        if (res && res.status === 200 && res.data) {
+           const stockData = res.data;
+           drugs.forEach(d => {
+             const stockItem = stockData.find((s:any) => s.drugCode === d.code || s.Code === d.code);
+             const available = stockItem ? stockItem.Quantity : 0;
+             const required = parseFloat(d.qty); // This is now in BOXES because of our fix
+             const minimum = stockItem ? stockItem.Minimum : 0;
+             
+             if (available < required) {
+               this.missingDrugs.push({
+                 code: d.code,
+                 name: d.name,
+                 required: required,
+                 available: available,
+                 missing: required - available,
+                 unit: d.unit
+               });
+             } else if (available <= minimum) {
+               this.lowStockDrugs.push({
+                 code: d.code,
+                 name: d.name,
+                 available: available,
+                 unit: d.unit
+               });
+             }
+           });
+        }
+        
+        this.checkStockTime = new Date();
+        this.dispenseStatus = 'ready';
+        
+        if (this.missingDrugs.length > 0) {
+            this.showStockWarning = true;
+        } else if (this.lowStockDrugs.length > 0) {
+            this.showLowStockWarning = true;
+        } else {
+            // No warning needed, auto dispense!
+            setTimeout(() => {
+                this.onDispense();
+            }, 500);
+        }
+        
+        this.cdr.detectChanges();
+      },
+      error: (e) => {
+        console.error('Check stock error', e);
+        this.missingDrugs = [];
+        this.checkStockTime = new Date();
+        this.dispenseStatus = 'ready';
+        this.cdr.detectChanges();
+        // Fallback: Proceed even if stock check fails
+        setTimeout(() => {
+            this.onDispense();
+        }, 500);
       }
     });
   }

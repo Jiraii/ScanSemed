@@ -196,28 +196,6 @@ server.post('/api/proxy/dispense', async (req, res) => {
         let baseUrl = HOSPITAL_API_BASE_URL;
         if(baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
 
-        // --- NEW: Calculate packageRatio ---
-        try {
-            const drugCodes = payload.drugsList.map(d => d.orderitemcode);
-            if (drugCodes.length > 0) {
-                const stockRes = await axios.post(baseUrl + '/dih/getsemedstock', drugCodes, { timeout: 10000 });
-                if (stockRes.data && Array.isArray(stockRes.data)) {
-                    payload.drugsList.forEach(drug => {
-                        const stockItem = stockRes.data.find(s => s.drugCode == drug.orderitemcode);
-                        if (stockItem && stockItem.packageRatio) {
-                            const ratio = parseInt(stockItem.packageRatio, 10);
-                            const rawQty = parseInt(drug.orderqty, 10);
-                            if (!isNaN(ratio) && ratio > 0 && !isNaN(rawQty)) {
-                                drug.orderqty = Math.floor(rawQty / ratio).toString();
-                            }
-                        }
-                    });
-                }
-            }
-        } catch (stockErr) {
-            console.error("Warning: Could not fetch getsemedstock for packageRatio:", stockErr.message);
-        }
-        
         // Generate XML entirely in Node.js, no C# needed!
         const innerXml = generateSemedXml(payload, windowNo);
 
