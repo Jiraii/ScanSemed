@@ -135,24 +135,22 @@ function generateSemedXml(payload, windowNoStr) {
     const doctName = p.doctorname || '';
 
     let drugsXml = '';
-    let itemNo = 1;
-    for (const d of drugs) {
-        drugsXml += 
-        `<Drug>
-          <Code>` + (d.icode || d.code || '') + `</Code>
-          <Name>` + (d.name || d.drugname || '') + `</Name>
-          <Spec></Spec>
-          <FirmName></FirmName>
-          <Unit>` + (d.units || '') + `</Unit>
-          <Alias></Alias>
-          <Method></Method>
-          <Type></Type>
-          <Qty>` + (d.qty || '') + `</Qty>
-          <note></note>
-          <ItemNo>` + itemNo + `</ItemNo>
-        </Drug>`;
-        itemNo++;
-    }
+    payload.drugsList.forEach((drug, index) => {
+        drugsXml += `
+    <Drug>
+        <Alias></Alias>
+        <Code>${drug.orderitemcode || ''}</Code>
+        <Name>${drug.orderitemname || ''}</Name>
+        <Spec>N/A</Spec>
+        <FirmName>NKP</FirmName>
+        <Qty>${drug.orderqty || ''}</Qty>
+        <Unit>${drug.orderunitcode || ''}</Unit>
+        <Method></Method>
+        <Type></Type>
+        <note>${drug.shelfzone || ''}</note>
+        <ItemNo>${index + 1}</ItemNo>
+    </Drug>`;
+    });
 
     const xml = `<?xml version="1.0" encoding="utf-8"?>
 <OutpOrderDispense xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -193,7 +191,7 @@ function generateSemedXml(payload, windowNoStr) {
 server.post('/api/proxy/dispense', async (req, res) => {
     try {
         let payload = req.body; 
-        const windowNo = OUTPUT_LR === 'R' ? '3,4' : '1,2';
+        const windowNo = payload.windowNo || '1';
         
         // Generate XML entirely in Node.js, no C# needed!
         const innerXml = generateSemedXml(payload, windowNo);
