@@ -198,6 +198,34 @@ server.post('/api/proxy/dispense', async (req, res) => {
         // Generate XML entirely in Node.js, no C# needed!
         const innerXml = generateSemedXml(payload, windowNo);
 
+        // Map the payload.drugsList to the format expected by update_resultSemed in C#
+        const sendoredrdishPayload = payload.drugsList.map(row => ({
+            alias: "",
+            code: (row.orderitemcode || "").toString().replace("/", "").replace("'", ""),
+            name: (row.orderitemname || "").toString().replace("/", "").replace("'", ""),
+            spec: "N/A", // C# checks stock for spec, defaulting to N/A
+            firmName: "NKP",
+            qty: (row.orderqty || "").toString(),
+            unit: (row.orderunitcode || "").toString(),
+            method: "",
+            type: "",
+            note: (row.shelfzone || "").toString(),
+            itemNo: ""
+        }));
+
+        try {
+            // C# calls update_resultSemed(json) to notify HIS
+            const hisUpdateUrl = HOSPITAL_API_BASE_URL + '/dih/sendoredrdish';
+            console.log("Sending update to HIS:", hisUpdateUrl);
+            await axios.post(hisUpdateUrl, sendoredrdishPayload, {
+                headers: { 'Content-Type': 'application/json' },
+                timeout: 10000
+            });
+        } catch (hisErr) {
+            console.error("Warning: HIS update /dih/sendoredrdish failed:", hisErr.message);
+            // We continue even if HIS fails, to make sure the machine dispenses.
+        }
+
         const soapEnvelope = `<?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <soap:Body>
