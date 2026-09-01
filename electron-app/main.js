@@ -15,17 +15,24 @@ const BAUD_RATE = 115200;
 
 // Configuration fallback
 let HOSPITAL_API_BASE_URL = 'http://192.168.34.246/apiopd';
-let SEMED_SOAP_URL = 'http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+let SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
 let OUTPUT_LR = 'L';
 
 const configPath = path.join(app.getPath('userData'), 'config.json');
 function loadConfig() {
     try {
         if (fs.existsSync(configPath)) {
-            const data = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-            if (data.HOSPITAL_API_BASE_URL) HOSPITAL_API_BASE_URL = data.HOSPITAL_API_BASE_URL;
-            if (data.SEMED_SOAP_URL) SEMED_SOAP_URL = data.SEMED_SOAP_URL;
-            if (data.OUTPUT_LR) OUTPUT_LR = data.OUTPUT_LR;
+            let configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+            HOSPITAL_API_BASE_URL = configData.HOSPITAL_API_BASE_URL || HOSPITAL_API_BASE_URL;
+            SEMED_SOAP_URL = configData.SEMED_SOAP_URL || SEMED_SOAP_URL;
+            OUTPUT_LR = configData.OUTPUT_LR || OUTPUT_LR;
+            
+            // Auto-fix the wrong IP that was previously cached
+            if (SEMED_SOAP_URL.includes('10.35.222.66')) {
+                SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+                configData.SEMED_SOAP_URL = SEMED_SOAP_URL;
+                fs.writeFileSync(configPath, JSON.stringify(configData, null, 2));
+            }
         } else {
             saveConfig();
         }
@@ -192,14 +199,13 @@ server.post('/api/proxy/dispense', async (req, res) => {
         const innerXml = generateSemedXml(payload, windowNo);
 
         const soapEnvelope = `<?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.pmpf.dih.com">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <web:outpOrderDispense>
-         <web:xml><![CDATA[` + innerXml + `]]></web:xml>
-      </web:outpOrderDispense>
-   </soapenv:Body>
-</soapenv:Envelope>`;
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <outpOrderDispense xmlns="http://webservice.pmpf.dih.com">
+      <xml><![CDATA[` + innerXml + `]]></xml>
+    </outpOrderDispense>
+  </soap:Body>
+</soap:Envelope>`;
 
         const response = await axios.post(SEMED_SOAP_URL, soapEnvelope, {
             headers: {
