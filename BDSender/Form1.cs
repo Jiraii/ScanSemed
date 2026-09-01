@@ -93,6 +93,101 @@ namespace BDSender
 
         }
 
+        private void CoreWebView2_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+        {
+            try
+            {
+                var json = e.WebMessageAsJson;
+                dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+                if (data != null && data.type == "DISPENSE_SOAP")
+                {
+                    string reqId = data.reqId;
+                    dynamic payloadStr = data.xml; 
+
+                    try
+                    {
+                        dynamic payload = Newtonsoft.Json.JsonConvert.DeserializeObject(payloadStr.ToString());
+                        string outp = Properties.Settings.Default.OUTPUT_LR;
+                        string windowNoStr = "2";
+                        if (outp != null && outp.ToUpper() == "L") { windowNoStr = "1"; }
+
+                        var culture = new System.Globalization.CultureInfo("en-US");
+                        List<gd4lib.OPD> opdList = new List<gd4lib.OPD>();
+
+                        if (payload.drugsList != null)
+                        {
+                            foreach (var drug in payload.drugsList)
+                            {
+                                gd4lib.OPD d = new gd4lib.OPD();
+                                d.patID = payload.patientInfo.hn != null ? payload.patientInfo.hn.ToString() : "";
+                                d.patName = payload.patientInfo.patientname != null ? payload.patientInfo.patientname.ToString().Replace("/", "").Replace("'", "") : "";
+                                d.gender = payload.patientInfo.sex != null ? payload.patientInfo.sex.ToString() : "";
+
+                                string dobStr = payload.patientInfo.patientdob != null ? payload.patientInfo.patientdob.ToString() : "";
+                                if (!string.IsNullOrEmpty(dobStr)) {
+                                    DateTime dt;
+                                    if (DateTime.TryParse(dobStr, out dt)) d.birthday = dt.ToString("yyyy-MM-dd HH:mm:ss", culture);
+                                    else d.birthday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
+                                } else d.birthday = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
+
+                                d.age = payload.patientInfo.age != null ? payload.patientInfo.age.ToString() : "";
+                                d.QN = payload.patientInfo.qn != null ? payload.patientInfo.qn.ToString() : "";
+                                d.AN = d.patID;
+                                d.identity = ""; d.insuranceNo = ""; d.chargeType = "";
+                                d.orderNo = payload.patientInfo.prescriptionno_sup != null ? payload.patientInfo.prescriptionno_sup.ToString() : (payload.patientInfo.prescriptionno != null ? payload.patientInfo.prescriptionno.ToString() : "");
+                                d.orderType = ""; d.pharmacy = "OPD"; d.windowNo = windowNoStr; d.paymentIP = "";
+                                
+                                string orderdtStr = payload.patientInfo.ordercreatedate != null ? payload.patientInfo.ordercreatedate.ToString() : "";
+                                if (!string.IsNullOrEmpty(orderdtStr)) {
+                                    DateTime dt2;
+                                    if (DateTime.TryParse(orderdtStr, out dt2)) d.paymentDT = dt2.ToString("yyyy-MM-dd HH:mm:ss", culture);
+                                    else d.paymentDT = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
+                                } else d.paymentDT = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", culture);
+
+                                d.outpNo = "";
+                                d.visitNo = payload.patientInfo.vn != null ? payload.patientInfo.vn.ToString() : "";
+                                d.deptCode = payload.patientInfo.wardcode != null ? payload.patientInfo.wardcode.ToString() : "";
+                                d.deptName = payload.patientInfo.wardname != null ? payload.patientInfo.wardname.ToString() : "";
+                                d.doctCode = payload.patientInfo.doctorcode != null ? payload.patientInfo.doctorcode.ToString() : "";
+                                d.doctName = payload.patientInfo.doctorname != null ? payload.patientInfo.doctorname.ToString() : "";
+                                d.code = drug.code != null ? drug.code.ToString() : "";
+                                d.name = drug.name != null ? drug.name.ToString() : "";
+                                d.spec = drug.Strength != null ? drug.Strength.ToString() : "";
+                                d.firmName = drug.firmname != null ? drug.firmname.ToString() : "";
+                                d.qty = drug.qty != null ? drug.qty.ToString() : "";
+                                d.unit = drug.unit != null ? drug.unit.ToString() : "";
+                                
+                                opdList.Add(d);
+                            }
+                        }
+
+                        dih dih_local = new dih();
+                        string XML2DIH_OPD = dih_local.genXML2_OPD(opdList);
+
+                        using (dih_webserv.DIHPMPFWebservice dihweb = new dih_webserv.DIHPMPFWebservice())
+                        {
+                            dihweb.Url = Properties.Settings.Default.BDSender_dih_webserv_DIHPMPFWebservice;
+                            dihweb.Proxy = null;
+                            System.Net.ServicePointManager.Expect100Continue = false;
+
+                            string dihapi_result = dihweb.outpOrderDispense(XML2DIH_OPD);
+
+                            var responseObj = new { type = "SOAP_RESPONSE", reqId = reqId, result = dihapi_result };
+                            string responseJson = Newtonsoft.Json.JsonConvert.SerializeObject(responseObj);
+                            webView21.CoreWebView2.PostWebMessageAsJson(responseJson);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        var errObj = new { type = "SOAP_RESPONSE", reqId = reqId, error = ex.Message };
+                        webView21.CoreWebView2.PostWebMessageAsJson(Newtonsoft.Json.JsonConvert.SerializeObject(errObj));
+                    }
+                }
+            }
+            catch (Exception exMain) {
+                Console.WriteLine(exMain.ToString());
+            }
+        }
         private void frm_main_Load(object sender, EventArgs e)
         {
             StartNodeServer();
@@ -109,8 +204,9 @@ namespace BDSender
                 this.webView21.BringToFront();
                 
                 this.webView21.EnsureCoreWebView2Async(null);
-                this.webView21.CoreWebView2InitializationCompleted += (s, args) => {
+                                this.webView21.CoreWebView2InitializationCompleted += (s, args) => {
                     if (args.IsSuccess) {
+                        webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
                         webView21.CoreWebView2.Navigate("http://localhost:9001/");
                     }
                 };
