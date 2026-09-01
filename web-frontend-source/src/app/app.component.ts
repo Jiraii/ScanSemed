@@ -248,60 +248,53 @@ export class AppComponent implements OnInit {
         drugsList: this.drugs
     };
     
-    if ((window as any).chrome && (window as any).chrome.webview) {
-        const reqId = Date.now().toString();
-        const listener = (event: any) => {
-            let data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-            if (data.type === 'SOAP_RESPONSE' && data.reqId === reqId) {
-                (window as any).chrome.webview.removeEventListener('message', listener);
-                if (data.error) {
-                    this.dispenseStatus = 'error';
-                    alert("ส่งคำสั่งล้มเหลว: " + data.error);
-                } else {
-                    this.dispenseStatus = 'success';
-                    this.sendSemedTime = new Date();
-                    alert("ส่งคำสั่งสำเร็จ");
-                    
-                    // Add to history
-                    this.dispensedHistory.push({
-                      basketNo: this.basketNo,
-                      patientName: this.patientName,
-                      time: new Date()
-                    });
-                    
-                    // Clear state after success
-                    setTimeout(() => {
-                        // If it reaches 5, clear it
-                        if (this.dispensedHistory.length >= 5) {
-                          this.dispensedHistory = [];
-                        }
+    this.http.post<any>('/api/proxy/dispense', payload).subscribe({
+      next: (res) => {
+        if (res.success) {
+          this.dispenseStatus = 'success';
+          this.sendSemedTime = new Date();
+          
+          // Add to history
+          this.dispensedHistory.push({
+            basketNo: this.basketNo,
+            patientName: this.patientName,
+            time: new Date()
+          });
+          
+          // Clear state after success
+          setTimeout(() => {
+              // If it reaches 5, clear it
+              if (this.dispensedHistory.length >= 5) {
+                this.dispensedHistory = [];
+              }
 
-                        this.patientName = '-';
-                        this.vn = '-';
-                        this.hn = '-';
-                        this.basketNo = '-';
-                        this.rfidCode = '-';
-                        this.drugs = [];
-                        this.patientInfo = null;
-                        this.dispenseStatus = 'idle';
-                        this.loadPatientTime = null;
-                        this.checkStockTime = null;
-                        this.sendSemedTime = null;
-                        this.cdr.detectChanges();
-                    }, 3000);
-                }
-            }
-        };
-        (window as any).chrome.webview.addEventListener('message', listener);
-        
-        (window as any).chrome.webview.postMessage({
-            type: "DISPENSE_SOAP",
-            reqId: reqId,
-            xml: payload
-        });
-    } else {
-        alert("กรุณารันโปรแกรมจาก C# Application เพื่อส่งคำสั่งจ่ายยา");
-    }
+              this.patientName = '-';
+              this.vn = '-';
+              this.hn = '-';
+              this.basketNo = '-';
+              this.rfidCode = '-';
+              this.drugs = [];
+              this.patientInfo = null;
+              this.dispenseStatus = 'idle';
+              this.loadPatientTime = null;
+              this.checkStockTime = null;
+              this.sendSemedTime = null;
+              this.cdr.detectChanges();
+          }, 3000);
+        } else {
+          this.dispenseStatus = 'error';
+          this.errorMessage = res.error || 'Unknown API Error';
+          this.showErrorModal = true;
+          this.cdr.detectChanges();
+        }
+      },
+      error: (e) => {
+        this.dispenseStatus = 'error';
+        this.errorMessage = e.message || 'Network Error / Endpoint not reachable';
+        this.showErrorModal = true;
+        this.cdr.detectChanges();
+      }
+    });
   }
   
   toggleMenu(event: Event) {
@@ -325,6 +318,8 @@ export class AppComponent implements OnInit {
   showNoSemedDrugWarning: boolean = false;
   showInvalidMapWarning: boolean = false;
   showLowStockWarning: boolean = false;
+  showErrorModal: boolean = false;
+  errorMessage: string = '';
   missingDrugs: any[] = [];
   lowStockDrugs: any[] = [];
 }

@@ -244,4 +244,25 @@
       </div>
     </div>
   </div>
+
+  <!-- API/Network Error Modal -->
+  <div class="modal-overlay" *ngIf="showErrorModal">
+    <div class="modal-content glass-modal">
+      <div class="modal-header warning-header" style="color: #991b1b; background: #fef2f2; border-bottom: 1px solid #fecaca;">
+        <span class="modal-icon">&#10006;</span>
+        <h2>เกิดข้อผิดพลาดของระบบ (System Error)</h2>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <p class="modal-desc" style="color: #7f1d1d; margin-bottom: 12px;">
+          ไม่สามารถส่งคำสั่งจ่ายยาไปยังเครื่อง SEMED ได้ กรุณาถ่ายภาพหน้าจอนี้เพื่อส่งให้ทีมผู้พัฒนาตรวจสอบ:
+        </p>
+        <div style="background: #1e293b; color: #38bdf8; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 14px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">
+          {{ errorMessage }}
+        </div>
+      </div>
+      <div class="modal-actions" style="justify-content: flex-end;">
+        <button class="btn-secondary" style="border-color: #fca5a5; color: #b91c1c;" (click)="showErrorModal = false; dispenseStatus = 'idle';">ปิดหน้าต่าง</button>
+      </div>
+    </div>
+  </div>
 </div>
