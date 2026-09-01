@@ -1,0 +1,45 @@
+{
+    "version": "1.0.0",
+    "name": "electron-app",
+    "description": "",
+    "scripts": {
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "build": {
+        "appId": "com.bdsender.semed",
+        "productName": "BDSender SEMED",
+        "directories": {
+            "output": "release"
+        },
+        "extraFiles": [
+            {
+                "filter": [
+                    "**/*"
+                ],
+                "from": "../SoapWorker",
+                "to": "SoapWorker"
+            }
+        ],
+        "win": {
+            "target": [
+                "nsis",
+                "portable"
+            ]
+        }
+    },
+    "main": "main.js",
+    "dependencies": {
+        "@serialport/parser-readline": "^13.0.0",
+        "axios": "^1.20.0",
+        "cors": "^2.8.6",
+        "electron": "^44.1.0",
+        "express": "^5.2.1",
+        "mssql": "^12.7.0",
+        "mysql2": "^3.24.2",
+        "serialport": "^13.0.0",
+        "ws": "^8.21.3"
+    }
+}

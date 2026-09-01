@@ -1,3 +1,0 @@
-UnhandledException: System.NullReferenceException: Object reference not set to an instance of an object.
-   at CrystalDecisions.CrystalReports.Engine.ReportClass.Dispose(Boolean bDisposeManaged)
-   at CrystalDecisions.CrystalReports.Engine.ReportClass.Finalize()
