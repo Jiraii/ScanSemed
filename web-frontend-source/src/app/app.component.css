@@ -1,0 +1,59 @@
+﻿
+.dashboard-container { font-family: "Sarabun", "Kanit", sans-serif; background-color: #f8fafc; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.top-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: white; border-bottom: 2px solid #e2e8f0; }
+.main-title { color: #0d9488; font-weight: 800; font-size: 24px; margin: 0; display: inline-block; }
+.version-badge { background: #f1f5f9; color: #64748b; padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-left: 10px; font-weight: bold; }
+.status-indicators { display: flex; gap: 20px; font-weight: bold; color: #0d9488; font-size: 14px; }
+.status-item { display: flex; align-items: center; gap: 8px; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; }
+.status-dot.success { background-color: #10b981; }
+
+.scan-area { padding: 20px; display: flex; justify-content: center; background: white; }
+.scan-input-wrapper-large input { width: 100%; max-width: 600px; padding: 15px; border-radius: 8px; border: 2px solid #0d9488; font-size: 18px; color: #0f172a; outline: none; }
+
+.main-content { padding: 20px; display: flex; gap: 20px; flex: 1; min-height: 0; }
+.current-basket-card, .drugs-card { background: white; border-radius: 12px; border: 2px solid #0d9488; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.current-basket-card { flex: 0 0 350px; display: flex; flex-direction: column; }
+.drugs-card { flex: 1; overflow-y: auto; }
+
+.card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px; }
+.card-header h2 { font-size: 18px; font-weight: bold; color: #0f172a; margin: 0; }
+.btn-primary { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; border-radius: 20px; padding: 5px 15px; font-weight: bold; cursor: pointer; }
+
+.patient-name { font-size: 28px; font-weight: 800; color: #0d9488; margin-top: 0; margin-bottom: 15px; }
+.badge { padding: 5px 15px; border-radius: 8px; font-weight: bold; font-size: 14px; margin-right: 10px; display: inline-block; }
+.badge-vn { background: #eff6ff; color: #1d4ed8; }
+.badge-hn { background: #f0fdf4; color: #15803d; }
+
+.rfid-box { border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; margin-top: 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.rfid-label { font-size: 14px; color: #64748b; font-weight: bold; margin-bottom: 10px; }
+.rfid-number { font-size: 48px; font-weight: 900; color: #0d9488; margin-bottom: 15px; }
+.rfid-code { font-size: 12px; color: #94a3b8; }
+
+.drugs-table { width: 100%; border-collapse: collapse; }
+.drugs-table th { background: #0d9488; color: white; padding: 12px; text-align: left; font-weight: bold; }
+.drugs-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #334155; }
+.qty-badge { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 12px; font-weight: bold; }
+
+.queue-area { padding: 0 20px; }
+.queue-header { font-size: 16px; font-weight: bold; color: #334155; margin-bottom: 10px; }
+.empty-queue { background: white; border: 1px dashed #cbd5e1; padding: 20px; text-align: center; color: #94a3b8; border-radius: 8px; font-weight: bold; }
+
+.action-footer { margin-top: auto; padding: 15px 20px; background: white; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; }
+.btn-channel-toggle { padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; background: #f0fdf4; border: 2px solid #10b981; color: #047857; font-size: 1.15rem; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.btn-channel-toggle.right { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; }
+
+
+/* Dropdown Menu Styles */
+.settings-dropdown-container { position: relative; margin-left: auto; }
+.btn-settings-gear { padding: 8px 18px; border-radius: 20px; font-weight: 600; cursor: pointer; background: #ffffff; border: 1px solid #cbd5e1; color: #475569; font-size: 1rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.2s ease; }
+.btn-settings-gear:hover { background: #f8fafc; border-color: #94a3b8; }
+.settings-menu { position: absolute; bottom: 120%; right: 0; background: white; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; width: 240px; display: none; flex-direction: column; z-index: 1000; transform: translateY(10px); opacity: 0; transition: all 0.2s ease; }
+.settings-menu.show { display: flex; transform: translateY(0); opacity: 1; }
+.menu-title { padding: 12px 15px; background: #f8fafc; font-size: 0.9rem; font-weight: bold; color: #64748b; border-bottom: 1px solid #e2e8f0; }
+.menu-option { padding: 12px 15px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 500; color: #334155; transition: background 0.2s; border-bottom: 1px solid #f1f5f9; }
+.menu-option .icon { font-size: 1.2rem; }
+.menu-option:hover { background: #f1f5f9; }
+.menu-option.selected { font-weight: bold; }
+.menu-option:nth-child(2).selected { background: #f0fdf4; color: #047857; }
+.menu-option:nth-child(3).selected { background: #eff6ff; color: #1d4ed8; }
