@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   dispensedHistory: any[] = [];
   channel: string = 'L';
   menuOpen: boolean = false;
+  dispenseHole: string = localStorage.getItem('dispenseHole') || '1';
 
   // Timeline & Status
   loadPatientTime: Date | null = null;
@@ -40,6 +41,12 @@ export class AppComponent implements OnInit {
     });
 
     this.connectWebSocket();
+  }
+
+  onHoleChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.dispenseHole = selectElement.value;
+    localStorage.setItem('dispenseHole', this.dispenseHole);
   }
 
   connectWebSocket() {
@@ -252,6 +259,7 @@ export class AppComponent implements OnInit {
     console.log("Dispensing...", this.patientInfo, this.drugs);
     this.dispenseStatus = 'dispensing';
     const payload = {
+        windowNo: this.dispenseHole,
         patientInfo: this.patientInfo,
         drugsList: this.drugs
     };
