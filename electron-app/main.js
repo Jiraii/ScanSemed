@@ -15,7 +15,7 @@ const BAUD_RATE = 115200;
 
 // Configuration fallback
 let HOSPITAL_API_BASE_URL = 'http://192.168.34.246/apiopd';
-let SEMED_SOAP_URL = 'http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+let SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
 let OUTPUT_LR = 'L';
 
 const configPath = path.join(app.getPath('userData'), 'config.json');
@@ -25,12 +25,13 @@ function loadConfig() {
         if (fs.existsSync(configPath)) {
             let configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
             HOSPITAL_API_BASE_URL = configData.HOSPITAL_API_BASE_URL || HOSPITAL_API_BASE_URL;
+            // Update to use the one from config, but we will force it if it was the wrong 10.35.222.66 IP
             SEMED_SOAP_URL = configData.SEMED_SOAP_URL || SEMED_SOAP_URL;
             OUTPUT_LR = configData.OUTPUT_LR || OUTPUT_LR;
             
-            // Auto-fix the wrong IP that was previously cached
-            if (SEMED_SOAP_URL.includes('172.16.11.4')) {
-                SEMED_SOAP_URL = 'http://10.35.222.66:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
+            // Auto-fix the wrong IP back to 172.16.11.4
+            if (SEMED_SOAP_URL.includes('10.35.222.66')) {
+                SEMED_SOAP_URL = 'http://172.16.11.4:8788/axis2/services/DIHPMPFWebservice.DIHPMPFWebserviceHttpSoap11Endpoint/';
                 configData.SEMED_SOAP_URL = SEMED_SOAP_URL;
                 fs.writeFileSync(configPath, JSON.stringify(configData, null, 2));
             }
