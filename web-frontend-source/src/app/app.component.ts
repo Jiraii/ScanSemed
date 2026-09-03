@@ -209,8 +209,8 @@ export class AppComponent implements OnInit {
            const stockData = res.data;
            drugs.forEach(d => {
              const stockItem = stockData.find((s:any) => s.drugCode === d.code || s.Code === d.code);
-             const available = stockItem ? stockItem.Quantity : 0;
              const packageRatio = stockItem && stockItem.packageRatio ? parseFloat(stockItem.packageRatio) : 1;
+             const available = stockItem ? stockItem.Quantity * packageRatio : 0;
              
              const rawQty = parseFloat(d.qty);
              
@@ -222,7 +222,7 @@ export class AppComponent implements OnInit {
              d.unit = "Box";
              
              const requiredPills = rawQty;
-             const minimum = stockItem ? stockItem.Minimum : 0;
+             const minimum = stockItem ? stockItem.Minimum * packageRatio : 0;
              
              if (available < requiredPills) {
                this.missingDrugs.push({
