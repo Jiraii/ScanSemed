@@ -460,3 +460,24 @@
   margin-bottom: 10px;
 }
 
+
+/* Scale up typography for readability on large touch screens */
+.main-title { font-size: 24px; }
+.status-indicators { font-size: 14px; }
+.scan-input-wrapper-large input { font-size: 20px; padding: 12px; }
+.card-header h2 { font-size: 22px; }
+.patient-name { font-size: 28px; }
+.badge { font-size: 16px; padding: 6px 16px; }
+.rfid-label { font-size: 14px; }
+.rfid-number { font-size: 38px; }
+.rfid-code { font-size: 14px; }
+.drugs-table th { font-size: 16px; padding: 10px; }
+.drugs-table td { font-size: 16px; padding: 10px; }
+.queue-header h3, .history-header h3 { font-size: 18px; }
+.empty-queue, .empty-history { font-size: 16px; padding: 25px; }
+.h-basket { font-size: 2rem; }
+.h-name { font-size: 1.1rem; max-width: 200px; }
+.h-time { font-size: 1rem; }
+.step-title { font-size: 16px; }
+.step-time { font-size: 14px; }
+.qty-badge { font-size: 15px; padding: 4px 12px; }
