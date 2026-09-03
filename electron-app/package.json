@@ -52,7 +52,8 @@
     "ws": "^8.21.3"
   },
   "devDependencies": {
-    "electron": "^44.1.0"
+    "electron": "^44.1.0",
+    "electron-builder": "^26.15.3"
   },
   "author": "Jiraii"
 }

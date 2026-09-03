@@ -1,5 +1,5 @@
 
-.dashboard-container { font-family: "Sarabun", "Kanit", sans-serif; background-color: #f8fafc; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.dashboard-container { font-family: "Sarabun", "Kanit", sans-serif; background-color: #f8fafc; height: 100vh; display: flex; flex-direction: column; overflow: hidden; overflow-y: auto; }
 .top-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: white; border-bottom: 2px solid #e2e8f0; }
 .logo-area { display: flex; align-items: center; }
 .main-title { color: #0d9488; font-weight: 800; font-size: 20px; margin: 0; }
@@ -427,3 +427,36 @@
   cursor: pointer; transition: all 0.2s;
 }
 .btn-secondary:hover { background: #f1f5f9; }
+
+/* Layout Tweaks for 14-inch screens */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 5px 20px 20px 20px;
+}
+
+.queue-area {
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin: 0;
+}
+
+.history-area {
+  margin-top: 0;
+  padding: 15px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.history-header h3, .queue-header h3 {
+  margin-top: 0;
+}
+
+.timeline-container {
+  padding: 10px 1rem;
+  margin-bottom: 10px;
+}
+

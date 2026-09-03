@@ -119,31 +119,34 @@
     </div>
   </div>
 
-  <!-- Queue Area -->
-  <div class="queue-area">
-    <div class="queue-header">
-      <h3>คิวรอส่งจ่าย</h3>
-    </div>
-    <div class="queue-list">
-      <div class="empty-queue" *ngIf="queue.length === 0">
-        ยังไม่มีตะกร้ารอคิว (สามารถสแกนตะกร้าใบต่อไปเพื่อเข้าคิวได้ทันที)
+  <!-- Bottom Section for Queue and History (Side by side on 14" screen) -->
+  <div class="bottom-section">
+    <!-- Queue Area -->
+    <div class="queue-area">
+      <div class="queue-header">
+        <h3>คิวรอส่งจ่าย</h3>
+      </div>
+      <div class="queue-list">
+        <div class="empty-queue" *ngIf="queue.length === 0">
+          ยังไม่มีตะกร้ารอคิว (สามารถสแกนตะกร้าใบต่อไปเพื่อเข้าคิวได้ทันที)
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- History Area -->
-  <div class="history-area">
-    <div class="history-header">
-      <h3>ประวัติที่จ่ายยาแล้ว</h3>
-    </div>
-    <div class="history-list">
-      <div class="empty-history" *ngIf="dispensedHistory.length === 0">
-        ยังไม่มีข้อมูลการจ่ายยา
+    <!-- History Area -->
+    <div class="history-area">
+      <div class="history-header">
+        <h3>ประวัติที่จ่ายยาแล้ว</h3>
       </div>
-      <div class="history-card" *ngFor="let h of dispensedHistory">
-        <div class="h-basket">{{ h.basketNo }}</div>
-        <div class="h-name">{{ h.patientName }}</div>
-        <div class="h-time"><span class="icon">&#128337;</span> {{ h.time | date:'HH:mm:ss' }}</div>
+      <div class="history-list">
+        <div class="empty-history" *ngIf="dispensedHistory.length === 0">
+          ยังไม่มีข้อมูลการจ่ายยา
+        </div>
+        <div class="history-card" *ngFor="let h of dispensedHistory">
+          <div class="h-basket">{{ h.basketNo }}</div>
+          <div class="h-name">{{ h.patientName }}</div>
+          <div class="h-time"><span class="icon">&#128337;</span> {{ h.time | date:'HH:mm:ss' }}</div>
+        </div>
       </div>
     </div>
   </div>

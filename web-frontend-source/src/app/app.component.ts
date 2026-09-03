@@ -210,10 +210,16 @@ export class AppComponent implements OnInit {
            drugs.forEach(d => {
              const stockItem = stockData.find((s:any) => s.drugCode === d.code || s.Code === d.code);
              const available = stockItem ? stockItem.Quantity : 0;
-             const packageRatio = stockItem ? parseFloat(stockItem.packageRatio || '1') : 1;
+             const packageRatio = stockItem && stockItem.packageRatio ? parseFloat(stockItem.packageRatio) : 1;
              
              const rawQty = parseFloat(d.qty);
-             d.boxQty = Math.ceil(rawQty / packageRatio);
+             
+             // ยัดโค้ดการคำนวณจำนวนกล่องให้เหมือน BDSender.sln
+             if (stockItem && stockItem.packageRatio) {
+                 d.qty = Math.floor(rawQty / packageRatio);
+             }
+             d.boxQty = d.qty; 
+             d.unit = "Box";
              
              const requiredPills = rawQty;
              const minimum = stockItem ? stockItem.Minimum : 0;
