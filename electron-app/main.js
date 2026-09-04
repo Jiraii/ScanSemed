@@ -247,6 +247,23 @@ server.post('/api/proxy/dispense', async (req, res) => {
             timeout: 30000
         });
 
+        // ==========================================
+        // 🚨 AUDIT FIX: Validate SeMed ACK/NACK (Code 0)
+        // ==========================================
+        let isSuccess = false;
+        let semedErrorMsg = "Unknown Hardware Error";
+        const codeMatch = response.data.match(/<code>(.*?)<\/code>/i);
+        if (codeMatch && codeMatch[1] === '0') {
+            isSuccess = true;
+        } else {
+            const msgMatch = response.data.match(/<message>(.*?)<\/message>/i);
+            if (msgMatch) semedErrorMsg = msgMatch[1];
+        }
+
+        if (!isSuccess) {
+            throw new Error(SeMed Machine Rejected: );
+        }
+
         res.json({ success: true, result: response.data });
     } catch (error) {
         console.error('Dispense API Error:', error.message);
