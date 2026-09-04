@@ -123,7 +123,13 @@ export class AppComponent implements OnInit {
     }
   }
 
+  lastScanTime: number = 0;
+
   handleScan(basketId: string) {
+    const now = Date.now();
+    if (now - this.lastScanTime < 1000) return;
+    this.lastScanTime = now;
+
     if (!basketId) return;
     const cleanId = basketId.trim();
 

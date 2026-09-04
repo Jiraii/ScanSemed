@@ -151,25 +151,23 @@
     </div>
   </div>
 
-  <!-- Stock Warning Modal -->
-  <div class="modal-overlay" *ngIf="showStockWarning">
-    <div class="modal-content glass-modal">
-      <div class="modal-header warning-header">
-        <span class="modal-icon">&#9888;</span>
-        <h2>แจ้งเตือนยาในตู้ไม่พอจ่าย</h2>
+    <!-- ========================================== -->
+  <!-- 🛑 MODERN BLOCKING MODALS                 -->
+  <!-- ========================================== -->
+
+  <!-- 1. Stock Warning Modal -->
+  <div class="modern-modal-overlay" *ngIf="showStockWarning">
+    <div class="modern-modal-card warning-theme">
+      <div class="modal-header">
+        <div class="icon-circle">!</div>
+        <h2>ยาไม่เพียงพอจ่าย</h2>
       </div>
-      <div class="modal-body">
-        <p class="modal-desc">พบว่ามียาในตู้ไม่เพียงพอสำหรับจ่ายในตะกร้า <strong>{{ basketNo }}</strong> กรุณาตรวจสอบรายการยาที่ขาดด้านล่างนี้</p>
-        
+      <div class="modal-content">
+        <p class="modal-desc">มียาไม่พอสำหรับตะกร้า <strong>{{ basketNo }}</strong> กรุณาตรวจสอบ:</p>
         <div class="missing-drugs-table-container">
           <table class="missing-drugs-table">
             <thead>
-              <tr>
-                <th>ชื่อยา</th>
-                <th>จำนวนที่สั่ง</th>
-                <th>มีในตู้</th>
-                <th>ขาด</th>
-              </tr>
+              <tr><th>ยา</th><th>จำนวนสั่ง</th><th>ในตู้มี</th><th>ขาด</th></tr>
             </thead>
             <tbody>
               <tr *ngFor="let m of missingDrugs">
@@ -182,67 +180,63 @@
           </table>
         </div>
       </div>
-      <div class="modal-actions">
-        <button class="btn-secondary" (click)="showStockWarning = false; dispenseStatus = 'idle';">รอเติมยา</button>
-        <button class="btn-primary" (click)="onDispense()">จ่ายเท่าที่มี</button>
+      <div class="modal-footer">
+        <button class="btn-secondary" (click)="showStockWarning = false; dispenseStatus = 'idle';">ยกเลิก</button>
+        <button class="btn-confirm" (click)="onDispense()">ยืนยันทำรายการต่อ</button>
       </div>
     </div>
   </div>
 
-  <!-- No SEMED Drug Warning Modal -->
-  <div class="modal-overlay" *ngIf="showNoSemedDrugWarning">
-    <div class="modal-content glass-modal">
-      <div class="modal-header warning-header" style="color: #ea580c; background: #fff7ed; border-bottom: 1px solid #ffedd5;">
-        <span class="modal-icon">&#9888;</span>
-        <h2>ไม่มียาในตู้ SEMED</h2>
+  <!-- 2. No SEMED Drug Warning Modal -->
+  <div class="modern-modal-overlay" *ngIf="showNoSemedDrugWarning">
+    <div class="modern-modal-card warning-theme">
+      <div class="modal-header" style="background-color: #fff7ed; padding-top: 30px;">
+        <div class="icon-circle" style="background-color: #ea580c;">!</div>
+        <h2 style="color: #ea580c;">ไม่มีรายการยาในตู้ SEMED</h2>
       </div>
-      <div class="modal-body text-center" style="padding: 40px 24px;">
-        <p class="modal-desc" style="font-size: 1.1rem; margin-bottom: 0;">
-          ตะกร้าหมายเลข <strong>{{ basketNo }}</strong> ไม่มีใบคำสั่งจ่ายยาของเครื่อง <strong>SEMED</strong>
+      <div class="modal-content" style="padding-top: 20px;">
+        <p style="font-size: 1.1rem; color: #475569;">
+          ตะกร้าเลขที่ <strong>{{ basketNo }}</strong> ไม่มีคิวสั่งจ่ายยาของตู้ <strong>SEMED</strong>
         </p>
       </div>
-      <div class="modal-actions" style="justify-content: center;">
-        <button class="btn-primary" style="min-width: 120px;" (click)="showNoSemedDrugWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
+      <div class="modal-footer">
+        <button class="btn-confirm" style="background-color: #ea580c;" (click)="showNoSemedDrugWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
       </div>
     </div>
   </div>
 
-  <!-- Invalid Mapping Warning Modal -->
-  <div class="modal-overlay" *ngIf="showInvalidMapWarning">
-    <div class="modal-content glass-modal">
-      <div class="modal-header warning-header" style="color: #b91c1c; background: #fef2f2; border-bottom: 1px solid #fecaca;">
-        <span class="modal-icon">&#10006;</span>
-        <h2>ตะกร้าแมพไม่ถูกต้อง</h2>
+  <!-- 3. Invalid Mapping Warning Modal -->
+  <div class="modern-modal-overlay" *ngIf="showInvalidMapWarning">
+    <div class="modern-modal-card error-theme">
+      <div class="modal-header">
+        <div class="icon-circle">✖</div>
+        <h2>จับคู่ตะกร้าไม่ถูกต้อง</h2>
       </div>
-      <div class="modal-body text-center" style="padding: 40px 24px;">
-        <p class="modal-desc" style="font-size: 1.1rem; margin-bottom: 0;">
-          ไม่พบข้อมูลสำหรับตะกร้าหมายเลข <strong>{{ basketNo }}</strong> <br><br>
-          <span style="color: #dc2626;">กรุณาแมพตะกร้าใหม่</span>
+      <div class="modal-content" style="padding-top: 20px;">
+        <p style="font-size: 1.1rem;">
+          ไม่พบข้อมูลรับรองตะกร้าเลขที่ <strong>{{ basketNo }}</strong> <br><br>
+          <span style="color: #ef4444; font-weight: bold;">กรุณานำตะกร้าไปผูกคิวก่อนใช้งาน</span>
         </p>
       </div>
-      <div class="modal-actions" style="justify-content: center;">
-        <button class="btn-primary" style="min-width: 120px; background: #dc2626; border-color: #dc2626;" (click)="showInvalidMapWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
+      <div class="modal-footer">
+        <button class="btn-confirm" (click)="showInvalidMapWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
       </div>
     </div>
   </div>
 
-  <!-- Low Stock Warning Modal -->
-  <div class="modal-overlay" *ngIf="showLowStockWarning">
-    <div class="modal-content glass-modal">
-      <div class="modal-header warning-header" style="color: #ca8a04; background: #fefce8; border-bottom: 1px solid #fef08a;">
-        <span class="modal-icon">&#9888;</span>
-        <h2>แจ้งเตือนยาใกล้หมดตู้</h2>
+  <!-- 4. Low Stock Warning Modal -->
+  <div class="modern-modal-overlay" *ngIf="showLowStockWarning">
+    <div class="modern-modal-card warning-theme">
+      <div class="modal-header" style="background-color: #fefce8; padding-top: 30px;">
+        <div class="icon-circle" style="background-color: #ca8a04;">!</div>
+        <h2 style="color: #ca8a04;">เตือนยาใกล้หมดตู้</h2>
       </div>
-      <div class="modal-body">
-        <p class="modal-desc" style="color: #ca8a04;">ยาต่อไปนี้มีจำนวนคงเหลือถึงเกณฑ์ขั้นต่ำ <strong>กรุณาแจ้งทีมงานให้เติมยา</strong></p>
-        
+      <div class="modal-content">
+        <p style="color: #ca8a04; margin-bottom: 16px;">ยาด้านล่างนี้มีจำนวนลดลงถึงเกณฑ์ขั้นต่ำ <strong>กรุณาแจ้งเติมยาหน้าตู้</strong></p>
         <div class="missing-drugs-table-container">
           <table class="missing-drugs-table">
             <thead>
-              <tr>
-                <th>ชื่อยา</th>
-                <th>คงเหลือในตู้</th>
-              </tr>
+              <tr><th>รายชื่อยา</th><th>คงเหลือในตู้</th></tr>
             </thead>
             <tbody>
               <tr *ngFor="let m of lowStockDrugs">
@@ -253,35 +247,42 @@
           </table>
         </div>
       </div>
-      <div class="modal-actions">
-        <button class="btn-primary" (click)="onDispense()">ตกลงและจ่ายยา</button>
+      <div class="modal-footer">
+        <button class="btn-confirm" style="background-color: #ca8a04;" (click)="onDispense()">ตกลงและดำเนินการจ่ายยาต่อ</button>
       </div>
     </div>
   </div>
 
-  <!-- API/Network Error Modal -->
-  <div class="modal-overlay" *ngIf="showErrorModal">
-    <div class="modal-content glass-modal">
-      <div class="modal-header warning-header" style="color: #991b1b; background: #fef2f2; border-bottom: 1px solid #fecaca;">
-        <span class="modal-icon">&#10006;</span>
-        <h2>เกิดข้อผิดพลาดของระบบ (System Error)</h2>
+  <!-- 5. API/Network Error Modal -->
+  <div class="modern-modal-overlay" *ngIf="showErrorModal">
+    <div class="modern-modal-card error-theme">
+      <div class="modal-header">
+        <div class="icon-circle">✖</div>
+        <h2>เกิดข้อผิดพลาดของระบบ</h2>
       </div>
-      <div class="modal-body" style="padding: 24px;">
-        <p class="modal-desc" style="color: #7f1d1d; margin-bottom: 12px;">
-          ไม่สามารถส่งคำสั่งจ่ายยาไปยังเครื่อง SEMED ได้ กรุณาถ่ายภาพหน้าจอนี้เพื่อส่งให้ทีมผู้พัฒนาตรวจสอบ:
+      <div class="modal-content">
+        <p style="color: #dc2626; margin-bottom: 12px; font-weight: 500;">
+          ไม่สามารถส่งคำสั่งจ่ายยาไปยังเครื่อง SEMED ได้ กรุณาตรวจสอบ Error ด้านล่าง:
         </p>
-        <div style="background: #1e293b; color: #38bdf8; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 14px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">
-          {{ errorMessage }}
-        </div>
+        <div class="error-log-box">{{ errorMessage }}</div>
       </div>
-      <div class="modal-actions" style="justify-content: flex-end;">
-        <button class="btn-secondary" style="border-color: #fca5a5; color: #b91c1c;" (click)="closeErrorModal()">ปิดหน้าต่าง</button>
+      <div class="modal-footer">
+        <button class="btn-confirm" (click)="closeErrorModal()">รับทราบและปิดหน้าต่าง</button>
       </div>
     </div>
   </div>
+
 </div>
 
-  <!-- Toast Notification -->
-  <div class="toast-container" *ngIf="toastMessage" [ngClass]="toastType">
-    {{ toastMessage }}
+<!-- ========================================== -->
+<!-- 🍞 TOAST NOTIFICATION (Modern Clean)        -->
+<!-- ========================================== -->
+<div class="modern-toast" *ngIf="toastMessage" [ngClass]="toastType">
+  <div class="toast-icon">
+    <span *ngIf="toastType === 'success'">✔</span>
+    <span *ngIf="toastType === 'error'">✖</span>
+    <span *ngIf="toastType === 'warning'">!</span>
+    <span *ngIf="toastType === 'info'">i</span>
   </div>
+  <div class="toast-body">{{ toastMessage }}</div>
+</div>
