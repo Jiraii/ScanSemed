@@ -253,7 +253,7 @@ server.post('/api/proxy/dispense', async (req, res) => {
         let isSuccess = false;
         let semedErrorMsg = "Unknown Hardware Error";
         const codeMatch = response.data.match(/<code>(.*?)<\/code>/i);
-        if (codeMatch && codeMatch[1] === '0') {
+        if (codeMatch && codeMatch[1].trim() === '0') {
             isSuccess = true;
         } else {
             const msgMatch = response.data.match(/<message>(.*?)<\/message>/i);

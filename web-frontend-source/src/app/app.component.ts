@@ -414,7 +414,7 @@ export class AppComponent implements OnInit {
       error: (e) => {
         this.dispenseStatus = 'error';
         this.playSound('error');
-          this.errorMessage = e.message || 'Network Error / Endpoint not reachable';
+          this.errorMessage = (e.error && e.error.error) ? e.error.error : (e.message || 'Network Error / Endpoint not reachable');
         this.isProcessing = false; // Fix: Unlock system on Network error
         this.showErrorModal = true;
         this.cdr.detectChanges();
