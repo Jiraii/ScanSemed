@@ -2,179 +2,184 @@
   <!-- Header -->
   <header class="top-header">
     <div class="logo-area">
-      <h1 class="main-title">SEMED CONTROL DASHBOARD</h1>
-      <span class="version-badge">v0.0.1</span>
-    </div>
-    <div class="status-indicators">
-      <div style="margin-right: 15px; display: inline-flex; align-items: center; gap: 8px;">
-        <label for="holeSelect" style="font-size: 12px; color: #4b5563; font-weight: bold;">จุดจ่ายยา (เครื่อง):</label>
-        <select id="holeSelect" [value]="dispenseHole" (change)="onHoleChange($event)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #d1d5db; font-size: 12px; color: #374151; background: white;">
-          <option value="1">รู 1 (ซ้าย)</option>
-          <option value="2">รู 2 (ซ้าย)</option>
-          <option value="3">รู 3 (ขวา)</option>
-          <option value="4">รู 4 (ขวา)</option>
-          <option value="L">L (ฝั่งซ้ายรวม)</option>
-          <option value="R">R (ฝั่งขวารวม)</option>
-        </select>
-      </div>
-      <span class="status-item"><div class="status-dot success"></div> API Server</span>
-      <span class="status-item"><div class="status-dot success"></div> Scanner</span>
-      <span class="status-item"><div class="status-dot success"></div> SEMED Link</span>
-    </div>
-  </header>
-
-  <!-- Scan Input -->
-  <div class="scan-area">
-    <div class="scan-input-wrapper-large">
-      <input type="text" placeholder="กรุณาวางตะกร้าเพื่อแสกน" [(ngModel)]="scanInput" (keyup.enter)="onScan()" />
-    </div>
-  </div>
-
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <div class="current-basket-card">
-      <div class="card-header">
-        <h2>ตะกร้าที่กำลังดำเนินการ</h2>
-        <button class="btn-primary" (click)="onDispense()">ส่งคำสั่ง...</button>
-      </div>
-      
-      <div class="patient-info">
-        <h1 class="patient-name">{{ patientName }}</h1>
-        <div class="patient-ids">
-          <span class="badge badge-vn">VN: {{ vn }}</span>
-          <span class="badge badge-hn">HN: {{ hn }}</span>
-        </div>
-      </div>
-      
-      <div class="rfid-box">
-        <div class="rfid-label">หมายเลขตะกร้า / RFID</div>
-        <div class="rfid-number">{{ basketNo }}</div>
-        <div class="rfid-code">RFID: {{ rfidCode }}</div>
+      <div class="logo-icon">💊</div>
+      <div>
+        <h1 class="main-title">SEMED CONTROL DASHBOARD</h1>
+        <span class="version-badge">v1.1 Modern</span>
       </div>
     </div>
     
-    <div class="drugs-card">
-      <div class="card-header">
-        <h2>รายการยาสำหรับเครื่อง SEMED</h2>
-      </div>
-      <div class="table-responsive">
-        <table class="drugs-table">
-          <thead>
-            <tr>
-              <th>ลำดับ</th>
-              <th>รหัสยา</th>
-              <th>ชื่อยา</th>
-              <th>จำนวน</th>
-              <th>หน่วย</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let drug of drugs; let i = index">
-              <td>{{ i + 1 }}</td>
-              <td>{{ drug.code }}</td>
-              <td>{{ drug.name }}</td>
-              <td><span class="qty-badge">{{ drug.boxQty }}</span></td>
-              <td>{{ drug.unit }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Timeline Status UI (Moved outside) -->
-  <div class="timeline-wrapper" *ngIf="dispenseStatus !== 'idle'">
-    <div class="timeline-container">
-      <div class="timeline-step" [class.active]="loadPatientTime" [class.success]="loadPatientTime">
-        <div class="step-icon"><span *ngIf="loadPatientTime">&#x2714;</span><span *ngIf="!loadPatientTime" class="spinner"></span></div>
-        <div class="step-content">
-          <div class="step-title">โหลดข้อมูลผู้ป่วย</div>
-          <div class="step-time" *ngIf="loadPatientTime">{{ loadPatientTime | date:'HH:mm:ss' }}</div>
-        </div>
-      </div>
-      <div class="timeline-line" [class.active]="checkStockTime"></div>
-      <div class="timeline-step" [class.active]="checkStockTime" [class.success]="checkStockTime">
-        <div class="step-icon">
-          <span *ngIf="checkStockTime">&#x2714;</span>
-          <span *ngIf="!checkStockTime && loadPatientTime" class="spinner"></span>
-          <span *ngIf="!checkStockTime && !loadPatientTime">...</span>
-        </div>
-        <div class="step-content">
-          <div class="step-title">ตรวจสอบสต๊อก</div>
-          <div class="step-time" *ngIf="checkStockTime">{{ checkStockTime | date:'HH:mm:ss' }}</div>
-        </div>
-      </div>
-      <div class="timeline-line" [class.active]="sendSemedTime"></div>
-      <div class="timeline-step" [class.active]="dispenseStatus === 'dispensing' || sendSemedTime" [class.success]="sendSemedTime">
-        <div class="step-icon">
-          <span *ngIf="sendSemedTime">&#x2714;</span>
-          <span *ngIf="dispenseStatus === 'dispensing'" class="spinner"></span>
-          <span *ngIf="dispenseStatus !== 'dispensing' && !sendSemedTime">...</span>
-        </div>
-        <div class="step-content">
-          <div class="step-title">จัดส่งเข้า SEMED</div>
-          <div class="step-time" *ngIf="sendSemedTime">{{ sendSemedTime | date:'HH:mm:ss' }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Section for Queue and History (Side by side on 14" screen) -->
-  <div class="bottom-section">
-    <!-- Queue Area -->
-    <div class="queue-area">
-      <div class="queue-header">
-        <h3>คิวรอส่งจ่าย</h3>
-      </div>
-      <div class="queue-list">
-        <div class="empty-queue" *ngIf="queue.length === 0">
-          ยังไม่มีตะกร้ารอคิว (สามารถสแกนตะกร้าใบต่อไปเพื่อเข้าคิวได้ทันที)
-        </div>
-      </div>
+    <div class="scan-input-modern">
+      <input type="text" placeholder="สแกนตะกร้า / ค้นหา RFID..." [(ngModel)]="scanInput" (keyup.enter)="onScan()" autofocus />
+      <span class="scan-icon">🔍</span>
     </div>
 
-    <!-- History Area -->
-    <div class="history-area">
-      <div class="history-header">
-        <h3>ประวัติที่จ่ายยาแล้ว</h3>
+    <div class="status-indicators">
+      <div class="dropdown-wrapper">
+        <label for="holeSelect">จุดจ่ายยา (เครื่อง):</label>
+        <select id="holeSelect" [value]="dispenseHole" (change)="onHoleChange($event)">
+          <option value="L">L (ฝั่งซ้ายรวม)</option>
+          <option value="R">R (ฝั่งขวารวม)</option>
+          <option value="1">ช่อง 1 (ซ้าย)</option>
+          <option value="2">ช่อง 2 (ซ้าย)</option>
+          <option value="3">ช่อง 3 (ขวา)</option>
+          <option value="4">ช่อง 4 (ขวา)</option>
+        </select>
       </div>
-      <div class="history-list">
-        <div class="empty-history" *ngIf="dispensedHistory.length === 0">
-          ยังไม่มีข้อมูลการจ่ายยา
-        </div>
-        <div class="history-card" *ngFor="let h of dispensedHistory">
-          <div class="h-basket">{{ h.basketNo }}</div>
-          <div class="h-name">{{ h.patientName }}</div>
-          <div class="h-time"><span class="icon">&#128337;</span> {{ h.time | date:'HH:mm:ss' }}</div>
-        </div>
+      <div class="sys-status">
+        <span class="status-item"><div class="pulse-dot success"></div> API</span>
+        <span class="status-item"><div class="pulse-dot success"></div> SEMED</span>
       </div>
     </div>
-  </div>
+  </header>
 
-    <!-- ========================================== -->
-  <!-- 🛑 MODERN BLOCKING MODALS                 -->
-  <!-- ========================================== -->
+  <!-- Main Grid -->
+  <div class="main-grid">
+    
+    <!-- LEFT COLUMN: Patient & Queue -->
+    <div class="left-column">
+      
+      <!-- Current Patient Card -->
+      <div class="modern-card highlight-card">
+        <div class="card-header">
+          <h2>ตะกร้าที่กำลังดำเนินการ</h2>
+          <div class="status-badge" [ngClass]="{'processing': dispenseStatus === 'dispensing', 'idle': dispenseStatus === 'idle'}">
+            {{ dispenseStatus === 'dispensing' ? 'กำลังส่งคำสั่ง...' : 'รอสแกน' }}
+          </div>
+        </div>
+        
+        <div class="patient-info">
+          <h1 class="patient-name">{{ patientName || '-' }}</h1>
+          <div class="patient-ids">
+            <span class="badge badge-vn">VN: {{ vn || '-' }}</span>
+            <span class="badge badge-hn">HN: {{ hn || '-' }}</span>
+          </div>
+        </div>
+        
+        <div class="rfid-box">
+          <div class="rfid-label">หมายเลขตะกร้า / RFID</div>
+          <div class="rfid-number">{{ basketNo || '-' }}</div>
+          <div class="rfid-code">RFID: {{ rfidCode || '-' }}</div>
+        </div>
 
-  <!-- 1. Stock Warning Modal -->
-  <div class="modern-modal-overlay" *ngIf="showStockWarning">
-    <div class="modern-modal-card warning-theme">
-      <div class="modal-header">
-        <div class="icon-circle">!</div>
-        <h2>ยาไม่เพียงพอจ่าย</h2>
+        <button class="btn-dispense-huge" (click)="onDispense()" [disabled]="!basketNo || basketNo === '-'">
+          ส่งคำสั่งจ่ายยา
+        </button>
       </div>
-      <div class="modal-content">
-        <p class="modal-desc">มียาไม่พอสำหรับตะกร้า <strong>{{ basketNo }}</strong> กรุณาตรวจสอบ:</p>
-        <div class="missing-drugs-table-container">
-          <table class="missing-drugs-table">
+
+      <!-- Queue List -->
+      <div class="modern-card flex-fill">
+        <div class="card-header">
+          <h2>คิวรอส่งจ่าย (Queue)</h2>
+        </div>
+        <div class="queue-list custom-scroll">
+          <div class="empty-state" *ngIf="queue.length === 0">
+            <div class="empty-icon">🧺</div>
+            ไม่มีคิวรอจ่าย
+          </div>
+          <div class="queue-item" *ngFor="let q of queue">
+            <div class="q-basket">{{ q }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: Drugs & History -->
+    <div class="right-column">
+      
+      <!-- Drugs Table -->
+      <div class="modern-card flex-fill drugs-section">
+        <div class="card-header">
+          <h2>รายการยาสั่งจัด SeMed</h2>
+          <div class="drug-count">{{ drugs ? drugs.length : 0 }} รายการ</div>
+        </div>
+        
+        <div class="table-responsive custom-scroll">
+          <table class="modern-table">
             <thead>
-              <tr><th>ยา</th><th>จำนวนสั่ง</th><th>ในตู้มี</th><th>ขาด</th></tr>
+              <tr>
+                <th>ลำดับ</th>
+                <th>รหัสยา</th>
+                <th>ชื่อยา</th>
+                <th class="text-center">จำนวน</th>
+                <th>หน่วย</th>
+              </tr>
             </thead>
             <tbody>
+              <tr *ngIf="!drugs || drugs.length === 0">
+                <td colspan="5" class="empty-table-state">
+                  ไม่มีรายการยาที่ต้องจัด
+                </td>
+              </tr>
+              <tr *ngFor="let drug of drugs; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td class="text-muted">{{ drug.code }}</td>
+                <td class="font-bold text-teal">{{ drug.name }}</td>
+                <td class="text-center"><span class="qty-badge-modern">{{ drug.boxQty }}</span></td>
+                <td>{{ drug.unit }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Timeline Status Inside Drugs Card -->
+        <div class="timeline-modern" *ngIf="dispenseStatus !== 'idle'">
+          <div class="step" [class.active]="loadPatientTime">
+            <div class="circle">{{ loadPatientTime ? '✓' : '...' }}</div>
+            <div class="label">โหลดข้อมูล<br><small *ngIf="loadPatientTime">{{ loadPatientTime | date:'HH:mm:ss' }}</small></div>
+          </div>
+          <div class="line" [class.active]="checkStockTime"></div>
+          <div class="step" [class.active]="checkStockTime">
+            <div class="circle">{{ checkStockTime ? '✓' : '...' }}</div>
+            <div class="label">ตรวจสอบสต๊อก<br><small *ngIf="checkStockTime">{{ checkStockTime | date:'HH:mm:ss' }}</small></div>
+          </div>
+          <div class="line" [class.active]="sendSemedTime"></div>
+          <div class="step" [class.active]="sendSemedTime || dispenseStatus === 'dispensing'">
+            <div class="circle">{{ sendSemedTime ? '✓' : '...' }}</div>
+            <div class="label">สั่งตู้จ่ายยา<br><small *ngIf="sendSemedTime">{{ sendSemedTime | date:'HH:mm:ss' }}</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Area -->
+      <div class="modern-card history-section">
+        <div class="card-header">
+          <h2>ประวัติการสั่งจัดยา SeMed</h2>
+        </div>
+        <div class="history-grid custom-scroll">
+          <div class="empty-state" *ngIf="dispensedHistory.length === 0">
+            <div class="empty-icon">📋</div>
+            ยังไม่มีประวัติ
+          </div>
+          <div class="history-pill" *ngFor="let h of dispensedHistory">
+            <div class="pill-icon">✅</div>
+            <div class="pill-content">
+              <div class="pill-name">{{ h.patientName }}</div>
+              <div class="pill-meta">ตะกร้า {{ h.basketNo }} • {{ h.time | date:'HH:mm:ss' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ALL MODALS (UNCHANGED FUNCTIONALITY, ONLY STYLED) -->
+  <div class="modern-modal-overlay" *ngIf="showStockWarning">
+    <div class="modern-modal-card warning-theme">
+      <div class="modal-header"><div class="icon-circle">!</div><h2>ยาไม่พอจ่าย</h2></div>
+      <div class="modal-content">
+        <p>สำหรับตะกร้า <strong>{{ basketNo }}</strong></p>
+        <div class="table-responsive">
+          <table class="modern-table">
+            <thead><tr><th>ยา</th><th>สั่ง</th><th>ในตู้</th><th>ขาด</th></tr></thead>
+            <tbody>
               <tr *ngFor="let m of missingDrugs">
-                <td class="drug-name-cell">{{ m.name }}</td>
-                <td class="text-center">{{ m.required }} {{ m.unit }}</td>
-                <td class="text-center text-warning">{{ m.available }} {{ m.unit }}</td>
-                <td class="text-center text-danger"><strong>{{ m.missing }}</strong> {{ m.unit }}</td>
+                <td>{{ m.name }}</td><td>{{ m.required }} {{ m.unit }}</td>
+                <td class="text-warning">{{ m.available }} {{ m.unit }}</td>
+                <td class="text-danger font-bold">{{ m.missing }} {{ m.unit }}</td>
               </tr>
             </tbody>
           </table>
@@ -182,107 +187,56 @@
       </div>
       <div class="modal-footer">
         <button class="btn-secondary" (click)="showStockWarning = false; dispenseStatus = 'idle';">ยกเลิก</button>
-        <button class="btn-confirm" (click)="onDispense()">ยืนยันทำรายการต่อ</button>
+        <button class="btn-warning" (click)="onDispense()">ยืนยันจ่ายยาที่เหลือ</button>
       </div>
     </div>
   </div>
 
-  <!-- 2. No SEMED Drug Warning Modal -->
   <div class="modern-modal-overlay" *ngIf="showNoSemedDrugWarning">
-    <div class="modern-modal-card warning-theme">
-      <div class="modal-header" style="background-color: #fff7ed; padding-top: 30px;">
-        <div class="icon-circle" style="background-color: #ea580c;">!</div>
-        <h2 style="color: #ea580c;">ไม่มีรายการยาในตู้ SEMED</h2>
-      </div>
-      <div class="modal-content" style="padding-top: 20px;">
-        <p style="font-size: 1.1rem; color: #475569;">
-          ตะกร้าเลขที่ <strong>{{ basketNo }}</strong> ไม่มีคิวสั่งจ่ายยาของตู้ <strong>SEMED</strong>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-confirm" style="background-color: #ea580c;" (click)="showNoSemedDrugWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
-      </div>
+    <div class="modern-modal-card error-theme">
+      <div class="modal-header"><div class="icon-circle">!</div><h2>ไม่มียาในตู้ SEMED</h2></div>
+      <div class="modal-content"><p>ตะกร้า <strong>{{ basketNo }}</strong> ไม่มีคำสั่งจ่ายยาของตู้ SEMED</p></div>
+      <div class="modal-footer"><button class="btn-danger" (click)="showNoSemedDrugWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button></div>
     </div>
   </div>
 
-  <!-- 3. Invalid Mapping Warning Modal -->
   <div class="modern-modal-overlay" *ngIf="showInvalidMapWarning">
     <div class="modern-modal-card error-theme">
-      <div class="modal-header">
-        <div class="icon-circle">✖</div>
-        <h2>จับคู่ตะกร้าไม่ถูกต้อง</h2>
-      </div>
-      <div class="modal-content" style="padding-top: 20px;">
-        <p style="font-size: 1.1rem;">
-          ไม่พบข้อมูลรับรองตะกร้าเลขที่ <strong>{{ basketNo }}</strong> <br><br>
-          <span style="color: #ef4444; font-weight: bold;">กรุณานำตะกร้าไปผูกคิวก่อนใช้งาน</span>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-confirm" (click)="showInvalidMapWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button>
-      </div>
+      <div class="modal-header"><div class="icon-circle">?</div><h2>รหัสตะกร้าไม่ถูกต้อง</h2></div>
+      <div class="modal-content"><p>ไม่พบการจับคู่ของรหัสตะกร้า <strong>{{ basketNo }}</strong><br><span class="text-danger">กรุณานำตะกร้าไปจับคู่ก่อนนำมาสแกน</span></p></div>
+      <div class="modal-footer"><button class="btn-danger" (click)="showInvalidMapWarning = false; patientName='-'; basketNo='-'; rfidCode='-';">ตกลง</button></div>
     </div>
   </div>
 
-  <!-- 4. Low Stock Warning Modal -->
   <div class="modern-modal-overlay" *ngIf="showLowStockWarning">
     <div class="modern-modal-card warning-theme">
-      <div class="modal-header" style="background-color: #fefce8; padding-top: 30px;">
-        <div class="icon-circle" style="background-color: #ca8a04;">!</div>
-        <h2 style="color: #ca8a04;">เตือนยาใกล้หมดตู้</h2>
-      </div>
+      <div class="modal-header"><div class="icon-circle">!</div><h2>ยาเหลือน้อย</h2></div>
       <div class="modal-content">
-        <p style="color: #ca8a04; margin-bottom: 16px;">ยาด้านล่างนี้มีจำนวนลดลงถึงเกณฑ์ขั้นต่ำ <strong>กรุณาแจ้งเติมยาหน้าตู้</strong></p>
-        <div class="missing-drugs-table-container">
-          <table class="missing-drugs-table">
-            <thead>
-              <tr><th>รายชื่อยา</th><th>คงเหลือในตู้</th></tr>
-            </thead>
+        <p>มียาจำนวนลดลงถึงเกณฑ์ต่ำ <strong>กรุณาเติมยา</strong></p>
+        <div class="table-responsive">
+          <table class="modern-table">
+            <thead><tr><th>ชื่อยา</th><th>คงเหลือในตู้</th></tr></thead>
             <tbody>
               <tr *ngFor="let m of lowStockDrugs">
-                <td class="drug-name-cell">{{ m.name }}</td>
-                <td class="text-center text-warning"><strong>{{ m.available }}</strong> {{ m.unit }}</td>
+                <td>{{ m.name }}</td><td class="text-warning font-bold">{{ m.available }} {{ m.unit }}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn-confirm" style="background-color: #ca8a04;" (click)="onDispense()">ตกลงและดำเนินการจ่ายยาต่อ</button>
-      </div>
+      <div class="modal-footer"><button class="btn-warning" (click)="onDispense()">ตกลงและดำเนินการจ่ายยาต่อ</button></div>
     </div>
   </div>
 
-  <!-- 5. API/Network Error Modal -->
   <div class="modern-modal-overlay" *ngIf="showErrorModal">
     <div class="modern-modal-card error-theme">
-      <div class="modal-header">
-        <div class="icon-circle">✖</div>
-        <h2>เกิดข้อผิดพลาดของระบบ</h2>
-      </div>
+      <div class="modal-header"><div class="icon-circle">X</div><h2>การติดต่อผิดพลาด</h2></div>
       <div class="modal-content">
-        <p style="color: #dc2626; margin-bottom: 12px; font-weight: 500;">
-          ไม่สามารถส่งคำสั่งจ่ายยาไปยังเครื่อง SEMED ได้ กรุณาตรวจสอบ Error ด้านล่าง:
-        </p>
+        <p class="text-danger">ไม่สามารถส่งคำสั่งจ่ายยาไปยังตู้ SEMED ได้:</p>
         <div class="error-log-box">{{ errorMessage }}</div>
       </div>
-      <div class="modal-footer">
-        <button class="btn-confirm" (click)="closeErrorModal()">รับทราบและปิดหน้าต่าง</button>
-      </div>
+      <div class="modal-footer"><button class="btn-danger" (click)="closeErrorModal()">รับทราบและปิดหน้าต่าง</button></div>
     </div>
   </div>
-
 </div>
 
-<!-- ========================================== -->
-<!-- 🍞 TOAST NOTIFICATION (Modern Clean)        -->
-<!-- ========================================== -->
-<div class="modern-toast" *ngIf="toastMessage" [ngClass]="toastType">
-  <div class="toast-icon">
-    <span *ngIf="toastType === 'success'">✔</span>
-    <span *ngIf="toastType === 'error'">✖</span>
-    <span *ngIf="toastType === 'warning'">!</span>
-    <span *ngIf="toastType === 'info'">i</span>
-  </div>
-  <div class="toast-body">{{ toastMessage }}</div>
-</div>

@@ -212,7 +212,7 @@ export class AppComponent implements OnInit {
     this.loadPatientTime = null;
     this.checkStockTime = null;
     this.sendSemedTime = null;
-    this.dispenseStatus = 'loading';
+    console.time("Total Roundtrip Time"); this.dispenseStatus = 'loading';
     this.cdr.detectChanges();
 
     this.http.post<any>('/api/proxy/packagemaster', { basketid: basketId }).subscribe({
@@ -297,10 +297,9 @@ export class AppComponent implements OnInit {
              
              // ยัดโค้ดการคำนวณจำนวนกล่องให้เหมือน BDSender.sln
              if (stockItem && stockItem.packageRatio) {
-                 d.qty = Math.floor(rawQty / packageRatio);
+                 /* d.qty = Math.floor(rawQty / packageRatio); */
              }
-             d.originalUnit = d.unit; d.boxQty = d.qty; 
-             d.unit = "Box";
+             d.originalUnit = d.unit; d.boxQty = d.qty; /* DO NOT MUTATE d.unit */
              
              const requiredPills = rawQty;
              const minimum = stockItem ? stockItem.Minimum * packageRatio : 0;
@@ -365,10 +364,10 @@ export class AppComponent implements OnInit {
     this.showStockWarning = false;
     this.showLowStockWarning = false;
 
-    console.log("Dispensing...", this.patientInfo, this.drugs);
+    
     this.dispenseStatus = 'dispensing';
     const payload = {
-        windowNo: (this.dispenseHole === 'L' || this.dispenseHole === '1') ? '1' : (this.dispenseHole === 'R' || this.dispenseHole === '2' ? '2' : '0'),
+        windowNo: (['R', '3', '4'].includes(this.dispenseHole)) ? '2' : '1',
         patientInfo: this.patientInfo,
         drugsList: this.drugs
     };
@@ -378,7 +377,7 @@ export class AppComponent implements OnInit {
         if (res.success) {
           this.playSound('success');
           this.showToast('ส่งคำสั่งจ่ายยาตะกร้า ' + this.basketNo + ' สำเร็จ', 'success');
-          this.dispenseStatus = 'success';
+          this.dispenseStatus = 'success'; console.timeEnd("Total Roundtrip Time");
           this.sendSemedTime = new Date();
           
           // โชว์สถานะสำเร็จค้างไว้ 3 วินาที
@@ -462,3 +461,13 @@ export class AppComponent implements OnInit {
   missingDrugs: any[] = [];
   lowStockDrugs: any[] = [];
 }
+
+
+
+
+
+
+
+
+
+

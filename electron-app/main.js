@@ -1,12 +1,34 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+ï»¿const { app, BrowserWindow, globalShortcut } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const http = require('http');
+const https = require('https');
+const httpAgent = new http.Agent({ keepAlive: true, maxSockets: 10 });
+const httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 10 });
+axios.defaults.httpAgent = httpAgent;
+axios.defaults.httpsAgent = httpsAgent;
 const WebSocket = require('ws');
 const { SerialPort } = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
+
+const net = require("net");
+function showOnScreenAlert(message, isError = false) { return; }
+
+function checkSemedConnection() {
+    const url = new URL(SEMED_SOAP_URL);
+    const host = url.hostname;
+    const port = url.port || 80;
+    const socket = new net.Socket();
+    socket.setTimeout(5000);
+    socket.on("connect", () => { showOnScreenAlert(`SeMed Connection OK (${host}:${port})`); socket.destroy(); });
+    socket.on("timeout", () => { showOnScreenAlert(`SeMed Connection TIMEOUT (${host}:${port}) - Check IP/Firewall`, true); socket.destroy(); });
+    socket.on("error", (err) => { showOnScreenAlert(`SeMed Connection ERROR (${host}:${port}) - ${err.message}`, true); });
+    socket.connect(port, host);
+}
+
 
 // --- StateController & Queue Variables ---
 let barcodeQueue = [];
@@ -15,6 +37,7 @@ function processNextInQueue() {
     if (isProcessing || barcodeQueue.length === 0) return;
     isProcessing = true;
     const barcode = barcodeQueue.shift();
+    console.log(`[API Start] Sending to UI: ${barcode} at ${new Date().toISOString()}`);
     broadcastToUI({ type: "SCAN", payload: barcode });
 }
 function releaseQueue() {
@@ -97,11 +120,16 @@ server.post('/api/proxy/packagemaster', async (req, res) => {
         
         const response = await axios.post(baseUrl + '/packagemaster/order/semed', 
             { basketid: basketid },
-            { timeout: 30000 }
+            { timeout: 15000 }
         );
+        let itemCount = 0;
+        if (response.data && response.data.data) itemCount = response.data.data.length;
+        showOnScreenAlert(`Loaded HIS Data: ${itemCount} items for basket ${basketid}`);
+        if (itemCount === 0) showOnScreenAlert(`WARNING: No items found for basket ${basketid}`, true);
         res.json(response.data);
     } catch (error) {
         console.error('API Error:', error.message);
+        showOnScreenAlert(`HIS API Error: ${error.message}`, true);
         res.status(200).json({ status: 500, error: 'HIS API Timeout or Error', data: [] });
     }
 });
@@ -153,12 +181,12 @@ function generateSemedXml(payload, windowNoStr) {
     const doctName = (p.doctorname || "").substring(0, 15);
 
     let drugsXml = '';
-    payload.drugsList.forEach((drug, index) => {
+    const aggregatedDrugs = {}; payload.drugsList.forEach(d => { const c = d.code || ''; if(!aggregatedDrugs[c]) { aggregatedDrugs[c] = { ...d }; aggregatedDrugs[c].qty = parseFloat(d.qty || d.orderqty || 0); } else { aggregatedDrugs[c].qty += parseFloat(d.qty || d.orderqty || 0); } }); Object.values(aggregatedDrugs).forEach((drug, index) => {
         drugsXml += `
     <Drug>
         <Alias></Alias>
-        <Code>${drug.code || ''}</Code>
-        <Name>${drug.name || ''}</Name>
+        <Code>${(drug.code || '').toString().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</Code>
+        <Name>${(drug.name || '').toString().replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</Name>
         <Spec>${drug.spec || drug.Strength || "N/A"}</Spec>
         <FirmName>${drug.firmName || drug.firmname || "NKP"}</FirmName>
         <Qty>${drug.qty !== undefined && drug.qty !== null && drug.qty !== "" ? drug.qty : (drug.orderqty || "1")}</Qty>
@@ -211,7 +239,7 @@ server.post('/api/proxy/dispense', async (req, res) => {
         let payload = req.body; 
         let rawWin = String(payload.windowNo || OUTPUT_LR || "1").trim().toUpperCase();
         let windowNo = "1";
-        if (rawWin.startsWith("R") || rawWin.includes("¢ÇÒ") || rawWin === "2") windowNo = "2";
+        if (rawWin.startsWith("R") || rawWin.includes("ï¿½ï¿½ï¿½") || rawWin === "2") windowNo = "2";
         if (windowNo.toUpperCase() === "L") windowNo = "1";
         else if (windowNo.toUpperCase() === "R") windowNo = "2";
         
@@ -258,6 +286,8 @@ server.post('/api/proxy/dispense', async (req, res) => {
   </soap:Body>
 </soap:Envelope>`;
 
+        showOnScreenAlert("Sending XML Payload (Check DevTools for details)");
+        mainWindow.webContents.executeJavaScript(`console.log("=== RAW XML TO SEMED ==="); console.log(decodeURIComponent("${encodeURIComponent(soapEnvelope)}"));`);
         const response = await axios.post(SEMED_SOAP_URL, soapEnvelope, {
             headers: {
                 'Content-Type': 'text/xml;charset=UTF-8',
@@ -285,9 +315,10 @@ server.post('/api/proxy/dispense', async (req, res) => {
             throw new Error(`SeMed Machine Rejected: ${semedErrorMsg}`);
         }
 
-        await new Promise(r => setTimeout(r, 3000));
-        res.json({ success: true, result: response.data });
-        releaseQueue(); // Process next basket
+        console.log(`[API Done] Dispense sent at ${new Date().toISOString()}`);
+        if (typeof showOnScreenAlert !== "undefined") showOnScreenAlert(`SeMed Success: Dispensed to Window ${payload.windowNo || OUTPUT_LR || "1"}`);
+        mainWindow.webContents.executeJavaScript(`console.log('=== SEMED RESPONSE ==='); console.log(decodeURIComponent(''));`).catch(()=>{}); res.json({ success: true, result: response.data });
+        setTimeout(() => { releaseQueue(); }, 3000); // Process next basket
     } catch (error) {
         console.error('Dispense API Error:', error.message);
         res.status(500).json({ success: false, error: error.message });
@@ -336,22 +367,22 @@ async function scanAndConnectSerialPorts() {
             const portPath = portInfo.path;
             try {
                 const port = new SerialPort({ path: portPath, baudRate: 115200 });
-                const parser = port.pipe(new ReadlineParser({ delimiter: '$' }));
-                parser.on('data', (data) => {
-                    // Ignore data received within the first 3 seconds (flush old buffer)
+                let serialBuffer = "";
+                port.on("data", (data) => {
                     if (Date.now() - appStartTime < 3000) return;
-                    
-                    let rawData = data.toString().trim();
-                    if (rawData.startsWith('#')) {
-                        const parts = rawData.substring(1).split('|');
-                        if (parts.length >= 3 && parts[2] !== '0') {
-                            const barcode = parts[2].trim();
-                            if (!barcodeQueue.includes(barcode)) {
-                                barcodeQueue.push(barcode);
-                                processNextInQueue();
-                            }
+                    serialBuffer += data.toString();
+                    const match = serialBuffer.match(/\|([A-F0-9]{16})/i);
+                    if (match) {
+                        const barcode = match[1].toUpperCase();
+                        console.log(`[RFID In] ${barcode} at ${new Date().toISOString()}`);
+                        if (typeof showOnScreenAlert !== "undefined") showOnScreenAlert(`[RFID Scanned] ${barcode}`);
+                        serialBuffer = "";
+                        if (!barcodeQueue.includes(barcode)) {
+                            barcodeQueue.push(barcode);
+                            processNextInQueue();
                         }
-
+                    } else if (serialBuffer.length > 200) {
+                        serialBuffer = "";
                     }
                 });
             } catch (err) { }
@@ -379,6 +410,7 @@ function createWindow() {
     mainWindow.maximize();
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(`http://localhost:${API_PORT}`);
+    setTimeout(() => { checkSemedConnection(); }, 3000);
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
@@ -410,6 +442,18 @@ app.on('activate', function () {
         createWindow();
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

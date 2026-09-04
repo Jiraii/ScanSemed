@@ -30,13 +30,16 @@
                                "oneClick":  true,
                                "perMachine":  true,
                                "runAfterFinish":  true,
-                               "allowToChangeInstallationDirectory":  false
+                               "allowToChangeInstallationDirectory":  false,
+                               "createDesktopShortcut":  true,
+                               "createStartMenuShortcut":  true,
+                               "shortcutName":  "BDSender SEMED"
                            },
                   "win":  {
                               "target":  "nsis"
                           },
                   "directories":  {
-
+                                      "output":  "D:\\Scan"
                                   }
               }
 }
