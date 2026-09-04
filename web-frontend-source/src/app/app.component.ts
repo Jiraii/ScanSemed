@@ -71,6 +71,8 @@ export class AppComponent implements OnInit {
     toastMessage: string | null = null;
   toastType: 'info' | 'warning' | 'success' | 'error' = 'info';
   toastTimeout: any;
+  successTimeout: any;
+
 
   showToast(msg: string, type: 'info' | 'warning' | 'success' | 'error' = 'info') {
     this.toastMessage = msg;
@@ -124,6 +126,23 @@ export class AppComponent implements OnInit {
   }
 
   lastScanTime: number = 0;
+
+  
+  resetForm() {
+    this.patientName = '-';
+    this.basketNo = '-';
+    this.rfidCode = '-';
+    this.hn = '-';
+    this.vn = '-';
+    this.drugs = [];
+    this.patientInfo = null;
+    this.loadPatientTime = null;
+    this.checkStockTime = null;
+    this.sendSemedTime = null;
+    this.dispenseStatus = 'idle';
+    this.isProcessing = false;
+    this.cdr.detectChanges();
+  }
 
   handleScan(basketId: string) {
     const now = Date.now();
@@ -362,24 +381,26 @@ export class AppComponent implements OnInit {
           this.dispenseStatus = 'success';
           this.sendSemedTime = new Date();
           
-          this.dispensedHistory.unshift({ id: this.basketNo, rfidCode: this.rfidCode, patientName: this.patientName, time: new Date() });
-          this.dispensedHistory = this.dispensedHistory.slice(0, 10);
-          this.isProcessing = false;
+          // โชว์สถานะสำเร็จค้างไว้ 3 วินาที
           this.cdr.detectChanges();
-          
-          setTimeout(() => {
 
+          if (this.successTimeout) clearTimeout(this.successTimeout);
+
+          this.successTimeout = setTimeout(() => {
+              // 1. นำรายการปัจจุบันเก็บลงประวัติ
+              this.dispensedHistory.unshift({ id: this.basketNo, rfidCode: this.rfidCode, patientName: this.patientName, time: new Date() });
+              this.dispensedHistory = this.dispensedHistory.slice(0, 10);
+              
+              // 2. เคลียร์ State และ Form ทั้งหมดให้ว่าง
+              this.resetForm();
+
+              // 3. ดึงคิวถัดไปมาทำ (ถ้ามี)
               if (this.queue.length > 0) {
-                // มีคิวรออยู่ เอาคิวแรกมาทำต่อ
                 const nextBasket = this.queue.shift();
-                this.dispenseStatus = 'idle';
                 this.cdr.detectChanges();
                 this.handleScan(nextBasket);
-              } else {
-                // ไม่มีคิวรอ กลับหน้าว่าง
-                this.dispenseStatus = 'idle';
-                this.cdr.detectChanges();
               }
+              this.successTimeout = null;
           }, 3000);
         } else {
           this.dispenseStatus = 'error';
