@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+﻿<div class="dashboard-container">
   <!-- Header -->
   <header class="top-header">
     <div class="logo-area">
@@ -280,3 +280,8 @@
     </div>
   </div>
 </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" *ngIf="toastMessage" [ngClass]="toastType">
+    {{ toastMessage }}
+  </div>

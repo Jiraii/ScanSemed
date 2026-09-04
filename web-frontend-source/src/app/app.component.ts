@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+﻿import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -68,31 +68,75 @@ export class AppComponent implements OnInit {
     };
   }
 
+    toastMessage: string | null = null;
+  toastType: 'info' | 'warning' | 'success' | 'error' = 'info';
+  toastTimeout: any;
+
+  showToast(msg: string, type: 'info' | 'warning' | 'success' | 'error' = 'info') {
+    this.toastMessage = msg;
+    this.toastType = type;
+    this.cdr.detectChanges();
+    if (this.toastTimeout) clearTimeout(this.toastTimeout);
+    this.toastTimeout = setTimeout(() => {
+      this.toastMessage = null;
+      this.cdr.detectChanges();
+    }, 4000);
+  }
+
+  playSound(type: 'beep' | 'success' | 'error' | 'warning') {
+    try {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      if (type === 'beep') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, ctx.currentTime);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.1);
+      } else if (type === 'success') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, ctx.currentTime);
+        osc.frequency.setValueAtTime(800, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.3);
+      } else if (type === 'error' || type === 'warning') {
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(300, ctx.currentTime);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        osc.start();
+        gain.gain.setValueAtTime(0, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime + 0.2);
+        gain.gain.setValueAtTime(0, ctx.currentTime + 0.3);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime + 0.4);
+        osc.stop(ctx.currentTime + 0.5);
+      }
+    } catch (e) {
+      console.error('Audio play failed', e);
+    }
+  }
+
   handleScan(basketId: string) {
     if (!basketId) return;
     const cleanId = basketId.trim();
 
-    // 1. ถ้ากำลังดำเนินการตะกร้านี้อยู่ ให้ข้ามไป (ป้องกันการสแกนซ้ำตอนที่ตะกร้าวางค้างไว้)
     if ((this.basketNo === cleanId || this.rfidCode === cleanId) && this.dispenseStatus !== 'idle') {
-      console.log('Basket is already processing, ignoring scan:', cleanId);
       return;
     }
 
-    // 2. ถ้าตะกร้านี้ไปอยู่ในคิวรอแล้ว ให้ข้ามไป
     if (this.queue.includes(cleanId)) {
-      console.log('Basket is already in queue, ignoring scan:', cleanId);
+      this.playSound('warning');
+      this.showToast('ตะกร้า ' + cleanId + ' อยู่ในคิวแล้ว', 'warning');
       return;
     }
 
-    // 3. ถ้าระบบไม่ว่าง ให้โยนตะกร้านี้เข้าคิว
-    if (this.dispenseStatus !== 'idle') {
-      console.log('System is busy, adding to queue:', cleanId);
-      this.queue.push(cleanId);
-      this.cdr.detectChanges();
-      return;
-    }
-
-    // 3. ถ้าตะกร้านี้เพิ่งถูกส่งจ่ายยาไปภายใน 2 นาที (120,000 ms) ให้ข้ามไป
     const now = new Date().getTime();
     const recentlyDispensed = this.dispensedHistory.some(h => 
       (h.id === cleanId || (h.rfidCode && h.rfidCode === cleanId)) && 
@@ -100,12 +144,20 @@ export class AppComponent implements OnInit {
     );
     
     if (recentlyDispensed) {
-      console.log('Basket was recently dispensed, ignoring scan:', cleanId);
-        alert('�Ѵ������� (����觤�����������ѡ����)');
+      this.playSound('error');
+      this.showToast('ตะกร้า ' + cleanId + ' นี้ส่งจ่ายยาสำเร็จไปแล้ว', 'error');
       return;
     }
 
-    // ถ้าผ่านเงื่อนไขตรวจสอบทั้งหมด ค่อยเรียกใช้งาน
+    if (this.dispenseStatus !== 'idle' || this.isProcessing) {
+      this.queue.push(cleanId);
+      this.playSound('beep');
+      this.showToast('เพิ่มตะกร้า ' + cleanId + ' ลงคิวลำดับที่ ' + this.queue.length, 'info');
+      this.cdr.detectChanges();
+      return;
+    }
+    
+    this.playSound('beep');
     this.fetchPatientData(cleanId);
   }
 
@@ -252,6 +304,7 @@ export class AppComponent implements OnInit {
         this.dispenseStatus = 'ready';
         
         if (this.missingDrugs.length > 0) {
+            this.playSound('warning');
             this.showStockWarning = true;
         } else if (this.lowStockDrugs.length > 0) {
             this.showLowStockWarning = true;
@@ -298,6 +351,8 @@ export class AppComponent implements OnInit {
     this.http.post<any>('/api/proxy/dispense', payload).subscribe({
       next: (res) => {
         if (res.success) {
+          this.playSound('success');
+          this.showToast('ส่งคำสั่งจ่ายยาตะกร้า ' + this.basketNo + ' สำเร็จ', 'success');
           this.dispenseStatus = 'success';
           this.sendSemedTime = new Date();
           
@@ -322,6 +377,7 @@ export class AppComponent implements OnInit {
           }, 3000);
         } else {
           this.dispenseStatus = 'error';
+          this.playSound('error');
           this.errorMessage = res.error || 'Unknown API Error';
           this.isProcessing = false; // Fix: Unlock system on API error
           this.showErrorModal = true;
@@ -330,7 +386,8 @@ export class AppComponent implements OnInit {
       },
       error: (e) => {
         this.dispenseStatus = 'error';
-        this.errorMessage = e.message || 'Network Error / Endpoint not reachable';
+        this.playSound('error');
+          this.errorMessage = e.message || 'Network Error / Endpoint not reachable';
         this.isProcessing = false; // Fix: Unlock system on Network error
         this.showErrorModal = true;
         this.cdr.detectChanges();
