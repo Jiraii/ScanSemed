@@ -368,7 +368,7 @@ export class AppComponent implements OnInit {
     console.log("Dispensing...", this.patientInfo, this.drugs);
     this.dispenseStatus = 'dispensing';
     const payload = {
-        windowNo: this.dispenseHole,
+        windowNo: (this.dispenseHole === 'L' || this.dispenseHole === '1') ? '1' : (this.dispenseHole === 'R' || this.dispenseHole === '2' ? '2' : '0'),
         patientInfo: this.patientInfo,
         drugsList: this.drugs
     };

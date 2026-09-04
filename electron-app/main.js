@@ -150,7 +150,7 @@ function generateSemedXml(payload, windowNoStr) {
         <Method></Method>
         <Type></Type>
         <note>${drug.shelfzone || ''}</note>
-        <ItemNo>${index + 1}</ItemNo>
+        <ItemNo></ItemNo>
     </Drug>`;
     });
 
@@ -252,11 +252,11 @@ server.post('/api/proxy/dispense', async (req, res) => {
         // ==========================================
         let isSuccess = false;
         let semedErrorMsg = "Unknown Hardware Error";
-        const codeMatch = response.data.match(/<code>(.*?)<\/code>/i);
+        const codeMatch = response.data.match(/(?:<|&lt;)code(?:>|&gt;)(.*?)(?:<|&lt;)\/code(?:>|&gt;)/i);
         if (codeMatch && codeMatch[1].trim() === '0') {
             isSuccess = true;
         } else {
-            const msgMatch = response.data.match(/<message>(.*?)<\/message>/i);
+            const msgMatch = response.data.match(/(?:<|&lt;)message(?:>|&gt;)(.*?)(?:<|&lt;)\/message(?:>|&gt;)/i);
             if (msgMatch) semedErrorMsg = msgMatch[1];
         }
 
