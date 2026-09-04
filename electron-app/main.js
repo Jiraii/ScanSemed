@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
@@ -7,6 +7,22 @@ const axios = require('axios');
 const WebSocket = require('ws');
 const { SerialPort } = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
+
+// --- StateController & Queue Variables ---
+let barcodeQueue = [];
+let isProcessing = false;
+function processNextInQueue() {
+    if (isProcessing || barcodeQueue.length === 0) return;
+    isProcessing = true;
+    const barcode = barcodeQueue.shift();
+    broadcastToUI({ type: "SCAN", payload: barcode });
+}
+function releaseQueue() {
+    isProcessing = false;
+    processNextInQueue();
+}
+// -----------------------------------------
+
 
 let mainWindow;
 const API_PORT = 9001;
@@ -132,9 +148,9 @@ function generateSemedXml(payload, windowNoStr) {
     const paymentDT = formatDate(p.ordercreatedate);
     const visitNo = p.vn || '';
     const deptCode = p.wardcode || '';
-    const deptName = p.wardname || '';
+    const deptName = (p.wardname || "").substring(0, 15);
     const doctCode = p.doctorcode || '';
-    const doctName = p.doctorname || '';
+    const doctName = (p.doctorname || "").substring(0, 15);
 
     let drugsXml = '';
     payload.drugsList.forEach((drug, index) => {
@@ -143,9 +159,9 @@ function generateSemedXml(payload, windowNoStr) {
         <Alias></Alias>
         <Code>${drug.code || ''}</Code>
         <Name>${drug.name || ''}</Name>
-        <Spec>N/A</Spec>
-        <FirmName>NKP</FirmName>
-        <Qty>${drug.qty || ''}</Qty>
+        <Spec>${drug.spec || drug.Strength || "N/A"}</Spec>
+        <FirmName>${drug.firmName || drug.firmname || "NKP"}</FirmName>
+        <Qty>${drug.qty !== undefined && drug.qty !== null && drug.qty !== "" ? drug.qty : (drug.orderqty || "1")}</Qty>
         <Unit>${drug.unit || ''}</Unit>
         <Method></Method>
         <Type></Type>
@@ -193,7 +209,11 @@ function generateSemedXml(payload, windowNoStr) {
 server.post('/api/proxy/dispense', async (req, res) => {
     try {
         let payload = req.body; 
-        const windowNo = payload.windowNo || '1';
+        let rawWin = String(payload.windowNo || OUTPUT_LR || "1").trim().toUpperCase();
+        let windowNo = "1";
+        if (rawWin.startsWith("R") || rawWin.includes("¢ÇÒ") || rawWin === "2") windowNo = "2";
+        if (windowNo.toUpperCase() === "L") windowNo = "1";
+        else if (windowNo.toUpperCase() === "R") windowNo = "2";
         
         let baseUrl = HOSPITAL_API_BASE_URL;
         if(baseUrl.endsWith('/')) baseUrl = baseUrl.slice(0, -1);
@@ -252,6 +272,7 @@ server.post('/api/proxy/dispense', async (req, res) => {
         // ==========================================
         let isSuccess = false;
         let semedErrorMsg = "Unknown Hardware Error";
+        console.log("[SeMed Raw Response]:", response.data);
         const codeMatch = response.data.match(/(?:<|&lt;)code(?:>|&gt;)(.*?)(?:<|&lt;)\/code(?:>|&gt;)/i);
         if (codeMatch && codeMatch[1].trim() === '0') {
             isSuccess = true;
@@ -264,13 +285,20 @@ server.post('/api/proxy/dispense', async (req, res) => {
             throw new Error(`SeMed Machine Rejected: ${semedErrorMsg}`);
         }
 
+        await new Promise(r => setTimeout(r, 3000));
         res.json({ success: true, result: response.data });
+        releaseQueue(); // Process next basket
     } catch (error) {
         console.error('Dispense API Error:', error.message);
         res.status(500).json({ success: false, error: error.message });
+        releaseQueue();
     }
 });
 
+server.post('/api/proxy/release_queue', (req, res) => {
+    releaseQueue();
+    res.json({ success: true });
+});
 server.use((req, res) => {
     res.sendFile(path.join(staticPath, 'index.html'));
 });
@@ -317,8 +345,13 @@ async function scanAndConnectSerialPorts() {
                     if (rawData.startsWith('#')) {
                         const parts = rawData.substring(1).split('|');
                         if (parts.length >= 3 && parts[2] !== '0') {
-                            broadcastToUI({ type: 'SCAN', payload: parts[2] });
+                            const barcode = parts[2].trim();
+                            if (!barcodeQueue.includes(barcode)) {
+                                barcodeQueue.push(barcode);
+                                processNextInQueue();
+                            }
                         }
+
                     }
                 });
             } catch (err) { }
@@ -334,11 +367,16 @@ function createWindow() {
         width: 1200,
         height: 800,
         title: "BDSender SEMED Dashboard",
+        kiosk: false,
+        fullscreen: false,
+        autoHideMenuBar: true,
         webPreferences: {
-            nodeIntegration: false,
-            contextIsolation: true
+            nodeIntegration: true,
+            contextIsolation: false,
+            zoomFactor: 1.0
         }
     });
+    mainWindow.maximize();
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(`http://localhost:${API_PORT}`);
     mainWindow.on('closed', function () {
@@ -347,7 +385,20 @@ function createWindow() {
     scanAndConnectSerialPorts();
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+    createWindow();
+    
+    // Register Emergency Shortcuts
+    globalShortcut.register('CommandOrControl+Shift+I', () => {
+        if (mainWindow) mainWindow.webContents.toggleDevTools();
+    });
+    globalShortcut.register('CommandOrControl+Shift+Q', () => {
+        app.quit();
+    });
+});
+app.on('will-quit', () => {
+    globalShortcut.unregisterAll();
+});
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
@@ -359,3 +410,15 @@ app.on('activate', function () {
         createWindow();
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
