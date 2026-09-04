@@ -241,7 +241,8 @@ server.post('/api/proxy/dispense', async (req, res) => {
         const response = await axios.post(SEMED_SOAP_URL, soapEnvelope, {
             headers: {
                 'Content-Type': 'text/xml;charset=UTF-8',
-                'SOAPAction': 'urn:outpOrderDispense'
+                'SOAPAction': 'urn:outpOrderDispense',
+                'Connection': 'close'
             },
             timeout: 30000
         });

@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|d:\\bdsender_nakornping\\bdsender_nakornping-main\\bdsender\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\forms\\frm_confirm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\forms\\frm_confirm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\forms\\frm_yesno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\forms\\frm_yesno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|BDSender||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\AppData\\Local\\Temp\\.vsdbgsrc\\a3f033b440ff7209e2f0f788f726ee9a5dc46c9bdecdc72cd5369dfabe6ead63\\ReportClass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A51BC027-D30A-4925-9066-EF22A1D09E25}|gd4lib\\gd4lib.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\dih.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A51BC027-D30A-4925-9066-EF22A1D09E25}|gd4lib\\gd4lib.csproj|solutionrelative:gd4lib\\dih.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A51BC027-D30A-4925-9066-EF22A1D09E25}|gd4lib\\gd4lib.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\cretem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A51BC027-D30A-4925-9066-EF22A1D09E25}|gd4lib\\gd4lib.csproj|solutionrelative:gd4lib\\cretem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\forms\\frmmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\forms\\frmmanual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\cls\\clsconvertdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\cls\\clsconvertdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\forms\\frmnumpad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\forms\\frmnumpad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\module\\cls_semed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\module\\cls_semed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\bdsender\\cls\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D14F0A7-ED23-4615-86B2-59270D4AA806}|BDSender\\BDSender.csproj|solutionrelative:bdsender\\cls\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReportClass.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\.vsdbgsrc\\a3f033b440ff7209e2f0f788f726ee9a5dc46c9bdecdc72cd5369dfabe6ead63\\ReportClass.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\.vsdbgsrc\\a3f033b440ff7209e2f0f788f726ee9a5dc46c9bdecdc72cd5369dfabe6ead63\\ReportClass.cs [Read Only]",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAQwNIAAAASAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T04:20:24.328Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.cs",
+              "RelativeDocumentMoniker": "BDSender\\Form1.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.cs",
+              "RelativeToolTip": "BDSender\\Form1.cs",
+              "ViewState": "AgIAAFYFAAAAAAAAAAAkwG0FAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T06:08:00.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "BDSender\\Properties\\Settings.settings",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Properties\\Settings.settings",
+              "RelativeToolTip": "BDSender\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2026-08-29T03:01:37.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BDSender",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\BDSender.csproj",
+              "RelativeDocumentMoniker": "BDSender\\BDSender.csproj",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\BDSender.csproj",
+              "RelativeToolTip": "BDSender\\BDSender.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-08-29T03:01:33.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_Confirm.cs [Design]",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frm_Confirm.cs",
+              "RelativeDocumentMoniker": "BDSender\\forms\\frm_Confirm.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frm_Confirm.cs [Design]",
+              "RelativeToolTip": "BDSender\\forms\\frm_Confirm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T05:47:27.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dih.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\dih.cs",
+              "RelativeDocumentMoniker": "gd4lib\\dih.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\dih.cs",
+              "RelativeToolTip": "gd4lib\\dih.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T08:35:53.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "cretem.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\cretem.cs",
+              "RelativeDocumentMoniker": "gd4lib\\cretem.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\gd4lib\\cretem.cs",
+              "RelativeToolTip": "gd4lib\\cretem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T08:35:50.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "BDSender\\Form1.Designer.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.Designer.cs",
+              "RelativeToolTip": "BDSender\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T05:48:12.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Program.cs",
+              "RelativeDocumentMoniker": "BDSender\\Program.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Program.cs",
+              "RelativeToolTip": "BDSender\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T04:36:43.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "clsconvertdate.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\cls\\clsconvertdate.cs",
+              "RelativeDocumentMoniker": "BDSender\\cls\\clsconvertdate.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\cls\\clsconvertdate.cs",
+              "RelativeToolTip": "BDSender\\cls\\clsconvertdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T04:35:17.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "cls_semed.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\module\\cls_semed.cs",
+              "RelativeDocumentMoniker": "BDSender\\module\\cls_semed.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\module\\cls_semed.cs",
+              "RelativeToolTip": "BDSender\\module\\cls_semed.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T05:58:08.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\cls\\Class1.cs",
+              "RelativeDocumentMoniker": "BDSender\\cls\\Class1.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\cls\\Class1.cs",
+              "RelativeToolTip": "BDSender\\cls\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T05:53:24.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.cs",
+              "RelativeDocumentMoniker": "BDSender\\Form1.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\Form1.cs [Design]",
+              "RelativeToolTip": "BDSender\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T03:56:09.696Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmNumpad.cs [Design]",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frmNumpad.cs",
+              "RelativeDocumentMoniker": "BDSender\\forms\\frmNumpad.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frmNumpad.cs [Design]",
+              "RelativeToolTip": "BDSender\\forms\\frmNumpad.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T04:35:01.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmManual.cs [Design]",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frmManual.cs",
+              "RelativeDocumentMoniker": "BDSender\\forms\\frmManual.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frmManual.cs [Design]",
+              "RelativeToolTip": "BDSender\\forms\\frmManual.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T04:34:59.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frm_yesno.cs [Design]",
+              "DocumentMoniker": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frm_yesno.cs",
+              "RelativeDocumentMoniker": "BDSender\\forms\\frm_yesno.cs",
+              "ToolTip": "D:\\BDSender_Nakornping\\BDSender_Nakornping-main\\BDSender\\forms\\frm_yesno.cs [Design]",
+              "RelativeToolTip": "BDSender\\forms\\frm_yesno.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T04:34:57.342Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

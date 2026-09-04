@@ -95,12 +95,13 @@ export class AppComponent implements OnInit {
     // 3. ถ้าตะกร้านี้เพิ่งถูกส่งจ่ายยาไปภายใน 2 นาที (120,000 ms) ให้ข้ามไป
     const now = new Date().getTime();
     const recentlyDispensed = this.dispensedHistory.some(h => 
-      (h.basketNo === cleanId || h.rfidCode === cleanId) && 
-      (now - h.timestamp.getTime() < 120000)
+      (h.id === cleanId || (h.rfidCode && h.rfidCode === cleanId)) && 
+      (now - (h.time ? h.time.getTime() : 0) < 120000)
     );
     
     if (recentlyDispensed) {
       console.log('Basket was recently dispensed, ignoring scan:', cleanId);
+        alert('�Ѵ������� (����觤�����������ѡ����)');
       return;
     }
 
@@ -119,7 +120,7 @@ export class AppComponent implements OnInit {
     if (this.isProcessing) return;
     
     // Check history (max 10 recent scans)
-    if (this.dispensedHistory.some(h => h.id === basketId)) {
+    if (this.dispensedHistory.some(h => h.id === basketId || (h.rfidCode && h.rfidCode === basketId))) {
         return;
     }
     
@@ -129,6 +130,7 @@ export class AppComponent implements OnInit {
     this.patientName = 'กำลังดึงข้อมูล...';
     this.vn = '-';
     this.hn = '-';
+    this.patientInfo = null; // Clear previous basket data
     this.drugs = [];
     this.loadPatientTime = null;
     this.checkStockTime = null;
@@ -162,7 +164,9 @@ export class AppComponent implements OnInit {
                   code: d.orderitemcode,
                   name: d.orderitemname,
                   qty: d.orderqty || d.qty,
-                  unit: drugDetails ? drugDetails.orderunitcode : d.orderunitcode
+                  unit: drugDetails ? drugDetails.orderunitcode : d.orderunitcode,
+                  shelfzone: d.shelfzone,
+                  Strength: d.Strength || 'N/A'
                 });
               }
             });
@@ -218,7 +222,7 @@ export class AppComponent implements OnInit {
              if (stockItem && stockItem.packageRatio) {
                  d.qty = Math.floor(rawQty / packageRatio);
              }
-             d.boxQty = d.qty; 
+             d.originalUnit = d.unit; d.boxQty = d.qty; 
              d.unit = "Box";
              
              const requiredPills = rawQty;
@@ -265,7 +269,7 @@ export class AppComponent implements OnInit {
         this.checkStockTime = new Date();
         this.dispenseStatus = 'ready';
         this.cdr.detectChanges();
-        drugs.forEach(d => { d.boxQty = d.qty; });
+        drugs.forEach(d => { d.originalUnit = d.unit; d.boxQty = d.qty; });
         setTimeout(() => {
             this.onDispense();
         }, 500);
@@ -297,11 +301,7 @@ export class AppComponent implements OnInit {
           this.dispenseStatus = 'success';
           this.sendSemedTime = new Date();
           
-          this.dispensedHistory.unshift({
-            id: this.basketNo,
-            patientName: this.patientName,
-            time: new Date()
-          });
+          this.dispensedHistory.unshift({ id: this.basketNo, rfidCode: this.rfidCode, patientName: this.patientName, time: new Date() });
           this.dispensedHistory = this.dispensedHistory.slice(0, 10);
           this.isProcessing = false;
           this.cdr.detectChanges();
@@ -323,6 +323,7 @@ export class AppComponent implements OnInit {
         } else {
           this.dispenseStatus = 'error';
           this.errorMessage = res.error || 'Unknown API Error';
+          this.isProcessing = false; // Fix: Unlock system on API error
           this.showErrorModal = true;
           this.cdr.detectChanges();
         }
@@ -330,10 +331,25 @@ export class AppComponent implements OnInit {
       error: (e) => {
         this.dispenseStatus = 'error';
         this.errorMessage = e.message || 'Network Error / Endpoint not reachable';
+        this.isProcessing = false; // Fix: Unlock system on Network error
         this.showErrorModal = true;
         this.cdr.detectChanges();
       }
     });
+  }
+
+  closeErrorModal() {
+    this.showErrorModal = false;
+    this.dispenseStatus = 'idle';
+    this.isProcessing = false;
+    
+    if (this.queue.length > 0) {
+      const nextBasket = this.queue.shift();
+      this.cdr.detectChanges();
+      this.handleScan(nextBasket);
+    } else {
+      this.cdr.detectChanges();
+    }
   }
   
   toggleMenu(event: Event) {

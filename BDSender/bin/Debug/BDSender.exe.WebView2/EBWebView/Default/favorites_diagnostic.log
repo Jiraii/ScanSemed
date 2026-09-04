@@ -1,0 +1,858 @@
+2026-08-27 03:58:42.036: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 03:58:42.036: [INFO] Profiles total count: 1
+2026-08-27 03:58:42.036: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=null
+2026-08-27 03:58:42.036: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 03:58:42.036: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 03:58:42.036: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 03:58:42.036: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 03:58:42.036: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:00:50.702: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:01:16.918: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:01:16.918: [INFO] Profiles total count: 1
+2026-08-27 04:01:16.918: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:00:48.899Z
+2026-08-27 04:01:16.918: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:01:16.918: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:00:48.899Z
+2026-08-27 04:01:16.918: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:01:16.918: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:01:16.918: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:01:16.918: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:04:08.008: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:04:25.922: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:04:25.922: [INFO] Profiles total count: 1
+2026-08-27 04:04:25.922: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:04:07.037Z
+2026-08-27 04:04:25.922: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:04:25.922: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:04:07.037Z
+2026-08-27 04:04:25.922: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:04:25.922: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:04:25.922: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:04:25.922: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:06:03.242: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:07:40.106: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:07:40.106: [INFO] Profiles total count: 1
+2026-08-27 04:07:40.106: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:06:02.516Z
+2026-08-27 04:07:40.106: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:07:40.107: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:06:02.516Z
+2026-08-27 04:07:40.107: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:07:40.107: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:07:40.107: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:07:40.107: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:09:43.668: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:29:27.559: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:29:27.559: [INFO] Profiles total count: 1
+2026-08-27 04:29:27.560: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:09:43.013Z
+2026-08-27 04:29:27.560: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:29:27.560: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:09:43.013Z
+2026-08-27 04:29:27.560: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:29:27.560: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:29:27.560: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:29:27.560: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:30:53.731: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:31:38.717: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:31:38.717: [INFO] Profiles total count: 1
+2026-08-27 04:31:38.717: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:30:52.997Z
+2026-08-27 04:31:38.717: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:31:38.717: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:30:52.997Z
+2026-08-27 04:31:38.717: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:31:38.717: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:31:38.717: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:31:38.717: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:32:40.531: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:36:18.789: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:36:18.789: [INFO] Profiles total count: 1
+2026-08-27 04:36:18.790: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:32:39.811Z
+2026-08-27 04:36:18.790: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:36:18.790: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:32:39.811Z
+2026-08-27 04:36:18.790: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:36:18.790: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:36:18.790: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:36:18.790: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:40:04.256: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:44:26.822: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:44:26.822: [INFO] Profiles total count: 1
+2026-08-27 04:44:26.823: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:40:03.447Z
+2026-08-27 04:44:26.823: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:44:26.823: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:40:03.447Z
+2026-08-27 04:44:26.823: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:44:26.823: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:44:26.823: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:44:26.823: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:45:33.216: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:52:16.812: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:52:16.812: [INFO] Profiles total count: 1
+2026-08-27 04:52:16.812: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:45:32.245Z
+2026-08-27 04:52:16.812: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:52:16.813: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:45:32.245Z
+2026-08-27 04:52:16.813: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:52:16.813: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:52:16.813: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:52:16.813: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:58:27.168: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 04:59:08.875: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:59:08.875: [INFO] Profiles total count: 1
+2026-08-27 04:59:08.875: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:58:26.391Z
+2026-08-27 04:59:08.875: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 04:59:08.875: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T04:58:26.391Z
+2026-08-27 04:59:08.875: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 04:59:08.875: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 04:59:08.875: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 04:59:08.875: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:17:52.465: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:19:17.387: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:19:17.387: [INFO] Profiles total count: 1
+2026-08-27 05:19:17.387: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:17:50.743Z
+2026-08-27 05:19:17.387: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:19:17.387: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:17:50.743Z
+2026-08-27 05:19:17.387: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:19:17.387: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:19:17.387: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:19:17.387: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:22:02.316: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:22:52.482: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:22:52.482: [INFO] Profiles total count: 1
+2026-08-27 05:22:52.482: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:22:01.507Z
+2026-08-27 05:22:52.482: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:22:52.482: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:22:01.507Z
+2026-08-27 05:22:52.482: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:22:52.482: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:22:52.482: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:22:52.482: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:24:53.381: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:29:11.515: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:29:11.515: [INFO] Profiles total count: 1
+2026-08-27 05:29:11.515: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:24:52.661Z
+2026-08-27 05:29:11.515: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:29:11.515: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:24:52.661Z
+2026-08-27 05:29:11.515: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:29:11.515: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:29:11.515: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:29:11.515: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:31:29.704: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:37:00.431: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:37:00.431: [INFO] Profiles total count: 1
+2026-08-27 05:37:00.432: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:31:10.973Z
+2026-08-27 05:37:00.432: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:37:00.432: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:31:10.973Z
+2026-08-27 05:37:00.432: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:37:00.432: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:37:00.432: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:37:00.432: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:39:17.305: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:41:16.224: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:41:16.224: [INFO] Profiles total count: 1
+2026-08-27 05:41:16.225: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:39:16.507Z
+2026-08-27 05:41:16.225: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:41:16.225: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:39:16.507Z
+2026-08-27 05:41:16.225: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:41:16.225: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:41:16.225: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:41:16.225: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:41:28.298: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:42:29.013: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:42:29.013: [INFO] Profiles total count: 1
+2026-08-27 05:42:29.013: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:41:28.109Z
+2026-08-27 05:42:29.013: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:42:29.013: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:41:28.109Z
+2026-08-27 05:42:29.013: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:42:29.013: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:42:29.013: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:42:29.014: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:42:38.560: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:42:42.574: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:42:42.574: [INFO] Profiles total count: 1
+2026-08-27 05:42:42.574: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:42:29.178Z
+2026-08-27 05:42:42.574: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:42:42.574: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:42:29.178Z
+2026-08-27 05:42:42.574: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:42:42.574: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:42:42.574: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:42:42.574: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:43:55.872: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:45:23.123: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:45:23.123: [INFO] Profiles total count: 1
+2026-08-27 05:45:23.123: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:43:55.073Z
+2026-08-27 05:45:23.123: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:45:23.123: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:43:55.073Z
+2026-08-27 05:45:23.123: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:45:23.123: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:45:23.123: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:45:23.123: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:47:21.684: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:55:04.201: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:55:04.201: [INFO] Profiles total count: 1
+2026-08-27 05:55:04.202: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:51:31.044Z
+2026-08-27 05:55:04.202: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:55:04.202: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:51:31.044Z
+2026-08-27 05:55:04.202: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:55:04.202: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:55:04.202: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:55:04.202: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:57:25.067: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 05:59:44.763: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:59:44.763: [INFO] Profiles total count: 1
+2026-08-27 05:59:44.763: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:57:23.511Z
+2026-08-27 05:59:44.764: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 05:59:44.764: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T05:57:23.511Z
+2026-08-27 05:59:44.764: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 05:59:44.764: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 05:59:44.764: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 05:59:44.764: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:03:32.437: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:05:14.639: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:05:14.639: [INFO] Profiles total count: 1
+2026-08-27 06:05:14.639: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:03:31.737Z
+2026-08-27 06:05:14.639: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:05:14.639: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:03:31.737Z
+2026-08-27 06:05:14.639: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:05:14.639: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:05:14.639: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:05:14.639: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:07:41.265: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:09:38.062: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:09:38.062: [INFO] Profiles total count: 1
+2026-08-27 06:09:38.062: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:07:40.495Z
+2026-08-27 06:09:38.062: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:09:38.062: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:07:40.495Z
+2026-08-27 06:09:38.062: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:09:38.062: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:09:38.062: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:09:38.062: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:13:39.681: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:14:03.206: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:14:03.206: [INFO] Profiles total count: 1
+2026-08-27 06:14:03.206: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:13:38.749Z
+2026-08-27 06:14:03.206: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:14:03.206: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:13:38.749Z
+2026-08-27 06:14:03.206: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:14:03.206: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:14:03.206: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:14:03.206: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:17:39.862: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:23:57.192: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:23:57.192: [INFO] Profiles total count: 1
+2026-08-27 06:23:57.193: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:17:38.747Z
+2026-08-27 06:23:57.193: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:23:57.193: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:17:38.747Z
+2026-08-27 06:23:57.193: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:23:57.193: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:23:57.193: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:23:57.193: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:25:44.057: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:30:57.109: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:30:57.109: [INFO] Profiles total count: 1
+2026-08-27 06:30:57.110: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:25:43.487Z
+2026-08-27 06:30:57.110: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:30:57.110: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:25:43.487Z
+2026-08-27 06:30:57.110: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:30:57.110: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:30:57.110: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:30:57.110: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:33:07.789: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:37:45.210: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:37:45.210: [INFO] Profiles total count: 1
+2026-08-27 06:37:45.211: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:33:06.540Z
+2026-08-27 06:37:45.211: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:37:45.211: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:33:06.540Z
+2026-08-27 06:37:45.211: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:37:45.211: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:37:45.211: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:37:45.211: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:37:48.230: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:37:52.407: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:37:52.407: [INFO] Profiles total count: 1
+2026-08-27 06:37:52.408: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:37:46.078Z
+2026-08-27 06:37:52.408: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:37:52.408: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:37:46.078Z
+2026-08-27 06:37:52.408: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:37:52.408: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:37:52.408: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:37:52.408: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:40:20.816: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 06:41:43.099: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:41:43.099: [INFO] Profiles total count: 1
+2026-08-27 06:41:43.099: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:40:20.071Z
+2026-08-27 06:41:43.099: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 06:41:43.099: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T06:40:20.071Z
+2026-08-27 06:41:43.099: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 06:41:43.099: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 06:41:43.099: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 06:41:43.099: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:41:25.576: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:48:07.007: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:48:07.007: [INFO] Profiles total count: 1
+2026-08-27 07:48:07.007: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:41:24.635Z
+2026-08-27 07:48:07.007: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:48:07.007: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:41:24.635Z
+2026-08-27 07:48:07.007: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 07:48:07.007: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 07:48:07.007: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 07:48:07.007: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:52:12.994: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:52:37.108: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:52:37.108: [INFO] Profiles total count: 1
+2026-08-27 07:52:37.109: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:52:12.430Z
+2026-08-27 07:52:37.109: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:52:37.109: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:52:12.430Z
+2026-08-27 07:52:37.109: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 07:52:37.109: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 07:52:37.109: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 07:52:37.109: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:54:16.007: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:54:58.746: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:54:58.746: [INFO] Profiles total count: 1
+2026-08-27 07:54:58.746: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:54:15.459Z
+2026-08-27 07:54:58.746: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:54:58.747: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:54:15.459Z
+2026-08-27 07:54:58.747: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 07:54:58.747: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 07:54:58.747: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 07:54:58.747: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:59:26.260: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 07:59:36.959: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:59:36.959: [INFO] Profiles total count: 1
+2026-08-27 07:59:36.959: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:59:25.039Z
+2026-08-27 07:59:36.959: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 07:59:36.959: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T07:59:25.039Z
+2026-08-27 07:59:36.959: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 07:59:36.959: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 07:59:36.959: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 07:59:36.959: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:14:01.500: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:19:19.652: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:19:19.652: [INFO] Profiles total count: 1
+2026-08-27 08:19:19.652: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:14:00.451Z
+2026-08-27 08:19:19.652: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:19:19.652: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:14:00.451Z
+2026-08-27 08:19:19.652: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 08:19:19.652: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 08:19:19.652: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 08:19:19.652: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:19:37.295: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:27:25.970: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:27:25.970: [INFO] Profiles total count: 1
+2026-08-27 08:27:25.971: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:19:36.680Z
+2026-08-27 08:27:25.971: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:27:25.971: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:19:36.680Z
+2026-08-27 08:27:25.971: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 08:27:25.971: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 08:27:25.971: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 08:27:25.971: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:29:32.907: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 08:41:42.371: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:41:42.371: [INFO] Profiles total count: 1
+2026-08-27 08:41:42.371: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:29:31.967Z
+2026-08-27 08:41:42.371: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-27 08:41:42.371: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T08:29:31.967Z
+2026-08-27 08:41:42.371: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 08:41:42.371: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 08:41:42.371: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 08:41:42.371: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 09:32:17.221: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:18:37.090: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:18:37.090: [INFO] Profiles total count: 1
+2026-08-28 09:18:37.091: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:18:37.091: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:18:37.091: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:18:37.091: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:18:37.091: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:18:37.091: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:18:37.091: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:19:14.947: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:21:34.443: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:21:34.443: [INFO] Profiles total count: 1
+2026-08-28 09:21:34.444: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:21:34.444: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:21:34.444: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:21:34.444: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:21:34.444: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:21:34.444: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:21:34.444: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:21:47.920: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:22:25.374: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:22:25.374: [INFO] Profiles total count: 1
+2026-08-28 09:22:25.374: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:22:25.374: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:22:25.374: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:22:25.374: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:22:25.374: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:22:25.374: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:22:25.374: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:22:28.497: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:28:47.500: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:28:47.500: [INFO] Profiles total count: 1
+2026-08-28 09:28:47.501: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:28:47.501: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:28:47.501: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:28:47.501: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:28:47.501: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:28:47.501: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:28:47.501: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:29:53.033: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:30:55.118: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:30:55.118: [INFO] Profiles total count: 1
+2026-08-28 09:30:55.119: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:30:55.119: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:30:55.119: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:30:55.119: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:30:55.119: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:30:55.119: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:30:55.119: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:31:32.879: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-28 09:32:03.060: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:32:03.060: [INFO] Profiles total count: 1
+2026-08-28 09:32:03.060: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:32:03.060: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-28 09:32:03.060: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-28 09:32:03.060: [INFO] OnDoneLoading sync enabled: 0
+2026-08-28 09:32:03.060: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-28 09:32:03.061: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-28 09:32:03.061: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:25:18.821: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:25:18.821: [INFO] Profiles total count: 1
+2026-08-29 02:25:18.822: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:25:18.822: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:25:18.822: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:25:18.822: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:25:18.822: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:25:18.822: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:25:18.822: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:25:38.162: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:28:01.237: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:28:01.237: [INFO] Profiles total count: 1
+2026-08-29 02:28:01.237: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:28:01.237: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:28:01.237: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:28:01.237: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:28:01.237: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:28:01.237: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:28:01.237: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:28:55.011: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:32:04.829: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:32:04.829: [INFO] Profiles total count: 1
+2026-08-29 02:32:04.830: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:32:04.830: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:32:04.830: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-27T09:32:15.847Z
+2026-08-29 02:32:04.830: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:32:04.830: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:32:04.830: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:32:04.830: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:33:25.247: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:34:18.482: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:34:18.482: [INFO] Profiles total count: 1
+2026-08-29 02:34:18.483: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:32:09.307Z
+2026-08-29 02:34:18.483: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:34:18.483: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:32:09.307Z
+2026-08-29 02:34:18.483: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:34:18.483: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:34:18.483: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:34:18.483: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:35:14.437: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:39:40.834: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:39:40.834: [INFO] Profiles total count: 1
+2026-08-29 02:39:40.835: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:35:12.860Z
+2026-08-29 02:39:40.835: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:39:40.835: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:35:12.860Z
+2026-08-29 02:39:40.835: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:39:40.835: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:39:40.835: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:39:40.835: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:45:53.338: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:50:27.224: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:50:27.224: [INFO] Profiles total count: 1
+2026-08-29 02:50:27.224: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:40:00.157Z
+2026-08-29 02:50:27.224: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:50:27.224: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:40:00.157Z
+2026-08-29 02:50:27.224: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:50:27.224: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:50:27.224: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:50:27.224: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:51:28.433: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:53:59.879: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:53:59.879: [INFO] Profiles total count: 1
+2026-08-29 02:53:59.880: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:51:26.285Z
+2026-08-29 02:53:59.880: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 02:53:59.880: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:51:26.285Z
+2026-08-29 02:53:59.880: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 02:53:59.880: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 02:53:59.880: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 02:53:59.880: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 02:56:21.822: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:02:24.326: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:02:24.326: [INFO] Profiles total count: 1
+2026-08-29 03:02:24.326: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:55:19.537Z
+2026-08-29 03:02:24.326: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:02:24.326: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T02:55:19.537Z
+2026-08-29 03:02:24.326: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 03:02:24.326: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 03:02:24.326: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 03:02:24.326: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:03:57.721: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:29:39.894: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:29:39.894: [INFO] Profiles total count: 1
+2026-08-29 03:29:39.894: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:03:06.539Z
+2026-08-29 03:29:39.894: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:29:39.894: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:03:06.539Z
+2026-08-29 03:29:39.894: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 03:29:39.894: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 03:29:39.894: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 03:29:39.894: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:30:14.436: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:30:19.166: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:30:19.166: [INFO] Profiles total count: 1
+2026-08-29 03:30:19.166: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:13.237Z
+2026-08-29 03:30:19.166: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 03:30:19.166: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:13.237Z
+2026-08-29 03:30:19.166: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 03:30:19.166: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 03:30:19.166: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 03:30:19.166: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 03:31:13.121: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:07:48.336: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:07:48.336: [INFO] Profiles total count: 1
+2026-08-29 04:07:48.336: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:28.302Z
+2026-08-29 04:07:48.336: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:07:48.336: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:28.302Z
+2026-08-29 04:07:48.336: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:07:48.336: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:07:48.336: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:07:48.336: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:08:21.418: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:13:40.778: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:13:40.778: [INFO] Profiles total count: 1
+2026-08-29 04:13:40.778: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:28.302Z
+2026-08-29 04:13:40.778: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:13:40.778: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T03:30:28.302Z
+2026-08-29 04:13:40.778: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:13:40.778: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:13:40.778: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:13:40.778: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:15:21.789: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:16:04.655: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:16:04.655: [INFO] Profiles total count: 1
+2026-08-29 04:16:04.655: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:13:59.699Z
+2026-08-29 04:16:04.656: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:16:04.656: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:13:59.699Z
+2026-08-29 04:16:04.656: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:16:04.656: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:16:04.656: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:16:04.656: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:17:39.801: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:19:15.760: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:19:15.761: [INFO] Profiles total count: 1
+2026-08-29 04:19:15.761: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:16:28.217Z
+2026-08-29 04:19:15.761: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:19:15.761: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:16:28.217Z
+2026-08-29 04:19:15.761: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:19:15.761: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:19:15.761: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:19:15.761: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:19:47.841: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:24:11.732: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:24:11.732: [INFO] Profiles total count: 1
+2026-08-29 04:24:11.733: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:19:29.719Z
+2026-08-29 04:24:11.733: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:24:11.733: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:19:29.719Z
+2026-08-29 04:24:11.733: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:24:11.733: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:24:11.733: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:24:11.733: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:24:52.177: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:24:57.219: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:24:57.219: [INFO] Profiles total count: 1
+2026-08-29 04:24:57.220: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:24:50.265Z
+2026-08-29 04:24:57.220: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:24:57.220: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:24:50.265Z
+2026-08-29 04:24:57.220: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:24:57.220: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:24:57.220: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:24:57.220: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:25:38.546: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:28:28.145: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:28:28.145: [INFO] Profiles total count: 1
+2026-08-29 04:28:28.146: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:25:11.204Z
+2026-08-29 04:28:28.146: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:28:28.146: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:25:11.204Z
+2026-08-29 04:28:28.146: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:28:28.146: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:28:28.146: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:28:28.146: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:28:59.801: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:30:59.950: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:30:59.950: [INFO] Profiles total count: 1
+2026-08-29 04:30:59.950: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:28:41.711Z
+2026-08-29 04:30:59.951: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:30:59.951: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:28:41.711Z
+2026-08-29 04:30:59.951: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:30:59.951: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:30:59.951: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:30:59.951: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:32:08.562: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:32:52.851: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:32:52.851: [INFO] Profiles total count: 1
+2026-08-29 04:32:52.852: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:31:18.218Z
+2026-08-29 04:32:52.852: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 04:32:52.852: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:31:18.218Z
+2026-08-29 04:32:52.852: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 04:32:52.852: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 04:32:52.852: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 04:32:52.852: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 04:33:27.785: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:23:03.852: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:23:03.852: [INFO] Profiles total count: 1
+2026-08-29 05:23:03.852: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:33:12.218Z
+2026-08-29 05:23:03.852: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:23:03.852: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T04:33:12.218Z
+2026-08-29 05:23:03.852: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:23:03.852: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:23:03.852: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:23:03.852: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:24:14.387: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:27:28.141: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:27:28.141: [INFO] Profiles total count: 1
+2026-08-29 05:27:28.141: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:23:32.224Z
+2026-08-29 05:27:28.141: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:27:28.141: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:23:32.224Z
+2026-08-29 05:27:28.141: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:27:28.141: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:27:28.141: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:27:28.141: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:28:01.626: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:34:06.054: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:34:06.054: [INFO] Profiles total count: 1
+2026-08-29 05:34:06.054: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:27:51.226Z
+2026-08-29 05:34:06.054: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:34:06.054: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:27:51.226Z
+2026-08-29 05:34:06.054: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:34:06.054: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:34:06.054: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:34:06.054: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:35:40.672: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:38:14.850: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:38:14.850: [INFO] Profiles total count: 1
+2026-08-29 05:38:14.850: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:34:19.350Z
+2026-08-29 05:38:14.850: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:38:14.850: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:34:19.350Z
+2026-08-29 05:38:14.850: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:38:14.850: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:38:14.850: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:38:14.850: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:39:19.135: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:41:07.247: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:41:07.247: [INFO] Profiles total count: 1
+2026-08-29 05:41:07.247: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:38:38.220Z
+2026-08-29 05:41:07.247: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:41:07.248: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:38:38.220Z
+2026-08-29 05:41:07.248: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:41:07.248: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:41:07.248: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:41:07.248: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:42:04.000: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:44:18.156: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:44:18.156: [INFO] Profiles total count: 1
+2026-08-29 05:44:18.156: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:41:20.858Z
+2026-08-29 05:44:18.156: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:44:18.156: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:41:20.858Z
+2026-08-29 05:44:18.156: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:44:18.156: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:44:18.156: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:44:18.157: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:44:45.583: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:48:52.542: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:48:52.542: [INFO] Profiles total count: 1
+2026-08-29 05:48:52.543: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:44:26.381Z
+2026-08-29 05:48:52.543: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:48:52.543: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:44:26.381Z
+2026-08-29 05:48:52.543: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:48:52.543: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:48:52.543: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:48:52.543: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:49:45.472: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:53:09.553: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:53:09.553: [INFO] Profiles total count: 1
+2026-08-29 05:53:09.553: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:49:05.747Z
+2026-08-29 05:53:09.553: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 05:53:09.554: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:49:05.747Z
+2026-08-29 05:53:09.554: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 05:53:09.554: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 05:53:09.554: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 05:53:09.554: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 05:54:37.354: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:03:34.323: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:03:34.323: [INFO] Profiles total count: 1
+2026-08-29 06:03:34.324: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:54:32.701Z
+2026-08-29 06:03:34.324: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:03:34.324: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T05:54:32.701Z
+2026-08-29 06:03:34.324: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:03:34.324: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:03:34.324: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:03:34.324: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:34:19.003: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:43:39.442: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:43:39.442: [INFO] Profiles total count: 1
+2026-08-29 06:43:39.442: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:03:47.204Z
+2026-08-29 06:43:39.442: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:43:39.442: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:03:47.204Z
+2026-08-29 06:43:39.442: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:43:39.442: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:43:39.442: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:43:39.442: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:44:07.137: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:44:11.981: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:44:11.981: [INFO] Profiles total count: 1
+2026-08-29 06:44:11.981: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:44:06.993Z
+2026-08-29 06:44:11.981: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:44:11.981: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:44:06.993Z
+2026-08-29 06:44:11.981: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:44:11.981: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:44:11.981: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:44:11.981: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:45:24.877: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:48:38.690: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:48:38.690: [INFO] Profiles total count: 1
+2026-08-29 06:48:38.691: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:44:12.216Z
+2026-08-29 06:48:38.691: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:48:38.691: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:44:12.216Z
+2026-08-29 06:48:38.691: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:48:38.691: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:48:38.691: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:48:38.691: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:49:01.501: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:51:04.767: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:51:04.767: [INFO] Profiles total count: 1
+2026-08-29 06:51:04.768: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:48:38.877Z
+2026-08-29 06:51:04.768: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:51:04.768: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:48:38.877Z
+2026-08-29 06:51:04.768: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:51:04.768: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:51:04.768: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:51:04.768: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:52:19.115: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:54:05.795: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:54:05.795: [INFO] Profiles total count: 1
+2026-08-29 06:54:05.796: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:51:04.954Z
+2026-08-29 06:54:05.796: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 06:54:05.796: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:51:04.954Z
+2026-08-29 06:54:05.796: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 06:54:05.796: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 06:54:05.796: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 06:54:05.796: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 06:54:24.984: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 07:03:01.303: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 07:03:01.303: [INFO] Profiles total count: 1
+2026-08-29 07:03:01.304: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:54:06.019Z
+2026-08-29 07:03:01.304: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 07:03:01.304: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T06:54:06.019Z
+2026-08-29 07:03:01.304: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 07:03:01.304: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 07:03:01.304: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 07:03:01.304: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 07:03:40.538: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 07:10:26.404: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 07:10:26.404: [INFO] Profiles total count: 1
+2026-08-29 07:10:26.404: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T07:03:14.490Z
+2026-08-29 07:10:26.404: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-08-29 07:10:26.404: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T07:03:14.490Z
+2026-08-29 07:10:26.404: [INFO] OnDoneLoading sync enabled: 0
+2026-08-29 07:10:26.404: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-29 07:10:26.404: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-29 07:10:26.404: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-29 07:11:17.890: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 02:41:47.667: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 02:41:47.667: [INFO] Profiles total count: 1
+2026-09-01 02:41:47.668: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T07:11:16.583Z
+2026-09-01 02:41:47.668: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 02:41:47.668: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-08-29T07:11:16.583Z
+2026-09-01 02:41:47.668: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 02:41:47.668: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 02:41:47.668: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 02:41:47.668: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 02:43:56.638: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 02:44:09.051: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 02:44:09.052: [INFO] Profiles total count: 1
+2026-09-01 02:44:09.052: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T02:43:43.721Z
+2026-09-01 02:44:09.052: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 02:44:09.052: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T02:43:43.721Z
+2026-09-01 02:44:09.052: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 02:44:09.052: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 02:44:09.052: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 02:44:09.052: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 02:44:13.804: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:07:19.505: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:07:19.505: [INFO] Profiles total count: 1
+2026-09-01 03:07:19.505: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T02:44:09.243Z
+2026-09-01 03:07:19.505: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:07:19.505: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T02:44:09.243Z
+2026-09-01 03:07:19.505: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 03:07:19.505: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 03:07:19.505: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 03:07:19.505: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:09:19.842: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:43:44.716: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:43:44.717: [INFO] Profiles total count: 1
+2026-09-01 03:43:44.717: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:09:18.114Z
+2026-09-01 03:43:44.717: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:43:44.718: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:09:18.114Z
+2026-09-01 03:43:44.718: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 03:43:44.718: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 03:43:44.718: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 03:43:44.718: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:45:51.984: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:48:51.142: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:48:51.142: [INFO] Profiles total count: 1
+2026-09-01 03:48:51.142: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:45:50.593Z
+2026-09-01 03:48:51.142: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 03:48:51.142: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:45:50.593Z
+2026-09-01 03:48:51.142: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 03:48:51.142: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 03:48:51.142: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 03:48:51.142: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 03:50:42.822: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:01:34.661: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:01:34.661: [INFO] Profiles total count: 1
+2026-09-01 04:01:34.661: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:50:41.651Z
+2026-09-01 04:01:34.661: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:01:34.661: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T03:50:41.651Z
+2026-09-01 04:01:34.661: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 04:01:34.661: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 04:01:34.661: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 04:01:34.661: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:02:10.834: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:10:42.272: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:10:42.272: [INFO] Profiles total count: 1
+2026-09-01 04:10:42.273: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:02:09.927Z
+2026-09-01 04:10:42.273: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:10:42.273: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:02:09.927Z
+2026-09-01 04:10:42.273: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 04:10:42.273: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 04:10:42.273: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 04:10:42.273: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:13:45.375: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:15:52.708: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:15:52.709: [INFO] Profiles total count: 1
+2026-09-01 04:15:52.709: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:13:44.343Z
+2026-09-01 04:15:52.709: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:15:52.709: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:13:44.343Z
+2026-09-01 04:15:52.709: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 04:15:52.709: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 04:15:52.709: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 04:15:52.709: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:18:08.513: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:55:59.040: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:55:59.040: [INFO] Profiles total count: 1
+2026-09-01 04:55:59.040: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:16:24.607Z
+2026-09-01 04:55:59.040: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 04:55:59.041: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:16:24.607Z
+2026-09-01 04:55:59.041: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 04:55:59.041: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 04:55:59.041: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 04:55:59.041: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 04:59:42.848: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 05:00:23.146: [INFO] CurrentProfilePath: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 05:00:23.146: [INFO] Profiles total count: 1
+2026-09-01 05:00:23.146: [INFO] Profile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:58:33.787Z
+2026-09-01 05:00:23.146: [INFO] LastUsedProfileDir: D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default
+2026-09-01 05:00:23.146: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\bin\Debug\BDSender.exe.WebView2\EBWebView\Default lastActive=2026-09-01T04:58:33.787Z
+2026-09-01 05:00:23.146: [INFO] OnDoneLoading sync enabled: 0
+2026-09-01 05:00:23.146: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-01 05:00:23.146: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-01 05:00:23.146: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-01 05:02:42.928: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

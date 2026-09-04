@@ -1,0 +1,16 @@
+Error: connect ETIMEDOUT 10.35.222.66:8788
+    at AxiosError.from (D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\agent-backend\node_modules\axios\dist\node\axios.cjs:1478:24)
+    at RedirectableRequest.handleRequestError (D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\agent-backend\node_modules\axios\dist\node\axios.cjs:4427:25)
+    at RedirectableRequest.emit (node:events:521:24)
+    at eventHandlers.<computed> (D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\agent-backend\node_modules\follow-redirects\index.js:56:24)
+    at ClientRequest.emit (node:events:509:28)
+    at emitErrorEvent (node:_http_client:109:11)
+    at Socket.socketErrorListener (node:_http_client:593:5)
+    at Socket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at Axios.request (D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\agent-backend\node_modules\axios\dist\node\axios.cjs:5864:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\agent-backend\server.js:221:26
+
+null

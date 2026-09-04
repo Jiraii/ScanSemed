@@ -1,0 +1,15 @@
+Main Exception: System.TypeInitializationException: The type initializer for 'CrystalDecisions.Shared.SharedUtils' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at CrystalDecisions.Shared.SharedUtils..cctor()
+   --- End of inner exception stack trace ---
+   at CrystalDecisions.Shared.SharedUtils.get_CurrentControl()
+   at CrystalDecisions.Shared.SharedUtils.GetEffectiveContentCulture()
+   at CrystalDecisions.Shared.SharedUtils.GetContentLocale()
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper.CreateRptDoc()
+   at CrystalDecisions.ReportAppServer.ReportClientDocumentWrapper..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument.Initialize()
+   at CrystalDecisions.CrystalReports.Engine.ReportDocument..ctor()
+   at CrystalDecisions.CrystalReports.Engine.ReportClass..ctor()
+   at BDSender.report.crpguideslip..ctor() in D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\report\crpguideslip.cs:line 21
+   at BDSender.frm_main.InitializeComponent() in D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\Form1.Designer.cs:line 52
+   at BDSender.frm_main..ctor() in D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\Form1.cs:line 52
+   at BDSender.Program.Main() in D:\BDSender_Nakornping\BDSender_Nakornping-main\BDSender\Program.cs:line 41
