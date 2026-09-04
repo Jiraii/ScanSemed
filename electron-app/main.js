@@ -261,7 +261,7 @@ server.post('/api/proxy/dispense', async (req, res) => {
         }
 
         if (!isSuccess) {
-            throw new Error(SeMed Machine Rejected: );
+            throw new Error(`SeMed Machine Rejected: ${semedErrorMsg}`);
         }
 
         res.json({ success: true, result: response.data });
