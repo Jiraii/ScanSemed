@@ -143,10 +143,10 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    const now = new Date().getTime();
+    const nowMs = new Date().getTime();
     const recentlyDispensed = this.dispensedHistory.some(h => 
       (h.id === cleanId || (h.rfidCode && h.rfidCode === cleanId)) && 
-      (now - (h.time ? h.time.getTime() : 0) < 120000)
+      (nowMs - (h.time ? h.time.getTime() : 0) < 120000)
     );
     
     if (recentlyDispensed) {
